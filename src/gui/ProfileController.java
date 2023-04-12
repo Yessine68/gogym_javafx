@@ -89,34 +89,73 @@ public class ProfileController implements Initializable {
 //    } catch (SQLException ex) {
 //    }
 //}
- @FXML
-private void Delete(ActionEvent event) {
-    System.out.println("salem");
-    try {
-        String username = usernameLB.getText();
-        System.out.println(username);
-        UserService userService = new UserService();
-        List<User> userList = userService.recuperer();
-        
-        if(userList != null && !userList.isEmpty()) {
-                 for(User user : userList) {
-        System.out.println(user);
+    
+    
+    
+    
+    @FXML
+private void Delete(ActionEvent event) throws SQLException {
+    Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+    alert.setTitle("Confirmation Dialog");
+    alert.setHeaderText("Do you really want to delete your account?");
+    alert.setContentText("This action cannot be undone.");
+
+    Optional<ButtonType> result = alert.showAndWait();
+    if (result.get() == ButtonType.OK){
+        try {
+            String username = usernameLB.getText();
+            UserService userService = new UserService();
+            List<User> userList = userService.recuperer();
+
+            for (User userr : userList) {
+                if (userr.getUsername().equals(username)) {
+                    userService.supprimer(userr);
+                    System.out.println("User " + username + " deleted from database.");
+                    break;
                 }
-} else {
-    System.out.println("User list is null or empty");
-}
-        for (User userr : userList) {
-            if (userr.getUsername().equals(username)) {
-                userService.supprimer(userr);
-                System.out.println("User " + username + " deleted from database.");
-                break;
             }
+
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("Login.fxml"));
+            Parent root = loader.load();
+            usernameLB.getScene().setRoot(root);
+        } catch (IOException ex) {
+            System.err.println(ex.getMessage());
         }
-    } catch (SQLException ex) {
-        ex.printStackTrace();
-    } catch (Exception ex) {
-        ex.printStackTrace();
     }
 }
+    
+    
+    
+    
+    
+//@FXML
+//private void Delete(ActionEvent event) throws SQLException {
+//    System.out.println("salem");
+//    try {
+//        String username = usernameLB.getText();
+//        System.out.println(username);
+//        UserService userService = new UserService();
+//        List<User> userList = userService.recuperer();
+//        
+//        for (User userr : userList) {
+//            
+//         
+//            if (userr.getUsername().equals(username)) {
+//                
+//                userService.supprimer(userr);
+//                System.out.println("User " + username + " deleted from database.");
+//                 FXMLLoader loader = new FXMLLoader(getClass().getResource("Login.fxml"));
+//            Parent root = loader.load();
+//            // Set the Login.fxml as the root node of the scene
+//            usernameLB.getScene().setRoot(root);
+//                break;
+//            }
+//        }
+//    } catch (SQLException ex) {
+//        ex.printStackTrace();
+//    } catch (Exception ex) {
+//        ex.printStackTrace();
+//    }
+//}
     
 }

@@ -55,6 +55,7 @@ public void ajouter(User t) throws SQLException {
         ResultSet rs = st.executeQuery(req);
         while(rs.next()){
             User u = new User();
+            u.setUsername(rs.getString("username"));
             u.setId(rs.getInt("id"));
             u.setNom(rs.getString("nom"));
             u.setPrenom(rs.getString("prenom"));
