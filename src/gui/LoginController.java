@@ -170,17 +170,7 @@ private void Login(ActionEvent event) throws ClassNotFoundException, SQLExceptio
 
 
 
-    private void signup(ActionEvent event) {
-         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("AjouterPersonne.fxml"));
-            Parent root = loader.load();
-            AjouterPersonneController controller =loader.getController();
-            controller.setUsername(usernameTF.getText());
-            usernameTF.getScene().setRoot(root);
-        } catch (IOException ex) {
-            System.err.println(ex.getMessage());
-        }
-    }
+  
 
     @FXML
     private void gotoSignup(ActionEvent event) {
