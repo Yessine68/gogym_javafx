@@ -58,6 +58,15 @@ public class ProfileController implements Initializable {
 
     @FXML
     private void edit(ActionEvent event) {
+        try {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("EditProfile.fxml"));
+        Parent root = loader.load();
+        EditProfileController controller = loader.getController();
+        controller.setUser(user);
+        usernameLB.getScene().setRoot(root);
+    } catch (IOException ex) {
+        System.err.println(ex.getMessage());
+    }
     }
 
     @FXML
@@ -72,23 +81,7 @@ public class ProfileController implements Initializable {
         }
     }
   
-//  @FXML
-//  private void Delete(ActionEvent event) {
-//      System.out.println("salem");
-//    try {
-//        String username = usernameLB.getText();
-//        UserService userService = new UserService();
-//        List<User> userList = userService.recuperer();
-//        for (User userr : userList) {
-//            if (userr.getUsername().equals(username)) {
-//                userService.supprimer(userr);
-//                System.out.println("User " + username + " deleted from database.");
-//                break;
-//            }
-//        }
-//    } catch (SQLException ex) {
-//    }
-//}
+
     
     
     
@@ -127,35 +120,6 @@ private void Delete(ActionEvent event) throws SQLException {
     
     
     
-    
-//@FXML
-//private void Delete(ActionEvent event) throws SQLException {
-//    System.out.println("salem");
-//    try {
-//        String username = usernameLB.getText();
-//        System.out.println(username);
-//        UserService userService = new UserService();
-//        List<User> userList = userService.recuperer();
-//        
-//        for (User userr : userList) {
-//            
-//         
-//            if (userr.getUsername().equals(username)) {
-//                
-//                userService.supprimer(userr);
-//                System.out.println("User " + username + " deleted from database.");
-//                 FXMLLoader loader = new FXMLLoader(getClass().getResource("Login.fxml"));
-//            Parent root = loader.load();
-//            // Set the Login.fxml as the root node of the scene
-//            usernameLB.getScene().setRoot(root);
-//                break;
-//            }
-//        }
-//    } catch (SQLException ex) {
-//        ex.printStackTrace();
-//    } catch (Exception ex) {
-//        ex.printStackTrace();
-//    }
-//}
+   
     
 }

@@ -16,11 +16,11 @@
             <Font name="Constantia" size="52.0" />
          </font>
       </Label>
-      <TextField fx:id="prenomTF" layoutX="278.0" layoutY="187.0" promptText="Enter your family name" />
       <TextField fx:id="nomTF" layoutX="278.0" layoutY="143.0" promptText="Enter your name" />
+	  <TextField fx:id="prenomTF" layoutX="278.0" layoutY="187.0" promptText="Enter your family name" />
       <TextField fx:id="usernameTF" layoutX="278.0" layoutY="227.0" promptText="Enter your username" />
-      <PasswordField fx:id="passwordTF" layoutX="278.0" layoutY="307.0" promptText="Enter your password" />
       <TextField fx:id="emailTF" layoutX="278.0" layoutY="265.0" promptText="Enter your email" />
+	  <PasswordField fx:id="passwordTF" layoutX="278.0" layoutY="307.0" promptText="Enter your password" />
       <Button layoutX="175.0" layoutY="353.0" mnemonicParsing="false" onAction="#SignUp" text="Sign Up" />
       <Label layoutX="175.0" layoutY="142.0" prefHeight="26.0" prefWidth="75.0" text="Name :" />
       <Label layoutX="175.0" layoutY="191.0" text="Family Name :" />

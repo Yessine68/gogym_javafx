@@ -29,12 +29,12 @@ public void ajouter(User t) throws SQLException {
 
     @Override
     public void modifier(User t) throws SQLException {
-        String req = "update user set nom = ?, prenom = ?, email = ?, password = ? where id = ?";
+        String req = "update user set nom = ?, prenom = ?, email = ?, username = ? where id = ?";
         PreparedStatement ps = cnx.prepareStatement(req);
         ps.setString(1, t.getNom());
         ps.setString(2, t.getPrenom());
         ps.setString(3, t.getEmail());
-        ps.setString(4, t.getPassword());
+        ps.setString(4, t.getUsername());
         ps.setInt(5, t.getId());
         ps.executeUpdate();
     }
