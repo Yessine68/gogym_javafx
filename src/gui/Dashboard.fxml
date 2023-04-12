@@ -1,11 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.DashboardController">
-    
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.DashboardController">
+   <children>
+      <TableView fx:id="tbUsers" layoutX="83.0" layoutY="100.0" prefHeight="200.0" prefWidth="484.0">
+        <columns>
+          <TableColumn fx:id="Cid" prefWidth="46.39996337890625" text="ID" />
+          <TableColumn fx:id="cUsername" prefWidth="92.0" text="Username" />
+            <TableColumn fx:id="cName" prefWidth="74.39996337890625" text="Name" />
+            <TableColumn fx:id="cLastName" prefWidth="79.20001220703125" text="Last Name" />
+            <TableColumn fx:id="cEmail" prefWidth="75.20001220703125" text="Email" />
+        </columns>
+      </TableView>
+   </children>
 </AnchorPane>

@@ -66,11 +66,22 @@ public class LoginController implements Initializable {
                 UserService userService = new UserService();
                 User loggedInUser = userService.login(nom, password);
                 if (loggedInUser != null) {
-                    FXMLLoader loader = new FXMLLoader(getClass().getResource("Profile.fxml"));
-                    Parent root = loader.load();
-                    ProfileController controller = loader.getController();
-                    controller.setUser(loggedInUser);
-                    usernameTF.getScene().setRoot(root);
+                    if (loggedInUser.getRoles()[0].contains("ROLE_USER")) {
+                        System.out.println("Loading user profile");
+                        FXMLLoader loader = new FXMLLoader(getClass().getResource("Profile.fxml"));
+                        Parent root = loader.load();
+                        ProfileController controller = loader.getController();
+                        controller.setUser(loggedInUser);
+                        usernameTF.getScene().setRoot(root);
+                    } else if (loggedInUser.getRoles()[0].contains("ROLE_ADMIN")) {
+                        System.out.println("Loading admin interface");
+                        FXMLLoader loader = new FXMLLoader(getClass().getResource("Dashboard.fxml"));
+                        Parent root = loader.load();
+                        DashboardController controller = loader.getController();
+                        controller.setUser(loggedInUser);
+                        usernameTF.getScene().setRoot(root);
+                    }
+                   
                 } else {
                     JOptionPane.showMessageDialog(null, "Invalid username or password. Please try again.");
                 }

@@ -115,33 +115,6 @@ public class UserService implements IService<User> {
             return null;
         }
     }
-//    public User login(String username, String password) throws SQLException {
-//        String req = "SELECT * FROM user WHERE username = ? AND password = ?";
-//        PreparedStatement ps = cnx.prepareStatement(req);
-//        ps.setString(1, username);
-//        ps.setString(2, password);
-//        ResultSet rs = ps.executeQuery();
-//        if (rs.next()) {
-//        
-//        int id = rs.getInt("id");
-//        String nom = rs.getString("nom");
-//        String email = rs.getString("email");
-//        String prenom = rs.getString("prenom");
-//        String status = rs.getString("status");
-//        String reset_token = rs.getString("reset_token");
-//        String[] roles = rs.getString("roles").split(",");
-//        
-//        
-//         User user =new User(id,username,password,email,nom, prenom, status, reset_token, roles);
-////        User user = new User(id, name, email);
-//        return user;
-//            // Login successful, return true
-//            
-//        } else {
-//            // Login failed, return false
-//            return null;
-//        }
-//    }
 
     public boolean emailExists(String email) throws SQLException {
         String req = "SELECT * FROM user WHERE email = ?";
@@ -179,32 +152,23 @@ public class UserService implements IService<User> {
 
         return user;
     }
-    
 
+    public boolean checkUsernameExists(String username, int userId) throws SQLException {
+        String query = "SELECT id FROM user WHERE username = ? AND id != ?";
+        PreparedStatement statement = cnx.prepareStatement(query);
+        statement.setString(1, username);
+        statement.setInt(2, userId);
+        ResultSet resultSet = statement.executeQuery();
+        boolean exists = resultSet.next();
+        resultSet.close();
+        statement.close();
+        return exists;
+    }
 
-public boolean checkUsernameExists(String username, int userId) throws SQLException {
-    String query = "SELECT id FROM user WHERE username = ? AND id != ?";
-    PreparedStatement statement = cnx.prepareStatement(query);
-    statement.setString(1, username);
-    statement.setInt(2, userId);
-    ResultSet resultSet = statement.executeQuery();
-    boolean exists = resultSet.next();
-    resultSet.close();
-    statement.close();
-    return exists;
+    public void aaaa(int id) throws SQLException {
+        String query = "DELETE FROM user WHERE id = ?";
+        PreparedStatement stmt = cnx.prepareStatement(query);
+        stmt.setInt(1, id);
+        stmt.executeUpdate();
+    }
 }
-}
-
-
-
-
-
-    
-
-
-
-
-
-
-
-
