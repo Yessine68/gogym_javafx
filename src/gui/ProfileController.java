@@ -58,6 +58,7 @@ public class ProfileController implements Initializable {
 
     @FXML
     private void edit(ActionEvent event) {
+        
         try {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("EditProfile.fxml"));
         Parent root = loader.load();
@@ -68,6 +69,7 @@ public class ProfileController implements Initializable {
         System.err.println(ex.getMessage());
     }
     }
+    
 
     @FXML
     private void Logout(ActionEvent event) {
@@ -116,7 +118,8 @@ private void Delete(ActionEvent event) throws SQLException {
         }
     }
 }
-    
+
+
     
     
     

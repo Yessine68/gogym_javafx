@@ -16,6 +16,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
+import javafx.scene.control.Alert;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import services.UserService;
@@ -26,8 +27,9 @@ import services.UserService;
  * @author don7a
  */
 public class SignUpController implements Initializable {
+
     UserService us = new UserService();
-    
+
     @FXML
     private TextField prenomTF;
     @FXML
@@ -45,30 +47,78 @@ public class SignUpController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-    }    
+    }
 
-   @FXML
-private void SignUp(ActionEvent event) throws SQLException, IOException {
-    String username = usernameTF.getText();
-    String password = passwordTF.getText();
-    String nom = nomTF.getText();
-    String prenom = prenomTF.getText();
-    String email = emailTF.getText();
+    @FXML
+    private void SignUp(ActionEvent event) throws SQLException, IOException {
+        String username = usernameTF.getText();
+        String password = passwordTF.getText();
+        String nom = nomTF.getText();
+        String prenom = prenomTF.getText();
+        String email = emailTF.getText();
 
-       User user = new User(username, password, email, nom, prenom, "enabled", null,new String[] {"ROLE_USER"});
+        // Check if any of the fields are empty
+        if (username.isEmpty() || password.isEmpty() || nom.isEmpty() || prenom.isEmpty() || email.isEmpty()) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error");
+            alert.setHeaderText(null);
+            alert.setContentText("All fields are required");
+            alert.showAndWait();
+            return;
+        }
 
+        // Validation for nom and prenom
+        if (!nom.matches("[a-zA-Z]+")) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error");
+            alert.setHeaderText("Invalid name format");
+            alert.setContentText("Please use a valid name");
+            alert.showAndWait();
+            return;
+        }
 
-    us.ajouter(user);
+        if (!prenom.matches("[a-zA-Z]+")) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error");
+            alert.setHeaderText("Invalid family name format");
+            alert.setContentText("Please use a valid family name");
+            alert.showAndWait();
+            return;
+        }
 
-    FXMLLoader loader = new FXMLLoader(getClass().getResource("/gui/Login.fxml"));
-    Parent parent = loader.load();
-    LoginController controller = loader.getController();
-    controller.setUser(user);
-    usernameTF.getScene().setRoot(parent);
-}
-    
-    
-       @FXML
+        // Check if the username already exists
+        if (us.getUserByUsername(username) != null) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error");
+            alert.setHeaderText("Username already exists");
+            alert.setContentText("Please choose a different username");
+            alert.showAndWait();
+            return;
+        }
+
+        // Check if the email format is valid
+        if (!email.matches("[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6}")) {
+
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error");
+            alert.setHeaderText("Invalid email format");
+            alert.setContentText("Please enter a valid email address");
+            alert.showAndWait();
+            return;
+        }
+
+        User user = new User(username, password, email, nom, prenom, "enabled", null, new String[]{"ROLE_USER"});
+
+        us.ajouter(user);
+
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/gui/Login.fxml"));
+        Parent parent = loader.load();
+        LoginController controller = loader.getController();
+        controller.setUser(user);
+        usernameTF.getScene().setRoot(parent);
+    }
+
+    @FXML
     private void gotoLogin(ActionEvent event) {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("Login.fxml"));
@@ -80,12 +130,5 @@ private void SignUp(ActionEvent event) throws SQLException, IOException {
             System.err.println(ex.getMessage());
         }
     }
-    
-
-
 
 }
-
- 
-    
-

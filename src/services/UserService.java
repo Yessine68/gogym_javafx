@@ -179,5 +179,32 @@ public class UserService implements IService<User> {
 
         return user;
     }
+    
 
+
+public boolean checkUsernameExists(String username, int userId) throws SQLException {
+    String query = "SELECT id FROM user WHERE username = ? AND id != ?";
+    PreparedStatement statement = cnx.prepareStatement(query);
+    statement.setString(1, username);
+    statement.setInt(2, userId);
+    ResultSet resultSet = statement.executeQuery();
+    boolean exists = resultSet.next();
+    resultSet.close();
+    statement.close();
+    return exists;
 }
+}
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
