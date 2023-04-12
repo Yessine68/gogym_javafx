@@ -8,7 +8,9 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
+import org.mindrot.jbcrypt.BCrypt;
 import utils.MyDB;
+import services.PasswordEncoder;
 
 public class UserService implements IService<User> {
 
@@ -18,14 +20,17 @@ public class UserService implements IService<User> {
         cnx = MyDB.getInstance().getCnx();
     }
 
-   @Override
-public void ajouter(User t) throws SQLException {
-    String req = "INSERT INTO user(username, roles, password, nom, prenom, email, reset_token, status) "
-               + "VALUES('" + t.getUsername() + "', '[\"ROLE_USER\"]', '" + t.getPassword() + "', '" + t.getNom() + "', '" + t.getPrenom() + "', '" + t.getEmail() + "', NULL, 'enabled')";
-    Statement st = cnx.createStatement();
-    st.executeUpdate(req);
-}
+    @Override
+    public void ajouter(User t) throws SQLException {
+        String encodedPassword = PasswordEncoder.encode(t.getPassword());
 
+//    String req = "INSERT INTO user(username, roles, password, nom, prenom, email, reset_token, status) "
+//               + "VALUES('" + t.getUsername() + "', '[\"ROLE_USER\"]', '" + t.getPassword() + "', '" + t.getNom() + "', '" + t.getPrenom() + "', '" + t.getEmail() + "', NULL, 'enabled')";
+        String req = "INSERT INTO user(username, roles, password, nom, prenom, email, reset_token, status) "
+                + "VALUES('" + t.getUsername() + "', '[\"ROLE_USER\"]', '" + encodedPassword + "', '" + t.getNom() + "', '" + t.getPrenom() + "', '" + t.getEmail() + "', NULL, 'enabled')";
+        Statement st = cnx.createStatement();
+        st.executeUpdate(req);
+    }
 
     @Override
     public void modifier(User t) throws SQLException {
@@ -53,7 +58,7 @@ public void ajouter(User t) throws SQLException {
         String req = "select * from user";
         Statement st = cnx.createStatement();
         ResultSet rs = st.executeQuery(req);
-        while(rs.next()){
+        while (rs.next()) {
             User u = new User();
             u.setUsername(rs.getString("username"));
             u.setId(rs.getInt("id"));
@@ -71,7 +76,7 @@ public void ajouter(User t) throws SQLException {
         String req = "select * from user where id= ?";
         PreparedStatement st = cnx.prepareStatement(req);
         ResultSet rs = st.executeQuery(req);
-        while(rs.next()){
+        while (rs.next()) {
             User u = new User();
             u.setId(rs.getInt("id"));
             u.setNom(rs.getString("nom"));
@@ -84,32 +89,59 @@ public void ajouter(User t) throws SQLException {
     }
 
     public User login(String username, String password) throws SQLException {
-        String req = "SELECT * FROM user WHERE username = ? AND password = ?";
+        String req = "SELECT * FROM user WHERE username = ?";
         PreparedStatement ps = cnx.prepareStatement(req);
         ps.setString(1, username);
-        ps.setString(2, password);
         ResultSet rs = ps.executeQuery();
         if (rs.next()) {
-        
-        int id = rs.getInt("id");
-        String nom = rs.getString("nom");
-        String email = rs.getString("email");
-        String prenom = rs.getString("prenom");
-        String status = rs.getString("status");
-        String reset_token = rs.getString("reset_token");
-        String[] roles = rs.getString("roles").split(",");
-        
-        
-         User user =new User(id,username,password,email,nom, prenom, status, reset_token, roles);
-//        User user = new User(id, name, email);
-        return user;
-            // Login successful, return true
-            
+            String encodedPassword = rs.getString("password");
+            boolean passwordMatch = BCrypt.checkpw(password, encodedPassword);
+            if (passwordMatch) {
+                int id = rs.getInt("id");
+                String nom = rs.getString("nom");
+                String email = rs.getString("email");
+                String prenom = rs.getString("prenom");
+                String status = rs.getString("status");
+                String reset_token = rs.getString("reset_token");
+                String[] roles = rs.getString("roles").split(",");
+                User user = new User(id, username, encodedPassword, email, nom, prenom, status, reset_token, roles);
+                return user;
+            } else {
+                // Login failed, return null
+                return null;
+            }
         } else {
-            // Login failed, return false
+            // Login failed, return null
             return null;
         }
     }
+//    public User login(String username, String password) throws SQLException {
+//        String req = "SELECT * FROM user WHERE username = ? AND password = ?";
+//        PreparedStatement ps = cnx.prepareStatement(req);
+//        ps.setString(1, username);
+//        ps.setString(2, password);
+//        ResultSet rs = ps.executeQuery();
+//        if (rs.next()) {
+//        
+//        int id = rs.getInt("id");
+//        String nom = rs.getString("nom");
+//        String email = rs.getString("email");
+//        String prenom = rs.getString("prenom");
+//        String status = rs.getString("status");
+//        String reset_token = rs.getString("reset_token");
+//        String[] roles = rs.getString("roles").split(",");
+//        
+//        
+//         User user =new User(id,username,password,email,nom, prenom, status, reset_token, roles);
+////        User user = new User(id, name, email);
+//        return user;
+//            // Login successful, return true
+//            
+//        } else {
+//            // Login failed, return false
+//            return null;
+//        }
+//    }
 
     public boolean emailExists(String email) throws SQLException {
         String req = "SELECT * FROM user WHERE email = ?";
@@ -124,32 +156,28 @@ public void ajouter(User t) throws SQLException {
             return false;
         }
     }
-    
-    
-  public User getUserByUsername(String username) throws SQLException {
-    User user = null;
-    String query = "SELECT * FROM user WHERE username = ?";
-    PreparedStatement statement = cnx.prepareStatement(query);
-    statement.setString(1, username);
-    ResultSet result = statement.executeQuery();
 
-    if (result.next()) {
-        int id = result.getInt("id");
-        String password = result.getString("password");
-        String email = result.getString("email");
-        String nom = result.getString("nom");
-        String prenom = result.getString("prenom");
-        String status = result.getString("status");
-        String resetToken = result.getString("reset_token");
-        String[] roles = result.getString("roles").split(",");
+    public User getUserByUsername(String username) throws SQLException {
+        User user = null;
+        String query = "SELECT * FROM user WHERE username = ?";
+        PreparedStatement statement = cnx.prepareStatement(query);
+        statement.setString(1, username);
+        ResultSet result = statement.executeQuery();
 
-        user = new User(id, username, password, email, nom, prenom, status, resetToken, roles);
+        if (result.next()) {
+            int id = result.getInt("id");
+            String password = result.getString("password");
+            String email = result.getString("email");
+            String nom = result.getString("nom");
+            String prenom = result.getString("prenom");
+            String status = result.getString("status");
+            String resetToken = result.getString("reset_token");
+            String[] roles = result.getString("roles").split(",");
+
+            user = new User(id, username, password, email, nom, prenom, status, resetToken, roles);
+        }
+
+        return user;
     }
-
-    return user;
-}
-  
-
-    
 
 }
