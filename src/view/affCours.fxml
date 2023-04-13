@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="732.0" prefWidth="1158.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.AffCoursController">
+   <children>
+      <ImageView fitHeight="883.0" fitWidth="1471.0" layoutX="-313.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/sport.jpg" />
+         </image></ImageView>
+      <TableView fx:id="affiche" layoutY="36.0" prefHeight="597.0" prefWidth="1158.0">
+         <columns>
+            <TableColumn fx:id="idcr" prefWidth="75.0" text="Id" />
+            <TableColumn fx:id="nomcr" prefWidth="260.0" text="Nom du cours" />
+            <TableColumn fx:id="dureecr" prefWidth="272.0" text="Duree" />
+            <TableColumn fx:id="intcr" prefWidth="133.0" text="intensite" />
+            <TableColumn fx:id="biencr" prefWidth="147.0" text="Bienfait" />
+            <TableColumn fx:id="imgcr" prefWidth="270.0" text="Image" />
+         </columns>
+      </TableView>
+   </children>
+</AnchorPane>
