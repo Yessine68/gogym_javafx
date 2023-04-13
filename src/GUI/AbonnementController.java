@@ -7,6 +7,7 @@ package GUI;
 
 import Entities.Abonnement;
 import Services.AbonnementService;
+import java.io.IOException;
 import java.net.URL;
 import java.sql.Date;
 import java.sql.SQLException;
@@ -18,7 +19,10 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
@@ -29,6 +33,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Stage;
 
 /**
  * FXML Controller class
@@ -90,6 +95,8 @@ public class AbonnementController implements Initializable {
     private Button btnSupp;
     @FXML
     private Button btnModif;
+    @FXML
+    private Button retourbtna;
    
     /**
      * Initializes the controller class.
@@ -131,10 +138,41 @@ public class AbonnementController implements Initializable {
             String type_a = TypeTf.getText();
             int prix_a = Integer.parseInt(PrixTf.getText());
             String description_a = DescriptionTa.getText();
+            
             LocalDate debutLocalDate = DebutDp.getValue();
             Date debut_a = Date.valueOf(debutLocalDate);
             LocalDate finLocalDate = FinDp.getValue();
             Date fin_a = Date.valueOf(finLocalDate);
+            
+            if(NomTf.getText().isEmpty() ){
+                Alert alert = new Alert(Alert.AlertType.WARNING);
+                alert.setTitle("Nom manquant");
+                alert.setHeaderText("Veuillez saisir un nom.");
+                alert.showAndWait();
+                return;
+            }
+            
+            if(TypeTf.getText().isEmpty()){
+                Alert alert = new Alert(Alert.AlertType.WARNING);
+                alert.setTitle("type manquant");
+                alert.setHeaderText("Veuillez sélectionner le type de cette salle !");
+                alert.showAndWait();
+                return;
+            } else if (!TypeTf.equals("annuel") && !TypeTf.equals("trimestriel") && !TypeTf.equals("semestriel") && !TypeTf.equals("mensuel")) {
+                Alert alert = new Alert(Alert.AlertType.WARNING);
+                alert.setTitle("type invalide");
+                alert.setHeaderText("Le type de l'abonnement doit être annuel, trimestriel, semestriel, mensuel !");
+                alert.showAndWait();
+                return;
+            }
+
+            if(PrixTf.getText().isEmpty() ){
+                Alert alert = new Alert(Alert.AlertType.WARNING);
+                alert.setTitle("Prix manquant");
+                alert.setHeaderText("Veuillez saisir un prix.");
+                alert.showAndWait();
+                return;
+            }
 
             if (debutLocalDate == null || finLocalDate == null) {
                 Alert alert = new Alert(Alert.AlertType.WARNING);
@@ -201,6 +239,18 @@ public class AbonnementController implements Initializable {
                 as.supprimer(abonnementASupprimer);
                 obs.remove(selectedIndex);
 
+                // Mettre à jour la liste des abonnements
+                AbonnementTv.setItems(FXCollections.observableArrayList(as.recuperer()));
+                AbonnementTv.refresh();
+
+                // Clear the UI elements
+                NomTf.setText("");
+                TypeTf.setText("");
+                PrixTf.setText("");
+                DescriptionTa.setText("");
+                DebutDp.setValue(null);
+                FinDp.setValue(null);
+            
                 // Afficher une confirmation
                 Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
                 alert.setTitle("Suppression réussie");
@@ -223,6 +273,7 @@ public class AbonnementController implements Initializable {
             Abonnement selectedAbonnement = AbonnementTv.getSelectionModel().getSelectedItem();
             if (selectedAbonnement != null) {
                 int selectedIndex = obs.indexOf(selectedAbonnement);
+                
                 String nom_a = NomTf.getText();
                 String type_a = TypeTf.getText();
                 int prix_a = Integer.parseInt(PrixTf.getText());
@@ -231,7 +282,39 @@ public class AbonnementController implements Initializable {
                 Date debut_a = Date.valueOf(debutLocalDate);
                 LocalDate finLocalDate = FinDp.getValue();
                 Date fin_a = Date.valueOf(finLocalDate);
+                            
+                if(NomTf.getText().isEmpty() ){
+                    Alert alert = new Alert(Alert.AlertType.WARNING);
+                    alert.setTitle("Nom manquant");
+                    alert.setHeaderText("Veuillez saisir un nom.");
+                    alert.showAndWait();
+                    return;
+                }
 
+               if(TypeTf.getText().isEmpty() ){
+                    Alert alert = new Alert(Alert.AlertType.WARNING);
+                    alert.setTitle("Type manquant");
+                    alert.setHeaderText("Veuillez saisir un type.");
+                    alert.showAndWait();
+                    return;
+                }
+
+                if(PrixTf.getText().isEmpty() ){
+                    Alert alert = new Alert(Alert.AlertType.WARNING);
+                    alert.setTitle("Prix manquant");
+                    alert.setHeaderText("Veuillez saisir un prix.");
+                    alert.showAndWait();
+                    return;
+                }
+
+                if (debutLocalDate == null || finLocalDate == null) {
+                    Alert alert = new Alert(Alert.AlertType.WARNING);
+                    alert.setTitle("Dates manquantes");
+                    alert.setHeaderText("Veuillez sélectionner une date de début et une date de fin.");
+                    alert.showAndWait();
+                    return;
+                }
+            
                 Abonnement a = new Abonnement(nom_a, type_a, prix_a, description_a, debut_a, fin_a);
                 a.setId(selectedAbonnement.getId());
                 as.modifier(a);
@@ -256,7 +339,30 @@ public class AbonnementController implements Initializable {
                 alert.setContentText("Veuillez sélectionner un abonnement à modifier.");
                 alert.showAndWait();
             }
-        } catch (SQLException ex) {
+        } catch (SQLException | NumberFormatException ex) {
+            // Gérer les erreurs liées à la source de données ou au format de nombre
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Erreur");
+            alert.setHeaderText("Une erreur s'est produite lors de l'ajout de l'abonnement.");
+            alert.setContentText(ex.getMessage());
+            alert.showAndWait();
+        }
+    }
+
+    @FXML
+    private void Retour(ActionEvent event) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("GoGym.fxml"));
+            Parent root = loader.load();
+            
+            GoGymController controller = loader.getController();
+            
+            Scene scene = new Scene(root);
+            Stage stage = new Stage();
+            stage.setScene(scene);
+            stage.show();
+            
+        } catch (IOException ex) {
             System.err.println(ex.getMessage());
         }
     }

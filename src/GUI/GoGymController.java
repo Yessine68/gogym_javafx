@@ -29,15 +29,15 @@ public class GoGymController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-    }    
-
+    }   
+    
     @FXML
-    private void navigateSalle(ActionEvent event) {
+    private void navigateAbonnement(ActionEvent event) {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("Salle.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("Abonnement.fxml"));
             Parent root = loader.load();
             
-            SalleController controller = loader.getController();
+            AbonnementController controller = loader.getController();
             
             Scene scene = new Scene(root);
             Stage stage = new Stage();
@@ -48,14 +48,14 @@ public class GoGymController implements Initializable {
             System.err.println(ex.getMessage());
         }
     }
-
+    
     @FXML
-    private void navigateAbonnement(ActionEvent event) {
+    private void navigateSalle(ActionEvent event) {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("Abonnement.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("Salle.fxml"));
             Parent root = loader.load();
             
-            AbonnementController controller = loader.getController();
+            SalleController controller = loader.getController();
             
             Scene scene = new Scene(root);
             Stage stage = new Stage();

@@ -8,16 +8,22 @@ package GUI;
 import Entities.Salle;
 import Entities.Salle;
 import Services.SalleService;
+import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.List;
 import java.util.Optional;
 import java.util.ResourceBundle;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
@@ -26,6 +32,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Stage;
 
 /**
  * FXML Controller class
@@ -102,6 +109,8 @@ public class SalleController implements Initializable {
     private TextField ImageTf;
     @FXML
     private TextField PerimetreTf;
+    @FXML
+    private Button retourbtns;
 
     /**
      * Initializes the controller class.
@@ -152,7 +161,43 @@ public class SalleController implements Initializable {
             float perimetre_s = Float.parseFloat(PerimetreTf.getText());
             int like_s = Integer.parseInt(LikeTf.getText());
 
-            if (adresse_s == null || ville_s == null) {
+            if(NomTf.getText().isEmpty()){
+                Alert alert = new Alert(Alert.AlertType.WARNING);
+                alert.setTitle("nom manquant");
+                alert.setHeaderText("Veuillez saisir le nom de cette salle !");
+                alert.showAndWait();
+                return;
+            }
+
+            if(EmailTf.getText().isEmpty()){
+                Alert alert = new Alert(Alert.AlertType.WARNING);
+                alert.setTitle("email manquant");
+                alert.setHeaderText("Veuillez saisir le mail de cette salle !");
+                alert.showAndWait();
+                return;
+            } else if (!isValidEmail(EmailTf.getText())) {
+                Alert alert = new Alert(Alert.AlertType.WARNING);
+                alert.setTitle("email invalide");
+                alert.setHeaderText("Veuillez saisir un mail valide !");
+                alert.showAndWait();
+                return;
+            }
+
+            if(TelTf.getText().isEmpty()){
+                Alert alert = new Alert(Alert.AlertType.WARNING);
+                alert.setTitle("numéro de téléphone manquant");
+                alert.setHeaderText("Veuillez saisir le numéro de téléphone de cette salle !");
+                alert.showAndWait();
+                return;
+            } else if (!isValidPhoneNumber(TelTf.getText())) {
+                Alert alert = new Alert(Alert.AlertType.WARNING);
+                alert.setTitle("numéro de téléphone invalide");
+                alert.setHeaderText("Veuillez saisir un numéro de téléphone valide (8 chiffres) !");
+                alert.showAndWait();
+                return;
+            }
+                    
+            if (AdresseTf.getText().isEmpty() || VilleTf.getText().isEmpty()) {
                 Alert alert = new Alert(Alert.AlertType.WARNING);
                 alert.setTitle("Adresse manquante");
                 alert.setHeaderText("Veuillez saisir l'adresse de cette salle !");
@@ -219,6 +264,20 @@ public class SalleController implements Initializable {
                 ss.supprimer(salleASupprimer);
                 obs.remove(selectedIndex);
 
+            // Mettre à jour la liste des salles
+            SalleTv.setItems(FXCollections.observableArrayList(ss.recuperer()));
+            SalleTv.refresh();
+        
+            // Clear the UI elements
+            NomTf.setText("");
+            EmailTf.setText("");
+            TelTf.setText("");
+            AdresseTf.setText("");
+            VilleTf.setText("");
+            ImageTf.setText("");
+            PerimetreTf.setText("");
+            LikeTf.setText("");
+            
                 // Afficher une confirmation
                 Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
                 alert.setTitle("Suppression réussie");
@@ -241,6 +300,7 @@ public class SalleController implements Initializable {
             Salle selectedSalle = SalleTv.getSelectionModel().getSelectedItem();
             if (selectedSalle != null) {
                 int selectedIndex = obs.indexOf(selectedSalle);
+                
                 String nom_s = NomTf.getText();
                 String email_s = EmailTf.getText();
                 int tel_s = Integer.parseInt(TelTf.getText());
@@ -249,6 +309,51 @@ public class SalleController implements Initializable {
                 String image_s = ImageTf.getText();
                 float perimetre_s = Float.parseFloat(PerimetreTf.getText());
                 int like_s = Integer.parseInt(LikeTf.getText());
+                
+                if(NomTf.getText().isEmpty()){
+                    Alert alert = new Alert(Alert.AlertType.WARNING);
+                    alert.setTitle("nom manquant");
+                    alert.setHeaderText("Veuillez saisir le nom de cette salle !");
+                    alert.showAndWait();
+                    return;
+                }
+
+                if(EmailTf.getText().isEmpty()){
+                    Alert alert = new Alert(Alert.AlertType.WARNING);
+                    alert.setTitle("email manquant");
+                    alert.setHeaderText("Veuillez saisir le mail de cette salle !");
+                    alert.showAndWait();
+                    return;
+                } else if (!isValidEmail(EmailTf.getText())) {
+                    Alert alert = new Alert(Alert.AlertType.WARNING);
+                    alert.setTitle("email invalide");
+                    alert.setHeaderText("Veuillez saisir un mail valide !");
+                    alert.showAndWait();
+                    return;
+                }
+
+                if(TelTf.getText().isEmpty()){
+                    Alert alert = new Alert(Alert.AlertType.WARNING);
+                    alert.setTitle("numéro de téléphone manquant");
+                    alert.setHeaderText("Veuillez saisir le numéro de téléphone de cette salle !");
+                    alert.showAndWait();
+                    return;
+                } else if (!isValidPhoneNumber(TelTf.getText())) {
+                    Alert alert = new Alert(Alert.AlertType.WARNING);
+                    alert.setTitle("numéro de téléphone invalide");
+                    alert.setHeaderText("Veuillez saisir un numéro de téléphone valide (8 chiffres) !");
+                    alert.showAndWait();
+                    return;
+                }
+                
+                if (AdresseTf.getText().isEmpty() || VilleTf.getText().isEmpty()) {
+                    Alert alert = new Alert(Alert.AlertType.WARNING);
+                    alert.setTitle("Adresse manquante");
+                    alert.setHeaderText("Veuillez saisir l'adresse de cette salle !");
+                    alert.showAndWait();
+                    return;
+                }
+            
                 Salle s = new Salle(nom_s, email_s, tel_s, adresse_s, ville_s, image_s, perimetre_s, like_s);
                 s.setId(selectedSalle.getId());
                 ss.modifier(s);
@@ -279,4 +384,47 @@ public class SalleController implements Initializable {
             System.err.println(ex.getMessage());
         }
     }
+    
+    public boolean isValidEmail(String email) {
+        boolean isValid = false;
+        String expression = "^[\\w\\.-]+@([\\w\\-]+\\.)+[A-Z]{2,4}$";
+        CharSequence inputStr = email;
+        Pattern pattern = Pattern.compile(expression, Pattern.CASE_INSENSITIVE);
+        Matcher matcher = pattern.matcher(inputStr);
+        if (matcher.matches()) {
+            isValid = true;
+        }
+        return isValid;
+    }
+
+    public boolean isValidPhoneNumber(String phoneNumber) {
+        boolean isValid = false;
+        String expression = "^[0-9]{8}$";
+        CharSequence inputStr = phoneNumber;
+        Pattern pattern = Pattern.compile(expression);
+        Matcher matcher = pattern.matcher(inputStr);
+        if (matcher.matches()) {
+            isValid = true;
+        }
+        return isValid;
+    }
+
+    @FXML
+    private void Retour(ActionEvent event) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("GoGym.fxml"));
+            Parent root = loader.load();
+            
+            GoGymController controller = loader.getController();
+            
+            Scene scene = new Scene(root);
+            Stage stage = new Stage();
+            stage.setScene(scene);
+            stage.show();
+            
+        } catch (IOException ex) {
+            System.err.println(ex.getMessage());
+        }
+    }
+    
 }
