@@ -31,7 +31,7 @@
             <Button mnemonicParsing="false" onAction="#edit" prefHeight="26.0" prefWidth="101.0" style="-fx-background-color: #13123A; -fx-border-color: #f79517;" text="Edit Profile" textFill="WHITE" />
          </children>
       </HBox>
-      <HBox layoutX="200.0" layoutY="119.0" prefHeight="177.0" prefWidth="290.0" style="-fx-border-color: #f79517;">
+      <HBox layoutX="141.0" layoutY="119.0" prefHeight="178.0" prefWidth="434.0" style="-fx-border-color: #f79517;">
          <children>
             <VBox prefHeight="200.0" prefWidth="100.0" spacing="25.0">
                <children>
@@ -41,16 +41,16 @@
                      </VBox.margin>
                   </Label>
                   <Label text="Name            :" textFill="WHITE" />
-                  <Label text="Family Name :" textFill="WHITE" />
+                  <Label text="Last Name     :" textFill="WHITE" />
                   <Label text="Email             :" textFill="WHITE" />
                </children>
             </VBox>
-            <VBox prefHeight="200.0" prefWidth="100.0" spacing="25.0">
+            <VBox prefHeight="146.0" prefWidth="284.0" spacing="25.0">
                <children>
-                  <Label fx:id="usernameLB" text="Label" textFill="WHITE" />
-                  <Label fx:id="nomLB" text="Label" textFill="WHITE" />
-                  <Label fx:id="prenomLB" text="Label" textFill="WHITE" />
-                  <Label fx:id="emailLB" text="Label" textFill="WHITE" />
+                  <Label fx:id="usernameLB" prefHeight="18.0" prefWidth="98.0" text="Label" textFill="WHITE" />
+                  <Label fx:id="nomLB" prefHeight="18.0" prefWidth="95.0" text="Label" textFill="WHITE" />
+                  <Label fx:id="prenomLB" prefHeight="18.0" prefWidth="98.0" text="Label" textFill="WHITE" />
+                  <Label fx:id="emailLB" prefHeight="18.0" prefWidth="98.0" text="Label" textFill="WHITE" />
                </children>
                <HBox.margin>
                   <Insets bottom="15.0" top="15.0" />
