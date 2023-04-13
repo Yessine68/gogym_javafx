@@ -169,5 +169,20 @@ public class DashboardController implements Initializable {
         stage.setScene(scene);
         stage.show();
     }
+    
+   @FXML
+    public void Logout(ActionEvent event) throws IOException {
+        // Load the login screen
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("Login.fxml"));
+        Parent root = loader.load();
+        LoginController LoginController = loader.getController();
+
+        Scene scene = new Scene(root);
+
+        // Switch to the login screen
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setScene(scene);
+        stage.show();
+    }
 
 }
