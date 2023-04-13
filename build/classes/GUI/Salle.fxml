@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.SalleController">
+   <children>
+      <Button fx:id="btnAjout" graphicTextGap="5.0" layoutX="182.0" layoutY="508.0" mnemonicParsing="false" onAction="#CreateSalle" text="Ajouter" textAlignment="CENTER" textFill="#ff8400">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <TextField fx:id="NomTf" layoutX="197.0" layoutY="160.0" prefHeight="10.0" prefWidth="200.0" promptText="Nom de la salle" />
+      <TextField fx:id="EmailTf" layoutX="197.0" layoutY="202.0" prefHeight="10.0" prefWidth="200.0" promptText="NomDeLaSalle@gogym.tn" />
+      <TextField fx:id="TelTf" layoutX="236.0" layoutY="244.0" prefHeight="31.0" prefWidth="159.0" promptText="Numéro de téléphone" />
+      <Label fx:id="NomL" layoutX="83.0" layoutY="163.0" text="Nom" />
+      <Label fx:id="EmailL" layoutX="83.0" layoutY="203.0" text="E-mail" />
+      <Label fx:id="TelL" layoutX="82.0" layoutY="248.0" text="Téléphone" />
+      <Label fx:id="AdresseL" layoutX="83.0" layoutY="290.0" text="Adresse" />
+      <Label fx:id="VilleL" layoutX="83.0" layoutY="338.0" text="Ville" />
+      <Label fx:id="ImageL" layoutX="81.0" layoutY="377.0" text="Image" />
+      <Label fx:id="tel216L" layoutX="197.0" layoutY="249.0" text="+216" />
+      <Label fx:id="SalleL" layoutX="184.0" layoutY="66.0" text="Salle" textFill="#002b4d">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Label>
+      <TableView fx:id="SalleTv" layoutX="446.0" layoutY="128.0" prefHeight="347.0" prefWidth="719.0">
+        <columns>
+            <TableColumn fx:id="NomC" prefWidth="75.0" text="Nom" />
+            <TableColumn fx:id="EmailC" prefWidth="124.0" text="E-mail" />
+            <TableColumn fx:id="TelC" prefWidth="100.0" text="Téléphone" />
+            <TableColumn fx:id="AdresseC" prefWidth="119.0" text="Adresse" />
+            <TableColumn fx:id="VilleC" prefWidth="49.0" text="Ville" />
+            <TableColumn fx:id="ImageC" prefWidth="74.0" text="Image" />
+            <TableColumn fx:id="PerimetreC" prefWidth="79.0" text="Périmetre" />
+            <TableColumn fx:id="lIkeC" prefWidth="97.0" text="Nbr de like" />
+        </columns>
+      </TableView>
+      <Button fx:id="btnSupp" layoutX="1058.0" layoutY="496.0" mnemonicParsing="false" onAction="#DeleteSalle" text="Supprimer" textAlignment="CENTER" textFill="#ff8400">
+        <font>
+            <Font size="18.0" />
+        </font>
+      </Button>
+      <Button fx:id="btnModif" graphicTextGap="5.0" layoutX="949.0" layoutY="496.0" mnemonicParsing="false" onAction="#UpdateSalle" text="Modifier" textAlignment="CENTER" textFill="#ff8400">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <Label fx:id="PerimetreL" layoutX="81.0" layoutY="418.0" text="Périmetre" />
+      <Label fx:id="LikeL" layoutX="82.0" layoutY="461.0" text="Nombre de Like" />
+      <TextField fx:id="VilleTf" layoutX="197.0" layoutY="330.0" prefHeight="31.0" prefWidth="200.0" promptText="Ville" />
+      <TextField fx:id="ImageTf" layoutX="197.0" layoutY="370.0" prefHeight="31.0" prefWidth="200.0" promptText="Image" />
+      <TextField fx:id="PerimetreTf" layoutX="197.0" layoutY="413.0" prefHeight="31.0" prefWidth="159.0" promptText="Périmetre" />
+      <TextField fx:id="AdresseTf" layoutX="197.0" layoutY="286.0" prefHeight="31.0" prefWidth="200.0" promptText="Adresse de la salle" />
+      <TextField fx:id="LikeTf" layoutX="197.0" layoutY="457.0" prefHeight="31.0" prefWidth="53.0" promptText="." />
+      <Label fx:id="m2L" layoutX="362.0" layoutY="418.0" text="m²" />
+      <Label fx:id="LikesL" layoutX="258.0" layoutY="462.0" text="Likes" />
+   </children>
+</AnchorPane>
