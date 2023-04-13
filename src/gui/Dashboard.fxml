@@ -4,9 +4,9 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.DashboardController">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #2b255a;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.DashboardController">
    <children>
-      <TableView fx:id="tbUsers" layoutX="83.0" layoutY="100.0" prefHeight="200.0" prefWidth="484.0">
+      <TableView fx:id="tbUsers" layoutX="58.0" layoutY="100.0" prefHeight="200.0" prefWidth="484.0">
         <columns>
           <TableColumn fx:id="Cid" prefWidth="46.39996337890625" text="ID" />
           <TableColumn fx:id="cUsername" prefWidth="92.0" text="Username" />
