@@ -5,6 +5,8 @@
  */
 package pidev.desktop;
 
+import com.sun.javafx.runtime.VersionInfo;
+
 /**
  *
  * @author MSI
@@ -15,7 +17,7 @@ public class PidevDesktop {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
-    }
+System.out.println(("JavaFX Version: " + VersionInfo.getVersion()));
+        System.out.println(("JavaFX Runtime Version: " + VersionInfo.getRuntimeVersion()));    }
     
 }

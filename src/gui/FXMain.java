@@ -30,10 +30,10 @@ public class FXMain extends Application {
     @Override
     public void start(Stage primaryStage) throws IOException {
        this.stage=primaryStage;
-     // parent=FXMLLoader.load(getClass().getResource("GestionEvenement.fxml"));
-      parent=FXMLLoader.load(getClass().getResource("Gestioncatevent.fxml"));
+      parent=FXMLLoader.load(getClass().getResource("Ibrahimhome.fxml"));
+      //parent=FXMLLoader.load(getClass().getResource("Eventfront.fxml"));
         // parent=FXMLLoader.load(getClass().getResource("ModifierEvenement.fxml"));
-        // parent=FXMLLoader.load(getClass().getResource("AjouterEvenement.fxml"));
+       //  parent=FXMLLoader.load(getClass().getResource("Ajoutereventcat.fxml"));
         primaryStage.setTitle("GOGYM app!");
         Scene scene=new Scene(parent);
         stage.setScene(scene);

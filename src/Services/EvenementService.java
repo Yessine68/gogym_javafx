@@ -18,12 +18,15 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import Services.*;
+import java.util.Comparator;
+import java.util.stream.Collectors;
 /**
  *
  * @author MSI
  */
 public class EvenementService {
-    
+        //int userid = 1 ;
+
     Connection cnx;
 
     public EvenementService() {
@@ -53,6 +56,56 @@ public class EvenementService {
             System.out.println("Error while creating the event: " + ex.getMessage());
         }
     }
+    
+        
+    public List<Evenement> recherche(String nomevent ) {
+        List<Evenement> list = new ArrayList<>();
+          try {
+            String req = "Select * from evenement";
+            PreparedStatement statement = cnx.prepareStatement(req);
+            ResultSet rs = statement.executeQuery();
+            while (rs.next()) {
+               int id = rs.getInt("id");
+            int catid = rs.getInt("categorie_evenement_id");
+            CategorieEvenementService service = new CategorieEvenementService();
+            String categorieEvenement = service.getbyid(catid);
+            String nom_e = rs.getString("nom_e");
+            String date_e = rs.getString("date_e");
+            String description_e = rs.getString("description_e");
+            String lieu_e = rs.getString("lieu_e");
+            int nbr_participants = rs.getInt("nbr_participants");
+            String Etat = rs.getString("Etat");
+            String image = rs.getString("image");
+            Evenement e = new Evenement(id, categorieEvenement, nom_e, date_e, description_e, lieu_e, nbr_participants, Etat, image);
+            list.add(e);
+            }
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        }
+        list=list.stream().filter(e -> e.getNom_e().contains(nomevent) || e.getLieu_e().contains(nomevent)).collect(Collectors.toList());
+        
+        return list;
+    }
+     
+     public List<Evenement> Trie(String sortOrder , List<Evenement> list) {
+       if(sortOrder=="ASC"){         
+       list = list.stream().sorted((o1, o2)->o1.getNom_e().
+                                   compareTo(o2.getNom_e())).
+                                   collect(Collectors.toList());
+       
+
+       }
+       else{     list = list.stream()
+                                        .sorted(Comparator.comparing(Evenement::getNom_e).reversed())
+                                         .collect(Collectors.toList());
+       }
+  
+           
+       
+        return list;
+    }
+    
+     
     
     public void update(Evenement e) {
 try {
@@ -170,21 +223,7 @@ System.out.println("Error while updating the event: " + ex.getMessage());
     }
 }
 
-  /* public void supprimer(long id) {
-        try {
-            Statement st = cnx.createStatement();
-            String query = "delete from evenement where id=" + id;
-            if (st.executeUpdate(query) == 1) {
-                System.out.println("suppression avec success");
-            } else {
-                System.out.println("evenement n'existe pas");
-            }
-        } catch (SQLException ex) {
-            System.out.println(ex.getMessage());
-        }
-
-    }
-   */
+ 
    /*
     public List<Evenement> afficher() {
         List<Evenement> lu = new ArrayList<>();
@@ -212,32 +251,7 @@ System.out.println("Error while updating the event: " + ex.getMessage());
         return lu;
     }
   */ 
- /*
- public List<Evenement> afficher() {
-    List<Evenement> le = new ArrayList<>();
-    try {
-        Statement st = cnx.createStatement();
-        String query = "SELECT * FROM evenement";
-        ResultSet rs = st.executeQuery(query);
-        while (rs.next()) {
-            Evenement e = new Evenement();
-            e.setId(rs.getInt("id"));
-            e.setCategorieEvenement(rs.getString("categorie_evenement"));
-            e.setNom_e(rs.getString("nom_e"));
-            e.setDate_e(rs.getString("date_e"));
-            e.setDescription_e(rs.getString("description_e"));
-            e.setLieu_e(rs.getString("lieu_e"));
-            e.setNbr_participants(rs.getInt("nbr_participants"));
-            e.setEtat(rs.getString("Etat"));
-            e.setImage(rs.getString("image"));
-            le.add(e);
-        }
-    } catch (SQLException ex) {
-        System.out.println(ex.getMessage());
-    }
-    return le;
-}
-*/
+ 
  
  
  /*
@@ -259,7 +273,7 @@ System.out.println("Error while updating the event: " + ex.getMessage());
         return email;
     }   
     
-    
+    */
  
  public Evenement EventDetailFront(int username) {
         Evenement u = new Evenement();
@@ -271,14 +285,14 @@ System.out.println("Error while updating the event: " + ex.getMessage());
             if (rs.next()) {
 
                 u.setDate_e(rs.getString("date_e"));
-                u.setCategorieEvenement(rs.getInt("categorie_evenement_id"));
+                u.setCategorieEvenement(rs.getString("categorie_evenement_id"));
                 u.setId(rs.getInt("id"));
                 u.setNom_e(rs.getString("nom_e"));
                 u.setDescription_e(rs.getString("description_e"));
                 u.setLieu_e(rs.getString("lieu_e"));
                 u.setImage(rs.getString("image"));
                 u.setEtat(rs.getString("etat"));
-                u.setNbr_participants(rs.getString("nbr_participants"));
+                u.setNbr_participants(rs.getInt("nbr_participants"));
             }
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());
@@ -286,6 +300,47 @@ System.out.println("Error while updating the event: " + ex.getMessage());
         return u;
     }
  
- */
+public void decrement(Evenement e) {
+    try {
+        String query = "UPDATE evenement SET nbr_participants = nbr_participants - 1 WHERE id = ?";
+        PreparedStatement statement = cnx.prepareStatement(query);
+        statement.setInt(1, e.getId());
+        statement.executeUpdate();
+    } catch (SQLException ex) {
+        System.out.println("Error while updating the event: " + ex.getMessage());
+    }
+}
+ 
+ public void Participer(Evenement e, String verification,int userid) {
+        try {
+            Statement st;
+            st = cnx.createStatement();
+            String query = "INSERT INTO `participate`(`id_user_id`,`id_event_id`, `verification_code`) "
+                    + "VALUES ('" + userid + "','" + e.getId() + "','" + verification + "')";
+            st.executeUpdate(query);
+            System.out.println("participation ajouté avec success");
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        }
+    }
+ 
+
+ 
+ 
+   public Boolean check(int Eventid , int userid){
+          try {
+            Statement st = cnx.createStatement();
+            String query = "SELECT * FROM `participate` WHERE `id_user_id`='" + userid + "' AND `id_event_id`='" + Eventid + "'";
+            ResultSet rs = st.executeQuery(query);
+            if (rs.next()) {
+                return true;
+            }
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        }
+        return false;
+    }
+ 
+ 
     
 }

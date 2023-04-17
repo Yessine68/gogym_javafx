@@ -15,6 +15,11 @@
         <URL value="@ajouterevenement.css" />
     </stylesheets>
    <children>
+      <ImageView fitHeight="702.0" fitWidth="1478.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/31491.jpg" />
+         </image>
+      </ImageView>
       <Label layoutX="549.0" layoutY="47.0" prefHeight="21.0" prefWidth="393.0" text="Ajouter Evenement:" textFill="#0c2d48">
          <font>
             <Font name="System Bold" size="30.0" />
@@ -23,20 +28,20 @@
       <Label layoutX="333.0" layoutY="170.0" prefHeight="21.0" prefWidth="77.0" text="nom_e:" />
       <Label layoutX="333.0" layoutY="208.0" text="description_e:" />
       <Label layoutX="333.0" layoutY="253.0" prefHeight="21.0" prefWidth="53.0" text="date_e:" />
-      <Label layoutX="333.0" layoutY="305.0" prefHeight="21.0" prefWidth="60.0" text="Lieu_e:" />
-      <Label layoutX="333.0" layoutY="346.0" text="nbr_participants:" />
-      <Label layoutX="333.0" layoutY="392.0" text="image:" />
-      <Label layoutX="333.0" layoutY="442.0" text="categorie_evenement_id:" />
-      <TextField fx:id="tfNom" layoutX="433.0" layoutY="165.0" />
-      <TextField fx:id="tfDescription" layoutX="443.0" layoutY="203.0" />
-      <TextField fx:id="tfDate" layoutX="433.0" layoutY="248.0" />
-      <TextField fx:id="tfLieu" layoutX="424.0" layoutY="300.0" />
-      <TextField fx:id="tfNbrParticipants" layoutX="456.0" layoutY="341.0" />
-      <ComboBox fx:id="cbcategorie" layoutX="536.0" layoutY="437.0" prefWidth="150.0" />
+      <Label layoutX="333.0" layoutY="305.0" prefHeight="21.0" prefWidth="60.0" text="Lieu_e:" textFill="WHITE" />
+      <Label layoutX="333.0" layoutY="346.0" text="nbr_participants:" textFill="#f8f8f8" />
+      <Label layoutX="333.0" layoutY="392.0" text="image:" textFill="WHITE" />
+      <Label layoutX="333.0" layoutY="442.0" text="categorie_evenement_id:" textFill="WHITE" />
+      <TextField fx:id="tfNom" layoutX="433.0" layoutY="165.0" promptText="nom" />
+      <TextField fx:id="tfDescription" layoutX="443.0" layoutY="203.0" promptText="description" />
+      <TextField fx:id="tfDate" layoutX="433.0" layoutY="248.0" promptText="date" />
+      <TextField fx:id="tfLieu" layoutX="424.0" layoutY="300.0" promptText="lieu" />
+      <TextField fx:id="tfNbrParticipants" layoutX="456.0" layoutY="341.0" promptText="nbrparticipants" />
+      <ComboBox fx:id="cbcategorie" layoutX="536.0" layoutY="437.0" prefWidth="150.0" promptText="categories" />
       <Button layoutX="472.0" layoutY="387.0" mnemonicParsing="false" onAction="#uploadimage" prefHeight="31.0" prefWidth="171.0" text="upload" />
       <Button fx:id="btnAjouter" layoutX="465.0" layoutY="543.0" mnemonicParsing="false" onAction="#ajouterEvenement" prefHeight="31.0" prefWidth="164.0" text="Ajouter" />
       <Button layoutX="702.0" layoutY="543.0" mnemonicParsing="false" onAction="#retour" prefHeight="31.0" prefWidth="164.0" text="Retour" />
-      <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/gogymlogo-removebg-preview.png" />
          </image>

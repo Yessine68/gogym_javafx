@@ -14,6 +14,11 @@
         <URL value="@ajoutereventcat.css" />
     </stylesheets>
    <children>
+      <ImageView fitHeight="702.0" fitWidth="1081.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/31491.jpg" />
+         </image>
+      </ImageView>
       <Label layoutX="485.0" layoutY="87.0" prefHeight="70.0" prefWidth="442.0" text="Ajouter Categorie Evenement :" textFill="#0c2d48">
          <font>
             <Font name="System Bold" size="30.0" />
@@ -24,10 +29,10 @@
             <Font name="System Italic" size="24.0" />
          </font>
       </Label>
-      <TextField fx:id="tfNomCat" layoutX="527.0" layoutY="239.0" prefHeight="34.0" prefWidth="294.0" />
+      <TextField fx:id="tfNomCat" layoutX="527.0" layoutY="239.0" prefHeight="34.0" prefWidth="294.0" promptText="Nom_Categorie" />
       <Button fx:id="btnAjouter" layoutX="539.0" layoutY="389.0" mnemonicParsing="false" onAction="#ajouter" prefHeight="34.0" prefWidth="166.0" text="Ajouter" />
       <Button fx:id="btnRetour" layoutX="789.0" layoutY="391.0" mnemonicParsing="false" onAction="#retour" prefHeight="31.0" prefWidth="166.0" text="Retour" />
-      <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/gogymlogo-removebg-preview.png" />
          </image>

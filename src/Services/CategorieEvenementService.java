@@ -8,6 +8,7 @@ package Services;
 import Entities.CategorieEvenement;
 import Tools.MyConnexion;
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -16,6 +17,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.util.stream.Collectors;
 
 /**
  *
@@ -127,7 +129,27 @@ public List<CategorieEvenement> readAll() {
      
      
      
-     
+          
+    public List<CategorieEvenement> recherche(String nomRes ) {
+        List<CategorieEvenement> list = new ArrayList<>();
+          try {
+            String req = "Select * from categorie_evenement";
+            PreparedStatement statement = cnx.prepareStatement(req);
+            ResultSet rs = statement.executeQuery();
+            while (rs.next()) {
+                int id = rs.getInt("id");
+                String nom_cat_e = rs.getString("nom_cat_e");
+                 CategorieEvenement s = new CategorieEvenement(id, nom_cat_e);
+                        
+                list.add(s);
+            }
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        }
+        list=list.stream().filter(e -> e.getNom_cat_e().contains(nomRes)).collect(Collectors.toList());
+        return list;
+    }
+    
      
      
      
