@@ -101,7 +101,7 @@ public class DashboardController implements Initializable {
                             UserService us = new UserService();
                             Alert alert = new Alert(AlertType.CONFIRMATION);
                             alert.setTitle("Delete Account");
-                            alert.setHeaderText("Are you sure you want to delete your account?");
+                            alert.setHeaderText("Are you sure you want to delete this account?");
                             alert.setContentText("This action cannot be undone.");
                             Optional<ButtonType> result = alert.showAndWait();
                             if (result.isPresent() && result.get() == ButtonType.OK) {
@@ -112,14 +112,12 @@ public class DashboardController implements Initializable {
                                 } catch (SQLException ex) {
                                     Logger.getLogger(DashboardController.class.getName()).log(Level.SEVERE, null, ex);
                                 }
-//                                System.out.println(
-//                                        "Delete reservation with id " + blg.getId());
                             } else {
                                 // deletion failed, display an error message
                                 /*Alert errorAlert = new Alert(AlertType.ERROR);
                                 errorAlert.setTitle("Deletion Error");
                                 errorAlert.setHeaderText(null);
-                                errorAlert.setContentText("Unable to delete Blog".");
+                                errorAlert.setContentText("Unable to delete User".");
                                 errorAlert.showAndWait();*/
                                 alert.close();
                             }
@@ -156,19 +154,7 @@ public class DashboardController implements Initializable {
         }
     }
 
-    public void handleLogout(ActionEvent event) throws IOException {
-        // Load the login screen
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("Login.fxml"));
-        Parent root = loader.load();
-        LoginController LoginController = loader.getController();
 
-        Scene scene = new Scene(root);
-
-        // Switch to the login screen
-        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        stage.setScene(scene);
-        stage.show();
-    }
     
    @FXML
     public void Logout(ActionEvent event) throws IOException {

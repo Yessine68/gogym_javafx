@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/19" fx:controller="gui.VerifCodeController">
+   <children>
+      <TextField fx:id="tfCode" layoutX="243.0" layoutY="121.0" />
+      <Button fx:id="btnConfirmerCode" layoutX="217.0" layoutY="200.0" mnemonicParsing="false" onAction="#btnConfirmerCodeAction" text="Confirmer" />
+      <Button layoutX="393.0" layoutY="200.0" mnemonicParsing="false" onAction="#btnAnnulerCode" text="Annuler" />
+      <Label layoutX="294.0" layoutY="65.0" text="Verif" />
+   </children>
+</AnchorPane>

@@ -171,4 +171,39 @@ public class UserService implements IService<User> {
         stmt.setInt(1, id);
         stmt.executeUpdate();
     }
+    
+    public int ChercherMail(String email) {
+
+        try {
+            String req = "SELECT * from `user` WHERE `user`.`email` ='" + email + "'  ";
+            Statement st = cnx.createStatement();
+            ResultSet rs = st.executeQuery(req);
+            while (rs.next()) {
+                if (rs.getString("email").equals(email)) {
+                    System.out.println("mail trouvé ! ");
+                    return 1;
+                }
+            }
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        }
+        return -1;
+    }
+    
+    public void ResetPaswword(String email, String password) {
+        try {
+
+            String req = "UPDATE user SET password = ? WHERE email = ?";
+            PreparedStatement ps = cnx.prepareStatement(req);
+
+            ps.setString(1, password);
+            ps.setString(2, email);
+
+            ps.executeUpdate();
+            System.out.println("Password updated !");
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        }
+
+    }
 }
