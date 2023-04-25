@@ -100,7 +100,7 @@ public class ForgotPasswordController implements Initializable {
     private void btnAnnulerForgot(ActionEvent event) {
         try {
 
-                    Parent page1 = FXMLLoader.load(getClass().getResource("/Login.fxml"));
+                    Parent page1 = FXMLLoader.load(getClass().getResource("Login.fxml"));
 
                     Scene scene = new Scene(page1);
 

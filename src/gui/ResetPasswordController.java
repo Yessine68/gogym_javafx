@@ -18,6 +18,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import services.PasswordEncoder;
@@ -31,11 +32,12 @@ import services.UserService;
 public class ResetPasswordController implements Initializable {
 
     @FXML
-    private TextField tfPassword;
+    private PasswordField tfPassword;
     @FXML
-    private TextField tfConfirm;
+    private PasswordField tfConfirm;
     @FXML
     private Button btnReset;
+    
 
     /**
      * Initializes the controller class.
@@ -56,7 +58,7 @@ public class ResetPasswordController implements Initializable {
             A.show();
             try {
 
-                Parent page1 = FXMLLoader.load(getClass().getResource("/UserGUI/LoginUI.fxml"));
+                Parent page1 = FXMLLoader.load(getClass().getResource("Login.fxml"));
 
                 Scene scene = new Scene(page1);
 
@@ -82,7 +84,7 @@ public class ResetPasswordController implements Initializable {
     private void btnAnnulerResetAction(ActionEvent event) {
          try {
 
-                Parent page1 = FXMLLoader.load(getClass().getResource("/UserGUI/ForgotPassword.fxml"));
+                Parent page1 = FXMLLoader.load(getClass().getResource("ForgotPassword.fxml"));
 
                 Scene scene = new Scene(page1);
 

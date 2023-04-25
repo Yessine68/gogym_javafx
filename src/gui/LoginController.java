@@ -35,11 +35,11 @@ public class LoginController implements Initializable {
     private TextField usernameTF;
     @FXML
     private TextField passwordTF;
-    @FXML
-    private Button LoginButton;
     Connection con;
     PreparedStatement pst;
     private User user;
+    @FXML
+    private Button LoginButton;
 
     /**
      * Initializes the controller class.
@@ -103,5 +103,20 @@ public class LoginController implements Initializable {
             System.err.println(ex.getMessage());
         }
     }
+
+    @FXML
+    private void forgor(ActionEvent event) {
+         try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("ForgotPassword.fxml"));
+            Parent root = loader.load();
+            usernameTF.getScene().setRoot(root);
+
+        } catch (IOException ex) {
+            System.err.println(ex.getMessage());
+        }
+    }
+
+
+
 
 }
