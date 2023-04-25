@@ -66,6 +66,9 @@ public class LoginController implements Initializable {
                 UserService userService = new UserService();
                 User loggedInUser = userService.login(nom, password);
                 if (loggedInUser != null) {
+                     if (loggedInUser.getStatus().equals("disabled")) {
+                    JOptionPane.showMessageDialog(null, "Your account has been disabled. Please contact the administrator for assistance.");
+                } else {
                     if (loggedInUser.getRoles()[0].contains("ROLE_USER")) {
                         System.out.println("Loading user profile");
                         FXMLLoader loader = new FXMLLoader(getClass().getResource("Profile.fxml"));
@@ -80,7 +83,7 @@ public class LoginController implements Initializable {
                         DashboardController controller = loader.getController();
                         controller.setUser(loggedInUser);
                         usernameTF.getScene().setRoot(root);
-                    }
+                    }}
                    
                 } else {
                     JOptionPane.showMessageDialog(null, "Invalid username or password. Please try again.");

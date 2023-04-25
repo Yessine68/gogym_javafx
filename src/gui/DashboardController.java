@@ -33,7 +33,9 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 import services.UserService;
-
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 /**
  * FXML Controller class
  *
@@ -82,6 +84,8 @@ public class DashboardController implements Initializable {
         cEmail.setCellValueFactory(new PropertyValueFactory<>("email"));
 
         boolean deleteColumnExists = false;
+        boolean blockColumnExists = false;
+
         for (TableColumn column : tbUsers.getColumns()) {
             if (column.getText().equals("ACTION")) {
                 deleteColumnExists = true;
@@ -139,7 +143,70 @@ public class DashboardController implements Initializable {
 
             tbUsers.getColumns().add(deleteColumn);
         }
+        if (!blockColumnExists) {
+            TableColumn<User, Void> blockColumn = new TableColumn<>("STATUS");
+            blockColumn.setCellFactory(column -> {
+                return new TableCell<User, Void>() {
+                    private final Button blockButton = new Button("Enabled");
 
+                    {
+                        blockButton.setOnAction(event -> {
+                            // Get the User associated with this row
+                            User user = getTableView().getItems().get(getIndex());
+                            System.out.println(user);
+                            System.out.println(user.getStatus());
+                                //System.out.println(user);
+                            // Set the blocked flag on the user object
+                               if (user.getStatus().equals("enabled"))
+                                       user.setStatus("disabled");
+                               else 
+                                     user.setStatus("enabled");
+
+                            // Update the database or perform any other action to prevent the user from logging in
+                            try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/login", "root", "")) {
+                                String sql = "UPDATE user SET status = ? WHERE id = ?";
+                                PreparedStatement statement = connection.prepareStatement(sql);
+                                statement.setString(1, user.getStatus());
+                                statement.setInt(2, user.getId());
+                                int rowsUpdated = statement.executeUpdate();
+                                System.out.println("Rows updated: " + rowsUpdated);
+                            } catch (SQLException ex) {
+                                ex.printStackTrace();
+                            }
+                            blockButton.setText(user.getStatus());
+//                            if (user.getStatus().equals("disabled")) {
+//                                blockButton.setText("Enable");
+//                            } else {
+//                                blockButton.setText("Disable");
+//                            }
+                            // Clear the cell content to indicate the user is blocked
+//                            setGraphic(null);
+                        });
+                    }
+
+                    @Override
+                    protected void updateItem(Void item, boolean empty) {
+                        super.updateItem(item, empty);
+                        if (empty) {
+                            setGraphic(null);
+                        } else {                            blockButton.setText(user.getStatus());
+
+//                            if (user.getStatus().equals("disabled")) {
+//                                
+//                                blockButton.setText("Disable");
+//                            } else {
+////                                System.out.println(user);
+//                                blockButton.setText("Enable");
+//                            }
+                            setGraphic(blockButton);
+                        }
+                    }
+                };
+
+            });
+
+            tbUsers.getColumns().add(blockColumn);
+        }
         List<User> list = hrc.recuperer();
         ObservableList<User> observableList = FXCollections.observableArrayList(list);
         tbUsers.setItems(observableList);

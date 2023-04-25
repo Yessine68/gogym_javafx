@@ -7,6 +7,7 @@ package gui;
 
 //import GUI.ControleSaisieTextFields;
 import java.io.IOException;
+import java.io.UnsupportedEncodingException;
 import java.net.URL;
 import java.util.Random;
 import java.util.ResourceBundle;
@@ -55,7 +56,7 @@ public class ForgotPasswordController implements Initializable {
     }
 
     @FXML
-    private void btnCodeAction(ActionEvent event) {
+    private void btnCodeAction(ActionEvent event) throws UnsupportedEncodingException {
         code = generateVerificationCode();
         Alert A = new Alert(Alert.AlertType.WARNING);
         UserService su = new UserService();
@@ -66,7 +67,7 @@ public class ForgotPasswordController implements Initializable {
         if (!tfMailO.getText().equals("") && verifMail) {
             if (su.ChercherMail(tfMailO.getText()) == 1) {
                 EmailReset = tfMailO.getText();
-                EmailSender.sendEmail("yessine.jarray@esprit.tn", "beitasitmay1", tfMailO.getText(), "Verification code", "Votre code est : " + code);
+                EmailSender.sendEmail("gogym.app.tn@gmail.com", "olrhyuwwhzzaavyg", tfMailO.getText(), "Verification code", "Votre code de verification est : " + code);
 
                 try {
 

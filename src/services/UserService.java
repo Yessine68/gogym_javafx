@@ -64,6 +64,7 @@ public class UserService implements IService<User> {
             u.setId(rs.getInt("id"));
             u.setNom(rs.getString("nom"));
             u.setPrenom(rs.getString("prenom"));
+            u.setStatus(rs.getString("status"));
             u.setEmail(rs.getString("email"));
             u.setPassword(rs.getString("password"));
             users.add(u);

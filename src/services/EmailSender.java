@@ -7,6 +7,7 @@ package services;
 
 
 
+import java.io.UnsupportedEncodingException;
 import javax.mail.*;
 import javax.mail.internet.*;
 import java.util.*;
@@ -18,7 +19,7 @@ import java.util.*;
 public class EmailSender {
     
     
-    public static void sendEmail(String from, String password, String to, String subject, String body) {
+    public static void sendEmail(String from, String password, String to, String subject, String body) throws UnsupportedEncodingException {
 
         // Set properties for the email session
         Properties properties = new Properties();
@@ -39,6 +40,7 @@ public class EmailSender {
             // Create a new email message
             Message message = new MimeMessage(session);
             message.setFrom(new InternetAddress(from));
+            message.setFrom(new InternetAddress("gogym.app.tn@gmail.com", "Go Gym"));
             message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(to));
             message.setSubject(subject);
             message.setText(body);
