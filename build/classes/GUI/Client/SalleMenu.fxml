@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Pagination?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="658.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.Client.SalleMenuController">
+   <children>
+      <Text fill="#514ee1" layoutX="524.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Les Salles">
+         <font>
+            <Font size="32.0" />
+         </font>
+      </Text>
+      <Pane fx:id="pane2" layoutX="280.0" layoutY="72.0" onMouseClicked="#paneClicked" prefHeight="286.0" prefWidth="221.0" scaleX="0.8" scaleY="0.8" style="-fx-background-color: #eeeeee; -fx-background-radius: 20;">
+         <children>
+            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="11.0" layoutY="6.0" pickOnBounds="true">
+               <image>
+                  <Image url="@../Images/Salles/no%20image.jpg" />
+               </image>
+            </ImageView>
+            <Text fill="#0860b2" layoutX="14.0" layoutY="170.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nom " />
+            <Text fill="#0860b2" layoutX="14.0" layoutY="200.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email" />
+            <Text fill="#0860b2" layoutX="14.0" layoutY="230.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Téléphone" />
+            <Text fill="#0860b2" layoutX="17.0" layoutY="260.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ville" />
+            <Text layoutX="100.0" layoutY="170.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lac" />
+            <Line endX="8.0" endY="87.0" layoutX="84.0" layoutY="191.0" startX="8.0" startY="-32.0" stroke="#b5b5b5" />
+            <Text layoutX="100.0" layoutY="200.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lac@gogym.com" />
+            <Text layoutX="100.0" layoutY="230.0" strokeType="OUTSIDE" strokeWidth="0.0" text="21345678" />
+            <Text layoutX="100.0" layoutY="260.0" strokeType="OUTSIDE" strokeWidth="0.0" text="sfax" />
+         </children>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Pane>
+      <Pane fx:id="pane3" layoutX="480.0" layoutY="72.0" onMouseClicked="#paneClicked" prefHeight="286.0" prefWidth="221.0" scaleX="0.8" scaleY="0.8" style="-fx-background-color: #eeeeee; -fx-background-radius: 20;">
+         <children>
+            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="11.0" layoutY="6.0" pickOnBounds="true">
+               <image>
+                  <Image url="@../Images/Salles/no%20image.jpg" />
+               </image>
+            </ImageView>
+            <Text fill="#0860b2" layoutX="14.0" layoutY="170.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nom " />
+            <Text fill="#0860b2" layoutX="14.0" layoutY="200.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email" />
+            <Text fill="#0860b2" layoutX="14.0" layoutY="230.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Téléphone" />
+            <Text fill="#0860b2" layoutX="17.0" layoutY="260.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ville" />
+            <Text layoutX="100.0" layoutY="170.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lac" />
+            <Line endX="8.0" endY="87.0" layoutX="84.0" layoutY="191.0" startX="8.0" startY="-32.0" stroke="#b5b5b5" />
+            <Text layoutX="100.0" layoutY="200.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lac@gogym.com" />
+            <Text layoutX="100.0" layoutY="230.0" strokeType="OUTSIDE" strokeWidth="0.0" text="21345678" />
+            <Text layoutX="100.0" layoutY="260.0" strokeType="OUTSIDE" strokeWidth="0.0" text="sfax" />
+         </children>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Pane>
+      <Pane fx:id="pane4" layoutX="680.0" layoutY="72.0" onMouseClicked="#paneClicked" prefHeight="286.0" prefWidth="221.0" scaleX="0.8" scaleY="0.8" style="-fx-background-color: #eeeeee; -fx-background-radius: 20;">
+         <children>
+            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="11.0" layoutY="6.0" pickOnBounds="true">
+               <image>
+                  <Image url="@../Images/Salles/no%20image.jpg" />
+               </image>
+            </ImageView>
+            <Text fill="#0860b2" layoutX="14.0" layoutY="170.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nom " />
+            <Text fill="#0860b2" layoutX="14.0" layoutY="200.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email" />
+            <Text fill="#0860b2" layoutX="14.0" layoutY="230.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Téléphone" />
+            <Text fill="#0860b2" layoutX="17.0" layoutY="260.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ville" />
+            <Text layoutX="100.0" layoutY="170.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lac" />
+            <Line endX="8.0" endY="87.0" layoutX="84.0" layoutY="191.0" startX="8.0" startY="-32.0" stroke="#b5b5b5" />
+            <Text layoutX="100.0" layoutY="200.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lac@gogym.com" />
+            <Text layoutX="100.0" layoutY="230.0" strokeType="OUTSIDE" strokeWidth="0.0" text="21345678" />
+            <Text layoutX="100.0" layoutY="260.0" strokeType="OUTSIDE" strokeWidth="0.0" text="sfax" />
+         </children>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Pane>
+      <Pane fx:id="pane5" layoutX="880.0" layoutY="72.0" onMouseClicked="#paneClicked" prefHeight="286.0" prefWidth="221.0" scaleX="0.8" scaleY="0.8" style="-fx-background-color: #eeeeee; -fx-background-radius: 20;">
+         <children>
+            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="11.0" layoutY="6.0" pickOnBounds="true">
+               <image>
+                  <Image url="@../Images/Salles/no%20image.jpg" />
+               </image>
+            </ImageView>
+            <Text fill="#0860b2" layoutX="14.0" layoutY="170.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nom " />
+            <Text fill="#0860b2" layoutX="14.0" layoutY="200.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email" />
+            <Text fill="#0860b2" layoutX="14.0" layoutY="230.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Téléphone" />
+            <Text fill="#0860b2" layoutX="17.0" layoutY="260.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ville" />
+            <Text layoutX="100.0" layoutY="170.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lac" />
+            <Line endX="8.0" endY="87.0" layoutX="84.0" layoutY="191.0" startX="8.0" startY="-32.0" stroke="#b5b5b5" />
+            <Text layoutX="100.0" layoutY="200.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lac@gogym.com" />
+            <Text layoutX="100.0" layoutY="230.0" strokeType="OUTSIDE" strokeWidth="0.0" text="21345678" />
+            <Text layoutX="100.0" layoutY="260.0" strokeType="OUTSIDE" strokeWidth="0.0" text="sfax" />
+         </children>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Pane>
+      <Pane fx:id="pane6" layoutX="80.0" layoutY="312.0" onMouseClicked="#paneClicked" prefHeight="286.0" prefWidth="221.0" scaleX="0.8" scaleY="0.8" style="-fx-background-color: #eeeeee; -fx-background-radius: 20;">
+         <children>
+            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="11.0" layoutY="6.0" pickOnBounds="true">
+               <image>
+                  <Image url="@../Images/Salles/no%20image.jpg" />
+               </image>
+            </ImageView>
+            <Text fill="#0860b2" layoutX="14.0" layoutY="170.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nom " />
+            <Text fill="#0860b2" layoutX="14.0" layoutY="200.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email" />
+            <Text fill="#0860b2" layoutX="14.0" layoutY="230.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Téléphone" />
+            <Text fill="#0860b2" layoutX="17.0" layoutY="260.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ville" />
+            <Text layoutX="100.0" layoutY="170.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lac" />
+            <Line endX="8.0" endY="87.0" layoutX="84.0" layoutY="191.0" startX="8.0" startY="-32.0" stroke="#b5b5b5" />
+            <Text layoutX="100.0" layoutY="200.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lac@gogym.com" />
+            <Text layoutX="100.0" layoutY="230.0" strokeType="OUTSIDE" strokeWidth="0.0" text="21345678" />
+            <Text layoutX="100.0" layoutY="260.0" strokeType="OUTSIDE" strokeWidth="0.0" text="sfax" />
+         </children>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Pane>
+      <Pane fx:id="pane7" layoutX="280.0" layoutY="312.0" onMouseClicked="#paneClicked" prefHeight="286.0" prefWidth="221.0" scaleX="0.8" scaleY="0.8" style="-fx-background-color: #eeeeee; -fx-background-radius: 20;">
+         <children>
+            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="11.0" layoutY="6.0" pickOnBounds="true">
+               <image>
+                  <Image url="@../Images/Salles/no%20image.jpg" />
+               </image>
+            </ImageView>
+            <Text fill="#0860b2" layoutX="14.0" layoutY="170.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nom " />
+            <Text fill="#0860b2" layoutX="14.0" layoutY="200.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email" />
+            <Text fill="#0860b2" layoutX="14.0" layoutY="230.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Téléphone" />
+            <Text fill="#0860b2" layoutX="17.0" layoutY="260.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ville" />
+            <Text layoutX="100.0" layoutY="170.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lac" />
+            <Line endX="8.0" endY="87.0" layoutX="84.0" layoutY="191.0" startX="8.0" startY="-32.0" stroke="#b5b5b5" />
+            <Text layoutX="100.0" layoutY="200.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lac@gogym.com" />
+            <Text layoutX="100.0" layoutY="230.0" strokeType="OUTSIDE" strokeWidth="0.0" text="21345678" />
+            <Text layoutX="100.0" layoutY="260.0" strokeType="OUTSIDE" strokeWidth="0.0" text="sfax" />
+         </children>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Pane>
+      <Pane fx:id="pane8" layoutX="480.0" layoutY="312.0" onMouseClicked="#paneClicked" prefHeight="286.0" prefWidth="221.0" scaleX="0.8" scaleY="0.8" style="-fx-background-color: #eeeeee; -fx-background-radius: 20;">
+         <children>
+            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="11.0" layoutY="6.0" pickOnBounds="true">
+               <image>
+                  <Image url="@../Images/Salles/no%20image.jpg" />
+               </image>
+            </ImageView>
+            <Text fill="#0860b2" layoutX="14.0" layoutY="170.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nom " />
+            <Text fill="#0860b2" layoutX="14.0" layoutY="200.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email" />
+            <Text fill="#0860b2" layoutX="14.0" layoutY="230.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Téléphone" />
+            <Text fill="#0860b2" layoutX="17.0" layoutY="260.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ville" />
+            <Text layoutX="100.0" layoutY="170.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lac" />
+            <Line endX="8.0" endY="87.0" layoutX="84.0" layoutY="191.0" startX="8.0" startY="-32.0" stroke="#b5b5b5" />
+            <Text layoutX="100.0" layoutY="200.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lac@gogym.com" />
+            <Text layoutX="100.0" layoutY="230.0" strokeType="OUTSIDE" strokeWidth="0.0" text="21345678" />
+            <Text layoutX="100.0" layoutY="260.0" strokeType="OUTSIDE" strokeWidth="0.0" text="sfax" />
+         </children>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Pane>
+      <Pane fx:id="pane9" layoutX="680.0" layoutY="312.0" onMouseClicked="#paneClicked" prefHeight="286.0" prefWidth="221.0" scaleX="0.8" scaleY="0.8" style="-fx-background-color: #eeeeee; -fx-background-radius: 20;">
+         <children>
+            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="11.0" layoutY="6.0" pickOnBounds="true">
+               <image>
+                  <Image url="@../Images/Salles/no%20image.jpg" />
+               </image>
+            </ImageView>
+            <Text fill="#0860b2" layoutX="14.0" layoutY="170.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nom " />
+            <Text fill="#0860b2" layoutX="14.0" layoutY="200.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email" />
+            <Text fill="#0860b2" layoutX="14.0" layoutY="230.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Téléphone" />
+            <Text fill="#0860b2" layoutX="17.0" layoutY="260.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ville" />
+            <Text layoutX="100.0" layoutY="170.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lac" />
+            <Line endX="8.0" endY="87.0" layoutX="84.0" layoutY="191.0" startX="8.0" startY="-32.0" stroke="#b5b5b5" />
+            <Text layoutX="100.0" layoutY="200.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lac@gogym.com" />
+            <Text layoutX="100.0" layoutY="230.0" strokeType="OUTSIDE" strokeWidth="0.0" text="21345678" />
+            <Text layoutX="100.0" layoutY="260.0" strokeType="OUTSIDE" strokeWidth="0.0" text="sfax" />
+         </children>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Pane>
+      <Pane fx:id="pane10" layoutX="880.0" layoutY="312.0" onMouseClicked="#paneClicked" prefHeight="286.0" prefWidth="221.0" scaleX="0.8" scaleY="0.8" style="-fx-background-color: #eeeeee; -fx-background-radius: 20;">
+         <children>
+            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="11.0" layoutY="6.0" pickOnBounds="true">
+               <image>
+                  <Image url="@../Images/Salles/no%20image.jpg" />
+               </image>
+            </ImageView>
+            <Text fill="#0860b2" layoutX="14.0" layoutY="170.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nom " />
+            <Text fill="#0860b2" layoutX="14.0" layoutY="200.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email" />
+            <Text fill="#0860b2" layoutX="14.0" layoutY="230.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Téléphone" />
+            <Text fill="#0860b2" layoutX="17.0" layoutY="260.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ville" />
+            <Text layoutX="100.0" layoutY="170.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lac" />
+            <Line endX="8.0" endY="87.0" layoutX="84.0" layoutY="191.0" startX="8.0" startY="-32.0" stroke="#b5b5b5" />
+            <Text layoutX="100.0" layoutY="200.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lac@gogym.com" />
+            <Text layoutX="100.0" layoutY="230.0" strokeType="OUTSIDE" strokeWidth="0.0" text="21345678" />
+            <Text layoutX="100.0" layoutY="260.0" strokeType="OUTSIDE" strokeWidth="0.0" text="sfax" />
+         </children>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Pane>
+      <Pagination fx:id="pagination" layoutX="491.0" layoutY="585.0" prefHeight="66.0" prefWidth="200.0" />
+      <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#retour">
+         <graphic>
+            <ImageView fitHeight="25.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../Images/Icons/previous.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Pane fx:id="pane1" layoutX="80.0" layoutY="72.0" onMouseClicked="#paneClicked" prefHeight="286.0" prefWidth="221.0" scaleX="0.8" scaleY="0.8" style="-fx-background-color: #eeeeee; -fx-background-radius: 20;">
+         <children>
+            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="11.0" layoutY="6.0" pickOnBounds="true">
+               <image>
+                  <Image url="@../Images/Salles/no%20image.jpg" />
+               </image>
+            </ImageView>
+            <Text fill="#0860b2" layoutX="14.0" layoutY="170.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nom " />
+            <Text fill="#0860b2" layoutX="14.0" layoutY="200.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email" />
+            <Text fill="#0860b2" layoutX="14.0" layoutY="230.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Téléphone" />
+            <Text fill="#0860b2" layoutX="17.0" layoutY="260.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ville" />
+            <Text layoutX="100.0" layoutY="170.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lac" />
+            <Line endX="8.0" endY="87.0" layoutX="84.0" layoutY="191.0" startX="8.0" startY="-32.0" stroke="#b5b5b5" />
+            <Text layoutX="100.0" layoutY="200.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lac@gogym.com" />
+            <Text layoutX="100.0" layoutY="230.0" strokeType="OUTSIDE" strokeWidth="0.0" text="21345678" />
+            <Text layoutX="100.0" layoutY="260.0" strokeType="OUTSIDE" strokeWidth="0.0" text="sfax" />
+         </children>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Pane>
+      <TextField fx:id="entrySearch" layoutX="227.0" layoutY="50.0" />
+      <ComboBox fx:id="searchCombo" layoutX="114.0" layoutY="50.0" prefHeight="31.0" prefWidth="114.0" />
+      <Button layoutX="414.0" layoutY="50.0" mnemonicParsing="false" onAction="#search" text="Search" />
+      <ComboBox fx:id="trieCombo" layoutX="945.0" layoutY="39.0" onAction="#trierPar" prefHeight="31.0" prefWidth="133.0" />
+      <Text layoutX="879.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Trier Par" />
+   </children>
+</AnchorPane>

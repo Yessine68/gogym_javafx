@@ -7,6 +7,7 @@ package Services;
 
 import java.util.List;
 import Entities.Abonnement;
+import Entities.Salle;
 import Utils.MyDB;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -27,13 +28,85 @@ public class AbonnementService implements IService<Abonnement>{
         cnx = MyDB.getInstance().getCnx();
     }
     
+    public void ajouter(Abonnement a,List<String> sallesChecked) throws SQLException {        
+        String req = "INSERT INTO Abonnement (nom_a, type_a, prix_a, description_a, debut_a, fin_a) VALUES ('"+a.getNom_a()+"','"+a.getType_a()+"','"+a.getPrix_a()+"','"+a.getDescription_a()+"','"+a.getDebut_a()+"','"+a.getFin_a()+"') ";
+        Statement st = cnx.createStatement();
+        st.executeUpdate(req, Statement.RETURN_GENERATED_KEYS);
+        ResultSet rs = st.getGeneratedKeys();
+        int idAbonnement=0;
+        if (rs.next()) {
+            idAbonnement = rs.getInt(1);
+        }
+        for (String nom :sallesChecked){
+            String req2 = "SELECT id FROM salle WHERE nom_s = ?";
+            PreparedStatement ss = cnx.prepareStatement(req2);
+            ss.setString(1, nom);
+            ResultSet rs2 = ss.executeQuery();
+            while (rs2.next()){
+                int id = rs2.getInt("id");
+                String req3 = "INSERT INTO abonnementSalle (idabonnement, idsalle) VALUES ("+idAbonnement+","+id+")";
+                st.executeUpdate(req3);
+            }
+        }
+    }
+    
     @Override
     public void ajouter(Abonnement a) throws SQLException {        
         String req = "INSERT INTO Abonnement (nom_a, type_a, prix_a, description_a, debut_a, fin_a) VALUES ('"+a.getNom_a()+"','"+a.getType_a()+"','"+a.getPrix_a()+"','"+a.getDescription_a()+"','"+a.getDebut_a()+"','"+a.getFin_a()+"') ";
         Statement st = cnx.createStatement();
         st.executeUpdate(req);
     }
+    public void modifier(Abonnement a,List<String> sitesAdded,List<String> sitesDeleted) throws SQLException {
+        String req = "UPDATE Abonnement SET nom_a = ?, type_a = ?, prix_a = ?, description_a = ?, debut_a = ?, fin_a = ? WHERE ID = ?";
+        PreparedStatement as = cnx.prepareStatement(req, Statement.RETURN_GENERATED_KEYS);
+        as.setString(1, a.getNom_a());
+        as.setString(2, a.getType_a());
+        as.setInt(3, a.getPrix_a());
+        as.setString(4, a.getDescription_a());
+        as.setDate(5, a.getDebut_a());
+        as.setDate(6, a.getFin_a());
+        as.setInt(7, a.getId());
+        as.executeUpdate();
+        
+        ResultSet rs = as.getGeneratedKeys();
+    int idAbonnement = a.getId();
 
+    String req2 = "SELECT id FROM salle WHERE nom_s = ?";
+    PreparedStatement ps2 = cnx.prepareStatement(req2);
+
+    for (String nom : sitesAdded) {
+        ps2.setString(1, nom);
+        ResultSet rs2 = ps2.executeQuery();
+        while (rs2.next()) {
+            int idSalle = rs2.getInt("id");
+            String req3 = "INSERT INTO abonnementSalle (idabonnement, idsalle) VALUES (?, ?)";
+            PreparedStatement ps3 = cnx.prepareStatement(req3);
+            ps3.setInt(1, idAbonnement);
+            ps3.setInt(2, idSalle);
+            ps3.executeUpdate();
+        }
+    }
+    for (String nom : sitesDeleted) {
+        ps2.setString(1, nom);
+        ResultSet rs2 = ps2.executeQuery();
+        while (rs2.next()) {
+            int idSalle = rs2.getInt("id");
+            String req5 = "DELETE FROM abonnementsalle WHERE idabonnement = ? and idsalle = ?";
+            PreparedStatement ss = cnx.prepareStatement(req5);
+            ss.setInt(1, idAbonnement);
+            ss.setInt(2, idSalle);
+            ss.executeUpdate();
+        }
+    }
+        
+        
+        
+        
+    }
+    
+    
+    
+    
     @Override
     public void modifier(Abonnement a) throws SQLException {
         String req = "UPDATE Abonnement SET nom_a = ?, type_a = ?, prix_a = ?, description_a = ?, debut_a = ?, fin_a = ? WHERE ID = ?";
@@ -68,6 +141,16 @@ public class AbonnementService implements IService<Abonnement>{
         
         while(rs.next()){
             Abonnement a = new Abonnement();
+            String req2 = "SELECT s.nom_s FROM Abonnement a join abonnementsalle aas join salle s on a.id=aas.idabonnement and s.id=aas.idsalle  where a.id="+rs.getInt("id");
+            Statement st2 = cnx.createStatement();
+            ResultSet rs2 = st2.executeQuery(req2);
+            String salles = "";
+            while (rs2.next()){
+                salles+=rs2.getString(1)+"/";
+            }
+            a.setSalles(salles);
+            
+            
             a.setId(rs.getInt("id"));
             a.setNom_a(rs.getString("nom_a"));
             a.setType_a(rs.getString("type_a"));
@@ -90,6 +173,71 @@ public class AbonnementService implements IService<Abonnement>{
         PreparedStatement as = cnx.prepareStatement(req);
         as.setInt(1, id);
         ResultSet rs = as.executeQuery();
+        
+        while(rs.next()){
+            Abonnement a = new Abonnement();
+            a.setId(rs.getInt("id"));
+            a.setNom_a(rs.getString("nom_a"));
+            a.setType_a(rs.getString("type_a"));
+            a.setPrix_a(rs.getInt("prix_a"));
+            a.setDescription_a(rs.getString("description_a"));
+            a.setDebut_a(rs.getDate("debut_a"));
+            a.setFin_a(rs.getDate("fin_a"));
+            
+            Abonnements.add(a);
+        }
+        
+        return Abonnements;
+    }
+
+    public List<Abonnement> abonnementsSalle(Salle salle) throws SQLException {
+        List<Abonnement> Abonnements = new ArrayList<>();
+        
+        String req = "SELECT a.id,a.nom_a,a.type_a,a.prix_a,a.description_a,a.debut_a,a.fin_a FROM Abonnement a join abonnementsalle aas join salle s on a.id=aas.idabonnement and s.id=aas.idsalle WHERE s.id = ?";
+        PreparedStatement st = cnx.prepareStatement(req);
+        st.setInt(1, salle.getId());
+        ResultSet rs = st.executeQuery();
+        
+        while(rs.next()){
+            Abonnement a = new Abonnement();
+            a.setId(rs.getInt("id"));
+            a.setNom_a(rs.getString("nom_a"));
+            a.setType_a(rs.getString("type_a"));
+            a.setPrix_a(rs.getInt("prix_a"));
+            a.setDescription_a(rs.getString("description_a"));
+            a.setDebut_a(rs.getDate("debut_a"));
+            a.setFin_a(rs.getDate("fin_a"));
+            
+            Abonnements.add(a);
+        }
+        
+        return Abonnements;
+    }
+
+    public List<Salle> getSallesAbonnement(Abonnement newValue) throws SQLException {
+        List<Salle> salles = new ArrayList<>();
+        
+        String req = "SELECT s.id , s.nom_s FROM Abonnement a join abonnementsalle aas join salle s on a.id=aas.idabonnement and s.id=aas.idsalle WHERE a.id = ?";
+        PreparedStatement as = cnx.prepareStatement(req);
+        as.setInt(1, newValue.getId());
+        ResultSet rs = as.executeQuery();
+        
+        while(rs.next()){
+            Salle s = new Salle();
+            s.setId(rs.getInt(1));
+            s.setNom_s(rs.getString(2));
+            salles.add(s);
+        }
+        
+        return salles;
+    }
+
+    public List<Abonnement> recupererSearchPar(String entry, String ch) throws SQLException {
+        List<Abonnement> Abonnements = new ArrayList<>();
+        
+        String req = "SELECT * FROM Abonnement where "+ch+" like '%"+entry+"%'";
+        Statement st = cnx.createStatement();
+        ResultSet rs = st.executeQuery(req);
         
         while(rs.next()){
             Abonnement a = new Abonnement();

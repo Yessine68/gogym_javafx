@@ -3,13 +3,8 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/HanaM/OneDrive/Bureau/Pi/AbonnementSalle/src/GUI/Salle.fxml</file>
-            <file>file:/C:/Users/HanaM/OneDrive/Bureau/Pi/AbonnementSalle/src/GUI/GoGymController.java</file>
-            <file>file:/C:/Users/HanaM/OneDrive/Bureau/Pi/AbonnementSalle/src/GUI/AbonnementController.java</file>
-            <file>file:/C:/Users/HanaM/OneDrive/Bureau/Pi/AbonnementSalle/src/Tests/NewFXMain.java</file>
-            <file>file:/C:/Users/HanaM/OneDrive/Bureau/Pi/AbonnementSalle/src/GUI/GoGym.fxml</file>
-            <file>file:/C:/Users/HanaM/OneDrive/Bureau/Pi/AbonnementSalle/src/GUI/SalleController.java</file>
-            <file>file:/C:/Users/HanaM/OneDrive/Bureau/Pi/AbonnementSalle/src/GUI/Abonnement.fxml</file>
+            <file>file:/C:/Users/HanaM/Downloads/AbonnementSalle/src/GUI/Client/AbonnementClient.fxml</file>
+            <file>file:/C:/Users/HanaM/Downloads/AbonnementSalle/src/GUI/Client/AbonnementClientController.java</file>
         </group>
     </open-files>
 </project-private>

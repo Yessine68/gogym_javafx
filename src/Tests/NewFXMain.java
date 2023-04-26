@@ -12,7 +12,6 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
-import javafx.scene.control.Button;
 import javafx.stage.Stage;
 
 /**
@@ -23,34 +22,22 @@ public class NewFXMain extends Application {
     
     @Override
     public void start(Stage primaryStage) {
+        Parent root;
+        Parent root2;
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("../GUI/GoGym.fxml"));
-            Parent root = loader.load();
-            Scene scene = new Scene(root); 
-            primaryStage.setTitle("Go Gym");
+            root = FXMLLoader.load(getClass().getResource("/GUI/Admin/GoGym.fxml"));
+            Scene scene = new Scene(root);
+            primaryStage.setTitle("Admin interface");
             primaryStage.setScene(scene);
             primaryStage.show();
-
-            // close the GoGym window when a new window is opened
-            Button abnmtbtn = (Button) loader.getNamespace().get("abnmtbtn");
-            abnmtbtn.setOnAction(a -> {
-                primaryStage.close();
-                openNewWindowAbonnement(primaryStage, root);
-            });
-            
-            Button sallebtn = (Button) loader.getNamespace().get("sallebtn");
-            sallebtn.setOnAction(s -> {
-                primaryStage.close();
-                openNewWindowSalle(primaryStage, root);
-            });
-            
+            root2 = FXMLLoader.load(getClass().getResource("/GUI/Client/GoGymClient.fxml"));
+            Scene scene2 = new Scene(root2);
+            Stage primaryStage2 = new Stage();
+            primaryStage2.setTitle("Client interface");
+            primaryStage2.setScene(scene2);
+            primaryStage2.show();
         } catch (IOException ex) {
-            System.err.println(ex.getMessage());
-            Alert alert = new Alert(AlertType.ERROR);
-            alert.setTitle("Error");
-            alert.setHeaderText("Unable to load FXML file");
-            alert.setContentText(ex.getMessage());
-            alert.showAndWait();
+            System.out.println(ex.getMessage());
         }
     }
 
@@ -82,7 +69,8 @@ public class NewFXMain extends Application {
             newStage.setScene(new Scene(newRoot));
             newStage.initOwner(primaryStage);
             newStage.show();
-        } catch (IOException ex) {
+        } 
+        catch (IOException ex) {
             System.err.println(ex.getMessage());
             Alert alert = new Alert(AlertType.ERROR);
             alert.setTitle("Error");
