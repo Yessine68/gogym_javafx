@@ -58,7 +58,7 @@ import javax.imageio.ImageIO;
 /**
  * FXML Controller class
  *
- * @author ASUS
+ * @author HanaM
  */
 public class ModifierSalleController implements Initializable {
 
@@ -201,7 +201,7 @@ SalleService ss = new SalleService();
                 }  
             } 
             else {
-                mapView.setCenter(new Coordinate(34.73879126332555,10.757074356079102));
+                mapView.setCenter(new Coordinate(34.747847,10.766163));
             }  
                 mapView.addEventHandler(MapViewEvent.MAP_CLICKED, event -> {
 

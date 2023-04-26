@@ -26,7 +26,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 /**
  * FXML Controller class
  *
- * @author ASUS
+ * @author HanaM
  */
 public class AbonnementsSalleController implements Initializable {
 

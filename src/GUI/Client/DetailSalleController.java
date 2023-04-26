@@ -46,7 +46,7 @@ import javafx.stage.Stage;
 /**
  * FXML Controller class
  *
- * @author ASUS
+ * @author HanaM
  */
 public class DetailSalleController implements Initializable {
 
@@ -147,7 +147,7 @@ public class DetailSalleController implements Initializable {
 
             }
             else {
-                mapView.setCenter(new Coordinate(34.73879126332555,10.757074356079102));
+                mapView.setCenter(new Coordinate(34.747847,10.766163));
 
                 
             }

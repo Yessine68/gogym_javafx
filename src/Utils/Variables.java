@@ -12,7 +12,7 @@ import javafx.stage.Stage;
 
 /**
  *
- * @author ASUS
+ * @author HanaM
  */
 public class Variables {
     public static Salle salleDetail = null;

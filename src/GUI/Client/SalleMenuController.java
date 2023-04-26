@@ -43,7 +43,7 @@ import javafx.scene.control.TextField;
 /**
  * FXML Controller class
  *
- * @author ASUS
+ * @author HanaM
  */
 public class SalleMenuController implements Initializable {
 
