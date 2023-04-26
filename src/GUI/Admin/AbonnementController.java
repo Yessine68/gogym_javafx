@@ -9,6 +9,7 @@ import Entities.Abonnement;
 import Entities.Salle;
 import Services.AbonnementService;
 import Services.SalleService;
+import com.itextpdf.text.DocumentException;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.Date;
@@ -461,4 +462,10 @@ public class AbonnementController implements Initializable {
                AbonnementTv.setItems(obs);
     }
 
+    @FXML
+    private void toPDF(ActionEvent event) throws SQLException, DocumentException, Exception {
+        List<Abonnement> abonnements = as.recuperer();
+        as.toPDF(abonnements);
+    }
+    
 }

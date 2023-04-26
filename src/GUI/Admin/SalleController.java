@@ -8,6 +8,7 @@ package GUI.Admin;
 import Entities.Salle;
 import Services.SalleService;
 import Utils.Variables;
+import com.itextpdf.text.DocumentException;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.URL;
@@ -251,4 +252,11 @@ private boolean selectImage=false;
         obs = FXCollections.observableArrayList(salleSearch); //Observablelist il peut detecter les changement 
                 SalleTv.setItems(obs);
     }
+    
+    @FXML
+    private void toPDF(ActionEvent event) throws DocumentException, SQLException {
+        List<Salle> salles = ss.recuperer();
+        ss.toPDF(salles);
+    }
+    
 }

@@ -154,7 +154,7 @@ SalleService ss = new SalleService();
                 if (abonnementExists) {
                     check.setSelected(true);
                 } else {
-                                        check.setSelected(false);
+                        check.setSelected(false);
 
                 }
                 scrollPane.getChildren().add(check);
@@ -188,6 +188,8 @@ SalleService ss = new SalleService();
             mapView.setZoom(10.0);
             File imageFile = new File(".\\src\\GUI\\blue_map_marker.png");
             if (salleC.getLatitude_s()!=0)   {
+                longitude.setText(String.valueOf(salleC.getLongitude_s()));
+                latitude.setText(String.valueOf(salleC.getLatitude_s()));
                 mapView.setCenter(new Coordinate(salleC.getLatitude_s(),salleC.getLongitude_s()));
                 try {
                     URL imageURL = imageFile.toURI().toURL();
@@ -198,6 +200,8 @@ SalleService ss = new SalleService();
                     markers.add(marker);
                 } catch (MalformedURLException ex) {
                     Logger.getLogger(AddSalleController.class.getName()).log(Level.SEVERE, null, ex);
+                    longitude.setText(String.valueOf(0));
+                    latitude.setText(String.valueOf(0));
                 }  
             } 
             else {

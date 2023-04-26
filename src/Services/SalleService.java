@@ -10,6 +10,20 @@ import java.util.List;
 import Entities.Salle;
 import Utils.MyDB;
 import Utils.Variables;
+import com.itextpdf.text.BaseColor;
+import com.itextpdf.text.Chunk;
+import com.itextpdf.text.Document;
+import com.itextpdf.text.DocumentException;
+import com.itextpdf.text.Element;
+import com.itextpdf.text.FontFactory;
+import com.itextpdf.text.PageSize;
+import com.itextpdf.text.Paragraph;
+import com.itextpdf.text.Phrase;
+import com.itextpdf.text.pdf.PdfPCell;
+import com.itextpdf.text.pdf.PdfPTable;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -275,4 +289,106 @@ public class SalleService implements IService<Salle> {
         return Salles;
     }
 
+    public void toPDF(List<Salle> salles) throws DocumentException, SQLException {
+        
+            try {
+                com.itextpdf.text.Document doc;
+                doc = new Document();
+                doc.setPageSize(PageSize.A4.rotate());
+                com.itextpdf.text.pdf.PdfWriter.getInstance(doc, new FileOutputStream("../../../Liste_des_Salles.pdf"));
+                
+                doc.open();
+                
+                Paragraph header = new Paragraph("Liste des salles et des abonnements associées", 
+                                          FontFactory.getFont(FontFactory.HELVETICA_BOLD, 24, BaseColor.ORANGE));
+                header.setAlignment(Element.ALIGN_CENTER);
+                doc.add(header);
+                doc.add(Chunk.NEWLINE);
+                //Test PDF
+                PdfPTable table = new PdfPTable(11);
+
+                table.setWidthPercentage(100);
+                table.setSpacingBefore(0f);
+                table.setSpacingAfter(0f);
+
+                // first row
+                int i = 1;
+                PdfPCell cell = new PdfPCell(new Phrase());
+                
+                cell = new PdfPCell(new Phrase("Nom"));
+                cell.setBackgroundColor(new BaseColor(239,250,230));
+                table.addCell(cell);
+                
+                cell = new PdfPCell(new Phrase("Email"));
+                cell.setBackgroundColor(new BaseColor(239,250,230));
+                table.addCell(cell);
+                
+                cell = new PdfPCell(new Phrase("Téléphone"));
+                cell.setBackgroundColor(new BaseColor(239,250,230));
+                table.addCell(cell);
+                
+                cell = new PdfPCell(new Phrase("Adresse"));
+                cell.setBackgroundColor(new BaseColor(239,250,230));
+                table.addCell(cell);
+                
+                cell = new PdfPCell(new Phrase("Ville "));
+                cell.setBackgroundColor(new BaseColor(239,250,230));
+                table.addCell(cell);
+                
+                cell = new PdfPCell(new Phrase("Image "));
+                cell.setBackgroundColor(new BaseColor(239,250,230));
+                table.addCell(cell);
+                
+                cell = new PdfPCell(new Phrase("Périmetre "));
+                cell.setBackgroundColor(new BaseColor(239,250,230));
+                table.addCell(cell);
+                cell = new PdfPCell(new Phrase("Likes "));
+                cell.setBackgroundColor(new BaseColor(239,250,230));
+                table.addCell(cell);
+                cell = new PdfPCell(new Phrase("Les abonnements "));
+                cell.setBackgroundColor(new BaseColor(239,250,230));
+                table.addCell(cell);
+                cell = new PdfPCell(new Phrase("Longitude "));
+                cell.setBackgroundColor(new BaseColor(239,250,230));
+                table.addCell(cell);
+                cell = new PdfPCell(new Phrase("Latitude "));
+                cell.setBackgroundColor(new BaseColor(239,250,230));
+                table.addCell(cell);
+                for (Salle s :salles){
+                
+                String img =s.getImage_s();
+                com.itextpdf.text.Image image = com.itextpdf.text.Image.getInstance("./src/Images/Salles/"+img);
+                image.scaleToFit(5f, 5f);
+                
+                table.addCell(String.valueOf(s.getNom_s()));
+                table.addCell(String.valueOf(s.getEmail_s()));
+                table.addCell(String.valueOf(s.getTel_s()));
+                table.addCell(String.valueOf(s.getAdresse_s()));
+                table.addCell(String.valueOf(s.getVille_s()));
+                table.addCell(image);
+                table.addCell(String.valueOf(s.getPerimetre_s()));
+                table.addCell(String.valueOf(s.getLike_s()));
+                table.addCell(String.valueOf(s.getAbonnements()));
+                table.addCell(String.valueOf(s.getLongitude_s()));
+                table.addCell(String.valueOf(s.getLatitude_s()));
+                
+                
+                i++;
+                }
+                
+               
+                
+                
+                doc.add(table); 
+                
+               
+                doc.close();
+                System.out.println("done");
+            } catch (FileNotFoundException ex) {
+                System.out.println(ex.getMessage());
+            } catch (IOException ex) {
+                System.out.println(ex.getMessage());
+            }
+    }
+    
 }

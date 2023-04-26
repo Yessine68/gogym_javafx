@@ -112,6 +112,7 @@ public class AbonnementClientController implements Initializable {
         trieCombo.getItems().add("Id");
         trieCombo.getItems().add("Nom");
         trieCombo.getItems().add("Type");
+        trieCombo.getItems().add("Prix");
         searchCombo.setValue("Nom");
         searchCombo.getItems().add("Nom");
         
@@ -240,6 +241,9 @@ public class AbonnementClientController implements Initializable {
         }
         if (trieCombo.getValue().equals("Type")){
             ch2="type_a";
+        }
+        if (trieCombo.getValue().equals("Prix")){
+            ch2="prix_a";
         }
         pagination.setCurrentPageIndex(0);
         try {
