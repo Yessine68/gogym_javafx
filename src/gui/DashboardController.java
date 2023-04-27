@@ -36,6 +36,8 @@ import services.UserService;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.util.ArrayList;
+import javafx.scene.control.TextField;
 /**
  * FXML Controller class
  *
@@ -56,6 +58,8 @@ public class DashboardController implements Initializable {
     private TableColumn<?, ?> cEmail;
     @FXML
     private TableView<User> tbUsers;
+    @FXML
+    private TextField filterInput;
 
     /**
      * Initializes the controller class.
@@ -64,6 +68,7 @@ public class DashboardController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         try {
             ListeUsers();
+            filterInput.textProperty().addListener((observable, oldValue, newValue) -> filterTable(null));
         } catch (SQLException ex) {
             Logger.getLogger(DashboardController.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -237,5 +242,28 @@ public class DashboardController implements Initializable {
         stage.setScene(scene);
         stage.show();
     }
+    
+    @FXML
+    private void filterTable(javafx.scene.input.KeyEvent event) {
+        refreshTable();
+        String filter = filterInput.getText();
+    if (filter == null || filter.length() == 0) {
+        // if the filter is empty, show all blogs
+        tbUsers.setItems(FXCollections.observableArrayList(usersList));
+        
+    } else {
+        // otherwise, filter the list of blogs by name
+        List<User> filteredList = new ArrayList<>();
+        
+        for (User user : usersList) {
+            if (user.getNom().toLowerCase().contains(filter.toLowerCase()) || user.getEmail().toLowerCase().contains(filter.toLowerCase())) {
+                
+                filteredList.add(user);
+            }
+        }
+        tbUsers.setItems(FXCollections.observableArrayList(filteredList));
+    }
+    }
+    
 
 }
