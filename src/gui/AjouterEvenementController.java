@@ -27,11 +27,26 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import Services.*;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileWriter;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.Reader;
 import java.net.MalformedURLException;
+import java.nio.charset.Charset;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
+import javafx.scene.input.KeyEvent;
 import javafx.stage.FileChooser;
+import org.controlsfx.control.textfield.AutoCompletionBinding;
+import org.controlsfx.control.textfield.TextFields;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 /**
  * FXML Controller class
@@ -54,24 +69,91 @@ public class AjouterEvenementController implements Initializable {
     private ComboBox<String> cbcategorie;
     @FXML
     private Button btnAjouter;
+    String[] words = {"ghazela", "ariana", "menzah", "nasser"};
+     Set<String> possibleWordSet = new HashSet<>();
+    AutoCompletionBinding<String> autoCompletionBinding;
 
        private List<CategorieEvenement> categories = new ArrayList<>();
     File selectedFile;
     String uploadpath;
+    String AIP = null;
+    String pays;
+    String region;
+    String idn;
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         
+        
+       try {
+    URL url_name = new URL("http://checkip.amazonaws.com/");
+    BufferedReader bf = new BufferedReader(new InputStreamReader(url_name.openStream()));
+    String AIP = bf.readLine().trim();
+    System.out.println(AIP);
+
+    JSONObject json = readJsonFromUrl("https://api.ipgeolocation.io/ipgeo?apiKey=e3f347b989f34e239402188106fbdf4c&ip=" + AIP);
+    System.out.println(json.toString());
+
+    String pays = json.optString("country_name", "");
+    String region = json.optString("city", "");
+    String idn = json.optString("calling_code", "");
+
+    System.out.println("pays" + pays);
+    System.out.println("region" + region);
+    System.out.println(idn);
+
+    // Crée un objet FileWriter et BufferedWriter pour écrire dans un fichier texte
+    FileWriter fw = new FileWriter("monfichier.txt");
+    BufferedWriter bw = new BufferedWriter(fw);
+
+    // Écrit les informations dans le fichier texte
+    bw.write("AIP : " + AIP);
+    bw.newLine();
+    bw.write("Pays : " + pays);
+    bw.newLine(); // Ajoute une nouvelle ligne
+    bw.write("Région : " + region);
+    bw.newLine();
+    bw.write("Indicatif téléphonique : " + idn);
+
+    // Ferme le BufferedWriter et le FileWriter
+    bw.close();
+    fw.close();
+
+    System.out.println("Les informations ont été écrites dans le fichier monfichier.txt !");
+} catch (Exception e) {
+    System.out.println("Erreur lors de la récupération des informations : " + e.getMessage());
+}
+ 
+     
+     
     CategorieEvenementService service = new CategorieEvenementService();
     
     categories = service.readAll();
-        
+    
+    
+    
+       Collections.addAll(possibleWordSet, words);
+        autoCompletionBinding = TextFields.bindAutoCompletion(tfLieu, possibleWordSet);
+
+        tfLieu.setOnKeyPressed(
+                (KeyEvent e) -> {
+                    switch (e.getCode()) {
+                        case ENTER:
+                            learnWord((tfLieu.getText()));
+                            break;
+                        default:
+                            break;
+                    }
+                }
+        );
+    
     for (int i = 0; i < categories.size(); i++){
      cbcategorie.getItems().add(categories.get(i).getNom_cat_e());  // TODO
     }
     } 
+    
     
     @FXML
     private void ajouterEvenement(ActionEvent event) {
@@ -196,6 +278,18 @@ public class AjouterEvenementController implements Initializable {
             System.out.println(uploadpath);
         }
     }
+    
+    
+    
+    private void learnWord(String text) {
+        possibleWordSet.add(text);
+        if (autoCompletionBinding != null) {
+            autoCompletionBinding.dispose();
+        }
+        autoCompletionBinding = TextFields.bindAutoCompletion(tfLieu, possibleWordSet);
+
+    }
+
 
   public void retour(ActionEvent event) throws IOException {
         Parent tableViewParent = FXMLLoader.load(getClass().getResource("Gestionevenement.fxml"));
@@ -204,5 +298,30 @@ public class AjouterEvenementController implements Initializable {
         window.setScene(tabbleViewScene);
         window.show();
     }
+  
+  
+   private static String readAll(Reader rd) throws IOException {
+        StringBuilder sb = new StringBuilder();
+        int cp;
+        while ((cp = rd.read()) != -1) {
+            sb.append((char) cp);
+        }
+        return sb.toString();
+    }
+
+    public static JSONObject readJsonFromUrl(String url) throws IOException, JSONException {
+        InputStream is = new URL(url).openStream();
+        try {
+            BufferedReader rd = new BufferedReader(new InputStreamReader(is, Charset.forName("UTF-8")));
+            String jsonText = readAll(rd);
+            JSONObject json = new JSONObject(jsonText);
+            return json;
+        } finally {
+            is.close();
+        }
+    }
     
 }
+
+
+ 

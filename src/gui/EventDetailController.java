@@ -34,9 +34,31 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import Tools.*;
+import com.github.sarxos.webcam.Webcam;
+import com.sun.speech.freetts.Voice;
+import com.sun.speech.freetts.VoiceManager;
+import java.io.BufferedReader;
+import java.io.ByteArrayOutputStream;
+import java.io.File;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.Reader;
+import java.nio.charset.Charset;
+import java.util.Base64;
 import java.util.Random;
+import java.util.UUID;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.image.PixelWriter;
+import javafx.scene.image.WritableImage;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.Pane;
+import javafx.scene.paint.ImagePattern;
+import javafx.scene.text.Text;
+import javax.imageio.ImageIO;
+
+
+
 /**
  * FXML Controller class
  *
@@ -52,14 +74,12 @@ public class EventDetailController implements Initializable {
     private Label nbrfxid;
     @FXML
     private Label lieufxid;
-    @FXML
-    private Label descriptionfxid;
+    
     @FXML
     private Label datefxid;
-    //@FXML
-    //private Label errorfxid;
+   
     @FXML
-    private ImageView qrView;
+    public ImageView qrView;
  
      public static Evenement evenement;
      public int Eventid;
@@ -69,10 +89,29 @@ public class EventDetailController implements Initializable {
 
     String usernom = "ibrahim"; 
     int userid = 1 ;
-    @FXML
-    private Label errorfxid;
+ 
     @FXML
     private Button btnparticiper;
+    @FXML
+    private Text descriptionfxid;
+    
+    private static final String VOICENAME = "kevin16";
+    @FXML
+    private Label part1;
+    @FXML
+    private Label lieu1;
+    @FXML
+    private Label date1;
+    @FXML
+    private Label descrip1;
+    @FXML
+    private ImageView imgPrevWeb;
+    @FXML
+    private Pane webcamPane;
+    public Image bufferedImage;
+
+    
+    
     /**
      * Initializes the controller class.
      */
@@ -94,11 +133,12 @@ public class EventDetailController implements Initializable {
             alertType.show();
             return;
         }
- 
+        
+           
     }    
     
-    
-   
+     
+
     
     
        @FXML
@@ -106,7 +146,7 @@ public class EventDetailController implements Initializable {
          EvenementService ths = new EvenementService();
          Evenement e = evenement;
         JavaMailEvent mail = new JavaMailEvent();
-        System.out.println(e);
+       // System.out.println(e);
         
         
         if (ths.check(e.getId(), userid) == true) {
@@ -115,7 +155,6 @@ public class EventDetailController implements Initializable {
         alertType.setHeaderText("vous avez deja participé");
         alertType.show();
         return;
-        //    errorfxid.setText("vous avez deja participé");
         } 
         
 
@@ -136,8 +175,10 @@ public class EventDetailController implements Initializable {
              content = "Bonjour mr/mme " + usernom + "\n"
                      + "Merci pour votre participation et voici votre pass pour l'evenement\n"
                      + "on vous attend chaleurheusement ! ";*/
-           mail.sendmail("Confirmation de participation!","ibrahim.souissi@esprit.tn");
-qr();
+           File qrCodeFile = new File("qrcode.png");
+         qr();
+         mail.sendmail(qrCodeFile,"Confirmation de participation!","ibrahim.souissi@esprit.tn");
+
         }
        //  EvenementService ths = new EvenementService();
         // Evenement e = ths.EventDetailFront(Eventid);
@@ -147,7 +188,7 @@ qr();
     }
     
     
-    public void qr(){
+        public void qr() throws IOException{
       Evenement e = evenement;
         QRCodeWriter qrCodeWriter = new QRCodeWriter();
         String myWeb = "bonjour" + usernom + "votre code de participation a l'evenement:" +e.getNom_e()+ "est" +code+ "."   ;
@@ -182,18 +223,21 @@ qr();
         
         //ImageView qrView = new ImageView();
         
+    
         qrView.setImage(SwingFXUtils.toFXImage(bufferedImage, null));
         
-      
+        File qrCodeFile = new File("qrcode.png");
+        ImageIO.write(bufferedImage, "png", qrCodeFile);
+
         }
+   
     
+   
     
-    
-    
-    
+         
+ 
     
   
-    
     @FXML
       public void retour(ActionEvent event) throws IOException {
         Parent tableViewParent = FXMLLoader.load(getClass().getResource("Eventfront.fxml"));
@@ -203,8 +247,72 @@ qr();
         window.show();
     }
 
+    @FXML
+    private void speak(MouseEvent event) {
+        
+        
+        
+               Voice voice;
+        VoiceManager vm = VoiceManager.getInstance();
+        voice = vm.getVoice(VOICENAME);
 
+        voice.allocate();
+        try {
+             //voice.speak("Welcome Back to Gogym");
+            voice.speak(namefxid.getText());
+            voice.speak(part1.getText());
+            voice.speak(nbrfxid.getText());
+            voice.speak(lieu1.getText());
+            voice.speak(lieufxid.getText());
+            voice.speak(date1.getText());
+            voice.speak(datefxid.getText());
+            voice.speak(descrip1.getText());
+            voice.speak(descriptionfxid.getText());
+
+            System.out.println("welcome");
+        } catch (Exception e) {
+
+        }
+    }
 
     
+    @FXML
+    private void photo(MouseEvent event) {
+        /*    Webcam cam = Webcam.getWebcams().get(0);
+        service = new WebCamService(cam);
+        WebCamView view = new WebCamView(service);
+        webcamPane.setVisible(true);
+        webcamPane.getChildren().add(view.getView());*/
+        Webcam wb = Webcam.getWebcams().get(0);
+
+        //paneNoir.setVisible(true);
+        webcamPane.setVisible(true);
+        wb.open();
+        String name = UUID.randomUUID().toString().substring(1, 8) + ".jpg";
+        File f = new File("src/images/" + name);
+
+        try {
+            ImageIO.write(wb.getImage(), "JPG", f);
+        } catch (IOException ex) {
+            Logger.getLogger(EventDetailController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        System.out.println("Ok");
+
+        Image i = new Image(f.toURI().toString());
+
+        imgPrevWeb.setImage(i);
+
+        String chemin = f.getAbsolutePath();
+        System.out.println(chemin);
+
+        //circleu.setFill(new ImagePattern(i));
+        // paneNoir.setVisible(false);
+        webcamPane.setVisible(false);
+        //tf_image.setText(f.toURI().toString());
+    }
     
+    
+ 
+
 }

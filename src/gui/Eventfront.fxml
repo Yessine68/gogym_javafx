@@ -11,9 +11,10 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.media.MediaView?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="652.0" prefWidth="1053.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.EventfrontController">
+<AnchorPane id="AnchorPane" fx:id="mainpane" prefHeight="652.0" prefWidth="1053.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.EventfrontController">
     <stylesheets>
         <URL value="@gestionevenement.css" />
     </stylesheets>
@@ -28,7 +29,7 @@
             <Image url="@../images/gogymlogo-removebg-preview.png" />
          </image>
       </ImageView>
-      <Label layoutX="539.0" layoutY="37.0" prefHeight="21.0" prefWidth="393.0" text="Liste des Evenements:" textFill="#0c2d48">
+      <Label fx:id="Title" layoutX="539.0" layoutY="37.0" prefHeight="21.0" prefWidth="393.0" text="Liste des Evenements:" textFill="#0c2d48">
          <font>
             <Font name="System Bold" size="30.0" />
          </font>
@@ -42,10 +43,36 @@
             </GridPane>
          </content>
       </ScrollPane>
-      <Button layoutX="189.0" layoutY="44.0" mnemonicParsing="false" onAction="#retour" prefHeight="31.0" prefWidth="137.0" text="Retour" />
-      <Button layoutX="189.0" layoutY="97.0" mnemonicParsing="false" onAction="#btnrecherce" prefHeight="31.0" prefWidth="137.0" text="Rechercher" />
+      <Button fx:id="btnRetour" layoutX="189.0" layoutY="44.0" mnemonicParsing="false" onAction="#retour" prefHeight="31.0" prefWidth="137.0" text="Retour" />
+      <Button fx:id="btnChercher" layoutX="189.0" layoutY="97.0" mnemonicParsing="false" onAction="#btnrecherce" prefHeight="31.0" prefWidth="137.0" text="Rechercher" />
       <TextField fx:id="tfrecherche" layoutX="360.0" layoutY="97.0" prefHeight="31.0" prefWidth="299.0" />
-      <ComboBox fx:id="cbdesasc" layoutX="872.0" layoutY="97.0" prefHeight="31.0" prefWidth="169.0" promptText="DES/ASC Nom" />
-      <Button layoutX="703.0" layoutY="97.0" mnemonicParsing="false" onAction="#btntrier" prefHeight="31.0" prefWidth="137.0" text="Trier" />
+      <ComboBox fx:id="cbdesasc" layoutX="872.0" layoutY="97.0" prefHeight="31.0" prefWidth="169.0" promptText="DES/ASC " />
+      <Button fx:id="btnTrier" layoutX="703.0" layoutY="97.0" mnemonicParsing="false" onAction="#btntrier" prefHeight="31.0" prefWidth="137.0" text="Trier" />
+      <MediaView fx:id="mediaView" fitHeight="90.0" fitWidth="150.0" layoutX="14.0" layoutY="609.0" />
+      <ImageView fx:id="An" fitHeight="45.0" fitWidth="41.0" layoutX="952.0" layoutY="26.0" onMouseClicked="#langueAng" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/eng-removebg-preview.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Fr" fitHeight="45.0" fitWidth="41.0" layoutX="993.0" layoutY="24.0" onMouseClicked="#langueFr" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/fr-removebg-preview.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="idpause" fitHeight="40.0" fitWidth="41.0" layoutX="189.0" layoutY="638.0" onMouseClicked="#pause" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/pause.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="idplay" fitHeight="34.0" fitWidth="40.0" layoutX="241.0" layoutY="641.0" onMouseClicked="#play" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/play-buttton.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="74.0" fitWidth="77.0" layoutX="915.0" layoutY="617.0" onMouseClicked="#chatbot" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/chatbot.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

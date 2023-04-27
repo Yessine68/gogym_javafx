@@ -16,6 +16,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.image.Image;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
@@ -25,16 +26,20 @@ import javafx.stage.Stage;
  */
 public class FXMain extends Application {
     
+
+    
     private Stage stage;
     private Parent parent;
     @Override
     public void start(Stage primaryStage) throws IOException {
        this.stage=primaryStage;
-      parent=FXMLLoader.load(getClass().getResource("Ibrahimhome.fxml"));
+     parent=FXMLLoader.load(getClass().getResource("Ibrahimhome.fxml"));
       //parent=FXMLLoader.load(getClass().getResource("Eventfront.fxml"));
         // parent=FXMLLoader.load(getClass().getResource("ModifierEvenement.fxml"));
-       //  parent=FXMLLoader.load(getClass().getResource("Ajoutereventcat.fxml"));
+       // parent=FXMLLoader.load(getClass().getResource("Calendar.fxml"));
         primaryStage.setTitle("GOGYM app!");
+         Image icon = new Image(getClass().getResourceAsStream("gogymlogo-removebg-preview.png"));
+          primaryStage.getIcons().add(icon);
         Scene scene=new Scene(parent);
         stage.setScene(scene);
         stage.show();         

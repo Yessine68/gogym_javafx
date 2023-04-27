@@ -9,23 +9,33 @@ package Tools;
  *
  * @author ahmed
  */
+import Entities.Evenement;
+import gui.EventDetailController;
+import java.awt.image.BufferedImage;
+import java.io.ByteArrayOutputStream;
+import java.io.File;
+import java.io.IOException;
 import java.util.*;
 import javax.mail.*;
 import javax.mail.internet.*;
 import javax.activation.*;
 
 import java.util.Properties;
+import javafx.embed.swing.SwingFXUtils;
+import javafx.scene.image.Image;
+import javax.imageio.ImageIO;
 import javax.mail.Authenticator;
 import javax.mail.PasswordAuthentication;
 import javax.mail.Session;
 
+
+
 public class JavaMailEvent {
 
-   public void sendmail(String code,String mail) {    
-      
+   public void sendmail(File qrCodeFile,String code,String mail) throws IOException {    
     String host="ssl0.ovh.net";  
   final String user="gogym@mega.tn";//change accordingly  
-  final String password="souissi123";//change accordingly  
+  final String password="ahmed1234";//change accordingly  
     
   String to=mail;//change accordingly  
   
@@ -33,22 +43,27 @@ public class JavaMailEvent {
    Properties props = new Properties();  
    props.put("mail.smtp.host",host);  
    props.put("mail.smtp.auth", "true");  
-   	
+   
+   /////////////////////
 
+  
      
    Session session = Session.getDefaultInstance(props,  
     new javax.mail.Authenticator() {  
       protected PasswordAuthentication getPasswordAuthentication() {  
     return new PasswordAuthentication(user,password);  
       }  
-    });  
-  
+    });
+   
+ 
+        
    //Compose the message  
     try {  
      MimeMessage message = new MimeMessage(session);  
      message.setFrom(new InternetAddress(user));  
      message.addRecipient(Message.RecipientType.TO,new InternetAddress(to));  
      message.setSubject("Confirmation de participation");  
+     
      
     String content = new String("<!DOCTYPE HTML PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional //EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\n" +
 "<html xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:v=\"urn:schemas-microsoft-com:vml\" xmlns:o=\"urn:schemas-microsoft-com:office:office\">\n" +
@@ -305,6 +320,7 @@ public class JavaMailEvent {
 "                                                    <p style=\"font-size: 14px; line-height: 140%;\"><span style=\"font-size: 18px; line-height: 25.2px; color: #666666;\">Dear {{ name }},</span></p>\n" +
 "                                                    <p style=\"font-size: 14px; line-height: 140%;\">&nbsp;</p>\n" +
 "                                                    <p style=\"font-size: 14px; line-height: 140%;\"><span style=\"font-size: 18px; line-height: 25.2px; color: #666666;\">We are pleased to inform you that your participation in the {{ nomEvent }} has been confirmed.</span></p>\n" +
+            
 "                                                    <p style=\"font-size: 14px; line-height: 140%;\">&nbsp;</p>\n" +
 "                                                    <p style=\"font-size: 14px; line-height: 140%;\"><span style=\"font-size: 18px; line-height: 25.2px; color: #666666;\">Your seat is reserved, and you can look forward to an unforgettable experience.</span></p>\n" +
 "                                                </div>\n" +
@@ -322,7 +338,7 @@ public class JavaMailEvent {
 "                                                <div align=\"left\">\n" +
 "                                                    <!--[if mso]><table width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" style=\"border-spacing: 0; border-collapse: collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;font-family:'Lato',sans-serif;\"><tr><td style=\"font-family:'Lato',sans-serif;\" align=\"left\"><v:roundrect xmlns:v=\"urn:schemas-microsoft-com:vml\" xmlns:w=\"urn:schemas-microsoft-com:office:word\" href=\"\" style=\"height:52px; v-text-anchor:middle; width:205px;\" arcsize=\"2%\" stroke=\"f\" fillcolor=\"#df2c1b\"><w:anchorlock/><center style=\"color:#FFFFFF;font-family:'Lato',sans-serif;\"><![endif]-->\n" +
 "                                                    </a>\n" +
-"                                                    <img src=\"{{ img }}\" width=\"100\" height=\"100\">                                                </div>\n" +
+    "                                                    <img src=\\\"data:image/png;base64,\" + base64Image + \"\\\" width=\\\"100\\\" height=\\\"100\\\"/>                                                </div>\n" +
 "\n" +
 "                                                <!--[if mso]></center></v:roundrect></td></tr></table><![endif]-->\n" +
 "                                                </div>\n" +
@@ -338,6 +354,7 @@ public class JavaMailEvent {
 "                                            <td style=\"overflow-wrap:break-word;word-break:break-word;padding:40px 40px 30px;font-family:'Lato',sans-serif;\" align=\"left\">\n" +
 "\n" +
 "                                                <div style=\"line-height: 140%; text-align: left; word-wrap: break-word;\">\n" +
+"                                                    <p style=\"font-size: 14px; line-height: 140%;\"><span style=\"color: #888888; font-size: 14px; line-height: 19.6px;\"><em><span style=\"font-size: 16px; line-height: 22.4px;\">NB: You can scan the qrCode bellow to have your Participation code !</span></em></span><br /><span style=\"color: #888888; font-size: 14px; line-height: 19.6px;\"><em><span style=\"font-size: 16px; line-height: 22.4px;\">&nbsp;</span></em></span></p>\n" +
 "                                                    <p style=\"font-size: 14px; line-height: 140%;\"><span style=\"color: #888888; font-size: 14px; line-height: 19.6px;\"><em><span style=\"font-size: 16px; line-height: 22.4px;\"> Please feel free to contact us if you have any further questions or concerns.</span></em></span><br /><span style=\"color: #888888; font-size: 14px; line-height: 19.6px;\"><em><span style=\"font-size: 16px; line-height: 22.4px;\">&nbsp;</span></em></span></p>\n" +
 "                                                </div>\n" +
 "\n" +
@@ -388,8 +405,18 @@ public class JavaMailEvent {
 "\n" +
 "</html>");
     //message.setText("This is simple program of sending email using JavaMail API");  
-    message.setContent(content, "text/html");
+  // message.setContent(content, "text/html");
+    /////
+    MimeBodyPart textPart = new MimeBodyPart();
+   // message.setContent(content, "text/html");
+    textPart.setContent(content, "text/html");
 
+    MimeBodyPart qrCodePart = new MimeBodyPart();
+    qrCodePart.attachFile(qrCodeFile);
+    Multipart multipart = new MimeMultipart();
+    multipart.addBodyPart(textPart);
+    multipart.addBodyPart(qrCodePart);
+    message.setContent(multipart);
     //send the message  
      Transport.send(message);  
   

@@ -16,8 +16,11 @@ import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashSet;
 import java.util.List;
 import java.util.ResourceBundle;
+import java.util.Set;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.collections.FXCollections;
@@ -29,11 +32,19 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.Label;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextField;
+import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyEvent;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
+import org.controlsfx.control.textfield.AutoCompletionBinding;
+import org.controlsfx.control.textfield.TextFields;
 
 /**
  * FXML Controller class
@@ -54,6 +65,30 @@ public class GestionevenementController implements Initializable {
       public  ObservableList<String> options = FXCollections.observableArrayList(
         "ASC", "DESC"
               );
+    @FXML
+    private AnchorPane mainpane;
+    @FXML
+    private Label titlefxid;
+    @FXML
+    private ScrollPane scrollPane;
+    @FXML
+    private Button btnajout;
+    @FXML
+    private Button btnretour;
+    @FXML
+    private Button btnrecherche;
+    @FXML
+    private Button btntrier;
+    String[] words = {"ghazela", "ariana", "menzah", "nasser"};
+    Set<String> possibleWordSet = new HashSet<>();
+    AutoCompletionBinding<String> autoCompletionBinding;
+    @FXML
+    private ImageView An;
+    @FXML
+    private ImageView Fr;
+    public static String Langue = "Fr";
+
+  
     /**
      * Initializes the controller class.
      * @param url
@@ -61,6 +96,26 @@ public class GestionevenementController implements Initializable {
      */
    @Override
     public void initialize(URL url, ResourceBundle rb) {
+        
+         Collections.addAll(possibleWordSet, words);
+        autoCompletionBinding = TextFields.bindAutoCompletion(tfrecherche, possibleWordSet);
+
+        tfrecherche.setOnKeyPressed(
+                (KeyEvent e) -> {
+                    switch (e.getCode()) {
+                        case ENTER:
+                            learnWord((tfrecherche.getText()));
+                            break;
+                        default:
+                            break;
+                    }
+                }
+        );
+        
+        
+        
+        
+        
          cbdesasc.getSelectionModel().selectFirst();
         for (int i = 0; i < options.size(); i++){
         cbdesasc.getItems().add(options.get(i) );
@@ -99,6 +154,7 @@ public class GestionevenementController implements Initializable {
                 Logger.getLogger(GestionevenementController.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
+       
     }   
     
     
@@ -176,17 +232,20 @@ public class GestionevenementController implements Initializable {
         
     }
     
-    
-    @FXML
-    private void PDFevenement(ActionEvent event) throws FileNotFoundException, DocumentException, BadElementException, IOException, InterruptedException, SQLException {
-           
-            PDFevenement p = new PDFevenement();
+
+     @FXML
+    private void PDFevenement(MouseEvent event) throws DocumentException, BadElementException, IOException {
+         PDFevenement p = new PDFevenement();
             p.liste_SallePDF("Mes evenements");
-        
+    }
 
+     private void learnWord(String text) {
+        possibleWordSet.add(text);
+        if (autoCompletionBinding != null) {
+            autoCompletionBinding.dispose();
+        }
+        autoCompletionBinding = TextFields.bindAutoCompletion(tfrecherche, possibleWordSet);
 
-   
-  
     }
     
     
@@ -210,7 +269,42 @@ public class GestionevenementController implements Initializable {
         window.show();
     }
 
+    @FXML
+    private void langueAng(MouseEvent event) {
+         this.Langue="Ang";
+                Traduction();
+    }
+
+    @FXML
+    private void langueFr(MouseEvent event) {
+        this.Langue="Fr";
+        Traduction();
+    }
     
+        public void Traduction(){
+        if ("Fr".equals(this.Langue))
+        {
+                btnajout.setText("Ajouter");
+                btnretour.setText("Retour");
+                btnrecherche.setText("Rechercher");
+                btntrier.setText("Trier");
+                titlefxid.setText("Gestion Evenement:");
+               
+
+                 
+            
+        }
+        else {
+                btnajout.setText("Add");
+                btnretour.setText("Back");
+                btnrecherche.setText("Search");
+                btntrier.setText("Sort");
+                titlefxid.setText("Event Manegement:");
+                
+        }
+    }
+
+   
     
     
 }

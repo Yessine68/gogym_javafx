@@ -5,7 +5,8 @@
  */
 package Entities;
 
-import java.util.Date;
+
+
 
 /**
  *
@@ -21,7 +22,9 @@ public class Evenement {
      String lieu_e;
      int nbr_participants;
      String Etat;
-     String image;   
+     String image;  
+
+     
 
     public Evenement() {
     }
@@ -53,6 +56,7 @@ public class Evenement {
         this.Etat = Etat;
         this.image = image;
     }
+    
 
     public int getId() {
         return id;
@@ -89,7 +93,7 @@ public class Evenement {
     public String getImage() {
         return image;
     }
-
+    
     public void setId(int id) {
         this.id = id;
     }
@@ -125,7 +129,7 @@ public class Evenement {
     public void setImage(String image) {
         this.image = image;
     }
-   
-   
+ 
+    
      
 }

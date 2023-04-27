@@ -26,6 +26,7 @@ import java.util.stream.Collectors;
  */
 public class EvenementService {
         //int userid = 1 ;
+ 
 
     Connection cnx;
 
@@ -156,63 +157,9 @@ System.out.println("Error while updating the event: " + ex.getMessage());
     return evenements;
 }
 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    /*
-    public void ajouterEvent(Evenement t) {
-        try {
-            Statement st;
-            st = cnx.createStatement();
-            String query = "INSERT INTO `evenement`(`categorie_evenement_id`,`nom_e`, `date_e`, `description_e`, `lieu_e`, `nbr_participants`, `image`, `etat`) "
-                    + "VALUES ('" + t.getCategorieEvenement() + "','" + t.getNom_e() + "','" + t.getDate_e() + "','" + t.getDescription_e() + "','" + t.getLieu_e() + "','" + t.getNbr_participants() + "','" + (t.getImage()) + "','" + t.getEtat() + "')";
-            st.executeUpdate(query);
-            System.out.println("Event ajouté avec success");
-        } catch (SQLException ex) {
-            System.out.println(ex.getMessage());
-        }
-    }
-    */
-    
-    /*
- public void modifier(long id_amodifier, Evenement t) {
-        try {
-            System.out.println("1");
 
-            PreparedStatement st;
-            st = cnx.prepareStatement("UPDATE `evenement` SET `categorie_evenement_id`=?,`nom_e`=?, `date_e`=?,`description_e`=?,`lieu_e`=?,`nbr_participants`=?,`image`=? WHERE id=?");
-            System.out.println("2");
-
-            st.setInt(1, t.getCategorieEvenement());
-            st.setString(2, t.getNom_e());
-            st.setString(3, t.getDate_e());
-            st.setString(4, t.getDescription_e());
-            st.setString(5, t.getLieu_e());
-            st.setString(6, t.getNbr_participants());
-            st.setString(7, t.getImage());
-            st.setLong(8, id_amodifier);
-            if (st.executeUpdate() == 1) {
-                System.out.println("event modifier avec success");
-            } else {
-                System.out.println("event n'existe pas");
-            }
-        } catch (SQLException ex) {
-             System.out.println(ex.getMessage());
-        }
-
-    }   
- */
+    
+  
  public void delete(Evenement e) {
     try {
         PreparedStatement ps = cnx.prepareStatement("DELETE FROM evenement WHERE id = ?");
@@ -340,7 +287,16 @@ public void decrement(Evenement e) {
         }
         return false;
     }
+
+   
+   
+
+   
  
- 
-    
+   
+
 }
+   
+   
+ 
+             
