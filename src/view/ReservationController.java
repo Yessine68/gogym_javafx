@@ -11,9 +11,12 @@ import java.net.URL;
 import java.sql.Date;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 import java.util.ResourceBundle;
+import java.util.Set;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
@@ -21,13 +24,19 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.geometry.Pos;
 import javafx.scene.Parent;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.DateCell;
+import javafx.scene.control.DatePicker;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.KeyEvent;
+import javafx.util.Duration;
+import org.controlsfx.control.Notifications;
 import services.ServiceRes;
 
 /**
@@ -37,6 +46,8 @@ import services.ServiceRes;
  */
 public class ReservationController implements Initializable {
 
+    @FXML
+    private DatePicker reservationDatePicker;
     @FXML
     private TextField idr;
     @FXML
@@ -61,6 +72,15 @@ public class ReservationController implements Initializable {
     private TableColumn<Reservation, String> dt;
     @FXML
     private TableColumn<Reservation, String> tp;
+    
+            private ServiceRes rs =new ServiceRes();
+    @FXML
+    private Button statbutt;
+    @FXML
+    private TextField rec;
+    @FXML
+    private Button btnTrier;
+
 
     /**
      * Initializes the controller class.
@@ -80,8 +100,28 @@ public class ReservationController implements Initializable {
 }
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
-        
+List<Reservation> reservations = rs.afficherRv();
+        Set<LocalDate> reservationDates = new HashSet<>();
+        for (Reservation reservation : reservations) {
+            LocalDate localDate = reservation.getDate().toLocalDate();
+            reservationDates.add(localDate);
+        }
+        reservationDatePicker.setDayCellFactory(picker -> new DateCell() {
+            @Override
+            public void updateItem(LocalDate date, boolean empty) {
+                super.updateItem(date, empty);
+                
+                if (empty) {
+                    setText(null);
+                    setGraphic(null);
+                } else {
+                    if (reservationDates.contains(date)) {
+                        setText("Reserved");
+                        setStyle("-fx-background-color: lightpink");
+                    }
+                }
+            }
+        });        
        refreshTable();
         
     }    
@@ -114,6 +154,12 @@ public class ReservationController implements Initializable {
             alert.show(); 
             
             refreshTable();
+            
+             Notifications notificationBuilder = Notifications.create()
+        .title("Alert").text("Reservation supprimé avec succès").graphic(null).hideAfter(Duration.seconds(6))
+                .position(Pos.BOTTOM_RIGHT);
+        notificationBuilder.darkStyle();
+        notificationBuilder.show();
             
     }
 
@@ -163,6 +209,12 @@ public class ReservationController implements Initializable {
 
         sm.ajouterRv(c);
         refreshTable();
+        
+         Notifications notificationBuilder = Notifications.create()
+        .title("Alert").text("Reservation ajouté avec succès").graphic(null).hideAfter(Duration.seconds(6))
+                .position(Pos.BOTTOM_RIGHT);
+        notificationBuilder.darkStyle();
+        notificationBuilder.show();
     }
 }
 
@@ -197,6 +249,13 @@ c.setType(type.getText());
 sm.modiferRv(c);
 
 refreshTable();
+
+ Notifications notificationBuilder = Notifications.create()
+        .title("Alert").text("Reservation modifié avec succès").graphic(null).hideAfter(Duration.seconds(6))
+                .position(Pos.BOTTOM_RIGHT);
+        notificationBuilder.darkStyle();
+        notificationBuilder.show();
+
     }
         
         
@@ -217,6 +276,48 @@ refreshTable();
                 type.getScene().setRoot(root);
         
     }
+
+    @FXML
+    private void stat(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/Statistics.fxml"));
+                Parent root = loader.load();
+                StatisticsController a = loader.getController();
+                statbutt.getScene().setRoot(root);
+    }
+
+     @FXML
+    private void search(ActionEvent event) throws IOException{
+ServiceRes service = new ServiceRes();
+List<Reservation> list = service.afficherRv();
+ObservableList<Reservation> observableList = FXCollections.observableList(list);
+ObservableList<Reservation> filteredList = FXCollections.observableArrayList();
+         filteredList.clear();
+        for (Reservation Skill : list) {
+            if(String.valueOf(Skill.getDate()).contains(rec.getText())){
+                filteredList.add(Skill);
+            }
+        }
+         id.setCellValueFactory(new PropertyValueFactory<>("id"));
+    idc.setCellValueFactory(new PropertyValueFactory<>("cours_id"));
+    dt.setCellValueFactory(new PropertyValueFactory<>("date"));
+    tp.setCellValueFactory(new PropertyValueFactory<>("type"));
+        
+        affiche.setItems(filteredList);
+    }
+
+    @FXML
+    private void rec(KeyEvent event) {
+    }
+
+    @FXML
+    private void affichrtTri(ActionEvent event) {
+      List<Reservation> l = new ArrayList<>();
+    l = (ArrayList<Reservation>) rs.afficherRv();
+    ObservableList<Reservation> data = FXCollections.observableArrayList(l);
+    data.sort((r1, r2) -> r1.getDate().compareTo(r2.getDate()));
+    FilteredList<Reservation> fle = new FilteredList(data, e -> true);
+    affiche.setItems(fle);
+}
     
     
 }

@@ -8,11 +8,15 @@ package services;
 import entities.Cours;
 import entities.Reservation;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import utils.MyDB;
 
 /**
@@ -26,6 +30,23 @@ public ServiceRes() {
     cnx = MyDB.getInstance().getcnx();
 }
 
+private Map<LocalDate, Integer> reservations;
+
+    /**
+     *
+     */
+    
+
+    public void addReservation(LocalDate date) {
+        int count = reservations.getOrDefault(date, 0);
+        reservations.put(date, count + 1);
+    }
+
+    public int getReservationCount(LocalDate date) {
+        return reservations.getOrDefault(date, 0);
+    }
+
+   
     @Override
     public void ajouterRv(Reservation r) {
            try {
@@ -99,4 +120,25 @@ public ServiceRes() {
             System.out.println(ex.getMessage());
         }
     }
+    
+    public List<Integer> getReservationCountByMonth() throws SQLException {
+    List<Integer> counts = new ArrayList<>();
+    for (int i = 1; i <= 12; i++) {
+        String query = "SELECT COUNT(*) FROM Reservation WHERE MONTH(date) = ?";
+        PreparedStatement st = MyDB.getInstance().getcnx().prepareStatement(query);
+        st.setInt(1, i);
+        ResultSet rs = st.executeQuery();
+        if (rs.next()) {
+            counts.add(rs.getInt(1));
+        } else {
+            counts.add(0);
+        }
+    }
+    return counts;
+    }
+
+    public Map<String, Integer> getReservationCountByMonth(int year) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
 }

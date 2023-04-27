@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -22,5 +24,8 @@
             <TableColumn fx:id="imgcr" prefWidth="270.0" text="Image" />
          </columns>
       </TableView>
+      <Button layoutX="706.0" mnemonicParsing="false" onAction="#search" text="rechercher" />
+      <TextField fx:id="rec" layoutX="461.0" onKeyTyped="#rec" />
+      <Button fx:id="pdf" layoutX="851.0" mnemonicParsing="false" onAction="#pdf" prefHeight="31.0" prefWidth="82.0" text="pdf" />
    </children>
 </AnchorPane>

@@ -1,1 +1,0 @@
-# gogym_javafx
