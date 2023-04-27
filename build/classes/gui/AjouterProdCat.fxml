@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="652.0" prefWidth="1053.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.AjouterProdCatController">
+   
+   <children>
+      <ImageView fitHeight="702.0" fitWidth="1081.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/hh.jpg" />
+         </image>
+      </ImageView>
+      <Label layoutX="485.0" layoutY="87.0" prefHeight="70.0" prefWidth="442.0" text="Ajouter Categorie Produit :" textFill="#0c2d48">
+         <font>
+            <Font name="System Bold" size="30.0" />
+         </font>
+      </Label>
+      <Label layoutX="56.0" layoutY="230.0" prefHeight="70.0" prefWidth="245.0" text="Nom_Categorie:">
+         <font>
+            <Font name="System Italic" size="24.0" />
+         </font>
+      </Label>
+      <TextField fx:id="NomCat" layoutX="281.0" layoutY="257.0" prefHeight="34.0" prefWidth="294.0" promptText="Nom_Categorie" />
+      <Button fx:id="btnAjouter" layoutX="623.0" layoutY="257.0" mnemonicParsing="false" onAction="#ajouter" prefHeight="34.0" prefWidth="221.0" text="Ajouter" />
+      <Button fx:id="btnRetour" layoutX="844.0" layoutY="633.0" mnemonicParsing="false" onAction="#retour" prefHeight="31.0" prefWidth="166.0" text="Retour" />
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/gogymlogo-removebg-preview.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

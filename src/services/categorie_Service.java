@@ -1,17 +1,17 @@
 package services;
+import Tools.MyConnexion;
 import java.sql.*;
 
 import entities.categorie;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import utils.Jdbc_connection;
 
 
 public class categorie_Service {
     
     Connection cnx;
     public categorie_Service() {
-            cnx = Jdbc_connection.getInstance();
+        cnx = MyConnexion.getInstance().getCnx();
 
     }
    

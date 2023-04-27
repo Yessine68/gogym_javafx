@@ -2,7 +2,10 @@ package entities;
 
 public class categorie {
 
-
+  private int id;
+    private String nom;
+    
+    
     public categorie(int id, String nom) {
         this.id = id;
         this.nom = nom;
@@ -12,8 +15,10 @@ public class categorie {
         this.nom = nom;
     }
 
-    private int id;
-    private String nom;
+    public categorie() {
+    }
+
+  
 
 
     public int getId() {

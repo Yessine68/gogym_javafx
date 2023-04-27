@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="652.0" prefWidth="1053.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.GestionProduitController">
+   
+   <children>
+      <ImageView fitHeight="703.0" fitWidth="1076.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/hh.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/gogymlogo-removebg-preview.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="278.0" layoutY="31.0" prefHeight="21.0" prefWidth="393.0" text="Gestion Produit :" textFill="#0c2d48">
+         <font>
+            <Font name="System Bold" size="30.0" />
+         </font>
+      </Label>
+      <ScrollPane layoutX="14.0" layoutY="152.0" prefHeight="457.0" prefWidth="1020.0">
+         <content>
+            <GridPane fx:id="grid" prefHeight="10.0" prefWidth="21.0">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+               </columnConstraints>
+            </GridPane>
+         </content>
+      </ScrollPane>
+            <Button layoutX="21.0" layoutY="633.0" mnemonicParsing="false" onAction="#btnaddhome" prefHeight="31.0" prefWidth="159.0" text="Ajouter" />
+            <Button layoutX="866.0" layoutY="633.0" mnemonicParsing="false" onAction="#retour" prefHeight="31.0" prefWidth="168.0" text="Retour" />
+      <Button layoutX="815.0" layoutY="101.0" mnemonicParsing="false" onAction="#Stat" prefHeight="31.0" prefWidth="168.0" text="Statistique" />
+   </children>
+</AnchorPane>
