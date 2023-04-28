@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="652.0" prefWidth="1053.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.ModifierProduitController">
+    
+   <children>
+      <ImageView fitHeight="704.0" fitWidth="1148.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/hh.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/gogymlogo-removebg-preview.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="549.0" layoutY="47.0" prefHeight="21.0" prefWidth="393.0" text="Modifier Produit:" textFill="#0c2d48">
+         <font>
+            <Font name="System Bold" size="30.0" />
+         </font>
+      </Label>
+      <Label layoutX="121.0" layoutY="170.0" prefHeight="21.0" prefWidth="77.0" text="Nom" textFill="#171515">
+         <font>
+            <Font size="20.0" />
+         </font></Label>
+      <Label layoutX="122.0" layoutY="224.0" text="Description" textFill="#171515">
+         <font>
+            <Font size="20.0" />
+         </font></Label>
+      <Label layoutX="130.0" layoutY="352.0" prefHeight="21.0" prefWidth="60.0" text="Prix" textFill="#171515">
+         <font>
+            <Font size="20.0" />
+         </font></Label>
+      <Label layoutX="122.0" layoutY="295.0" text="Quantite" textFill="#171515">
+         <font>
+            <Font size="20.0" />
+         </font></Label>
+      <Label layoutX="122.0" layoutY="418.0" text="image:" textFill="#171515">
+         <font>
+            <Font size="20.0" />
+         </font></Label>
+      <Label layoutX="100.0" layoutY="488.0" text="categorie_Produit:" textFill="#171515">
+         <font>
+            <Font size="20.0" />
+         </font></Label>
+      <TextField fx:id="Nom" layoutX="230.0" layoutY="165.0" promptText="Nom" />
+      <TextField fx:id="Description" layoutX="230.0" layoutY="233.0" promptText="Description" />
+      <TextField fx:id="Quantite" layoutX="230.0" layoutY="290.0" promptText="Quantite" />
+      <TextField fx:id="Prix" layoutX="230.0" layoutY="358.0" promptText="Prix" />
+      <ComboBox fx:id="categorieCB" layoutX="230.0" layoutY="483.0" prefWidth="150.0" promptText="Categories" />
+      <Button layoutX="230.0" layoutY="424.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="171.0" text="upload" />
+      <Button layoutX="794.0" layoutY="627.0" mnemonicParsing="false" onAction="#modifierProduit" prefHeight="31.0" prefWidth="200.0" text="Modifier" />
+   </children>
+</AnchorPane>

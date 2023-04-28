@@ -33,7 +33,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
-import Tools.*;
+import utils.*;
 import com.github.sarxos.webcam.Webcam;
 import com.sun.speech.freetts.Voice;
 import com.sun.speech.freetts.VoiceManager;

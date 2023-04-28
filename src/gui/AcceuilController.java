@@ -26,8 +26,6 @@ import javafx.stage.Stage;
  * @author don7a
  */
 public class AcceuilController implements Initializable {
-    @FXML
-    private Label usernameLB;
 
     /**
      * Initializes the controller class.
@@ -40,6 +38,15 @@ public class AcceuilController implements Initializable {
     @FXML
     private void GoToEvent(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("Ibrahimhome.fxml"));
+        Scene scene = new Scene(root);
+        Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        app_stage.setScene(scene);
+        app_stage.show();
+    }
+
+    @FXML
+    private void GoToProduit(ActionEvent event) throws IOException {
+         Parent root = FXMLLoader.load(getClass().getResource("Ademhome.fxml"));
         Scene scene = new Scene(root);
         Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         app_stage.setScene(scene);

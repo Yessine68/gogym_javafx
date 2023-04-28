@@ -37,6 +37,8 @@ public class FXMain extends Application {
       //parent=FXMLLoader.load(getClass().getResource("Eventfront.fxml"));
          parent=FXMLLoader.load(getClass().getResource("Login.fxml"));
        // parent=FXMLLoader.load(getClass().getResource("Calendar.fxml"));
+             //  parent=FXMLLoader.load(getClass().getResource("Ademhome.fxml"));
+
         primaryStage.setTitle("GOGYM app!");
          Image icon = new Image(getClass().getResourceAsStream("gogymlogo-removebg-preview.png"));
           primaryStage.getIcons().add(icon);
