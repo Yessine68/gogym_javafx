@@ -61,5 +61,6 @@
             <Insets left="40.0" />
          </padding>
       </HBox>
+      <Button layoutX="141.0" layoutY="346.0" mnemonicParsing="false" onAction="#GoToHome" style="-fx-background-color: #13123A; -fx-border-color: #f79517;" text="Home" textFill="WHITE" />
    </children>
 </AnchorPane>

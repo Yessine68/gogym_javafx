@@ -17,23 +17,30 @@ import javafx.stage.Stage;
  * @author don7a
  */
 public class NewFXMain extends Application {
-
+   
+  
     @Override
     public void start(Stage primaryStage) {
 
         try {
+                    //    FXMLLoader loader = new FXMLLoader(getClass().getResource("../gui/Ibrahimhome.fxml"));
+
             FXMLLoader loader = new FXMLLoader(getClass().getResource("../gui/Login.fxml"));
 //            FXMLLoader loader = new FXMLLoader(getClass().getResource("../gui/ForgotPassword.fxml"));
             Parent root = loader.load();
             Scene scene = new Scene(root);
             primaryStage.setTitle("GO GYM");
+       
             primaryStage.setScene(scene);
             primaryStage.show();
         } catch (IOException ex) {
             System.err.println(ex.getMessage());
 
         }
-    }
+        
+  
+   
+}
 
     /**
      * @param args the command line arguments
