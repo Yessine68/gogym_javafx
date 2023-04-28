@@ -151,7 +151,7 @@ SalleService ss = new SalleService();
         
         //////////////////////////////////////////////////////////////////////////////////////////////////////
         mapView.initialize();
-        mapView.setCenter(new Coordinate(34.747847,10.766163));
+        mapView.setCenter(new Coordinate(34.73879126332555,10.757074356079102));
         mapView.setMapType(MapType.OSM);
         mapView.addEventHandler(MapViewEvent.MAP_CLICKED, event -> {
            
@@ -274,7 +274,7 @@ SalleService ss = new SalleService();
             
             
             
-            Salle s = new Salle(nom_s, email_s, tel_s, adresse_s, ville_s, image_s, perimetre_s, 1,type,longitude_s,latitude_s);
+            Salle s = new Salle(nom_s, email_s, tel_s, adresse_s, ville_s, image_s, perimetre_s, 0,type,longitude_s,latitude_s);
             ss.ajouter(s,abonnementsChecked);
             
             

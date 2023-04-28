@@ -44,7 +44,7 @@ public class SalleService implements IService<Salle> {
         cnx = MyDB.getInstance().getCnx();
     }
     public void ajouter(Salle s,List<String> abonnementsChecked) throws SQLException {
-        String req = "INSERT INTO Salle (nom_s, email_s, tel_s, adresse_s, ville_s, image_s, perimetre_s, like_s,type_s) VALUES ('"+s.getNom_s()+"','"+s.getEmail_s()+"',"+s.getTel_s()+",'"+s.getAdresse_s()+"','"+s.getVille_s()+"','"+s.getImage_s()+"',"+s.getPerimetre_s()+","+s.getLike_s()+",'"+s.getType()+"')";
+        String req = "INSERT INTO Salle (nom_s, email_s, tel_s, adresse_s, ville_s, image_s, perimetre_s, like_s,type_s,longitude_s,latitude_s) VALUES ('"+s.getNom_s()+"','"+s.getEmail_s()+"',"+s.getTel_s()+",'"+s.getAdresse_s()+"','"+s.getVille_s()+"','"+s.getImage_s()+"',"+s.getPerimetre_s()+","+s.getLike_s()+",'"+s.getType()+"',"+s.getLongitude_s()+","+s.getLatitude_s()+")";
         Statement st = cnx.createStatement();
         st.executeUpdate(req, Statement.RETURN_GENERATED_KEYS);
         ResultSet rs = st.getGeneratedKeys();

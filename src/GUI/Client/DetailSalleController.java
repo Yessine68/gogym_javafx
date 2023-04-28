@@ -81,6 +81,7 @@ public class DetailSalleController implements Initializable {
         try {
             stream2 = new FileInputStream("./src/Images/Salles/"+salleClicked.getImage_s());
             Image image2 = new Image(stream2);
+            
             ((ImageView)anchorPane.getChildren().get(0)).setImage(image2);
             ((Text)anchorPane.getChildren().get(10)).setText(salleClicked.getNom_s());
                ((Text)anchorPane.getChildren().get(11)).setText(salleClicked.getEmail_s());
@@ -147,7 +148,7 @@ public class DetailSalleController implements Initializable {
 
             }
             else {
-                mapView.setCenter(new Coordinate(34.747847,10.766163));
+                mapView.setCenter(new Coordinate(34.73879126332555,10.757074356079102));
 
                 
             }

@@ -205,7 +205,7 @@ SalleService ss = new SalleService();
                 }  
             } 
             else {
-                mapView.setCenter(new Coordinate(34.747847,10.766163));
+                mapView.setCenter(new Coordinate(34.73879126332555,10.757074356079102));
             }  
                 mapView.addEventHandler(MapViewEvent.MAP_CLICKED, event -> {
 
