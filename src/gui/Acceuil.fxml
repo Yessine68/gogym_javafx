@@ -36,5 +36,6 @@
          </font>
       </Label>
       <Button layoutX="181.0" layoutY="200.0" mnemonicParsing="false" onAction="#GoToProduit" prefHeight="31.0" prefWidth="110.0" style="-fx-border-color: #f79517; -fx-background-color: #13123A;" text="Produit" textFill="WHITE" />
+      <Button layoutX="181.0" layoutY="256.0" mnemonicParsing="false" onAction="#goToHana" prefHeight="31.0" prefWidth="110.0" style="-fx-border-color: #f79517; -fx-background-color: #13123A;" text="Abonnemnt/Salle" textFill="WHITE" />
    </children>
 </AnchorPane>

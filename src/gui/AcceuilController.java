@@ -27,6 +27,7 @@ import javafx.stage.Stage;
  */
 public class AcceuilController implements Initializable {
 
+
     /**
      * Initializes the controller class.
      */
@@ -51,6 +52,24 @@ public class AcceuilController implements Initializable {
         Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         app_stage.setScene(scene);
         app_stage.show();
+    }
+
+    @FXML
+    private void goToHana(ActionEvent event) throws IOException {
+         // Load the first FXML file
+Parent root1 = FXMLLoader.load(getClass().getResource("/gui/Client/GoGymClient.fxml"));
+Scene scene1 = new Scene(root1);
+Stage stage1 = new Stage();
+stage1.setScene(scene1);
+stage1.show();
+
+// Load the second FXML file
+Parent root2 = FXMLLoader.load(getClass().getResource("/gui/Admin/GoGym.fxml"));
+Scene scene2 = new Scene(root2);
+Stage stage2 = new Stage();
+stage2.setScene(scene2);
+stage2.show();
+        
     }
     
     

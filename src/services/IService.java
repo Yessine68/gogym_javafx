@@ -10,16 +10,16 @@ import java.util.List;
 
 /**
  *
- * @author Skand
+ * @author HanaM
  */
 public interface IService<T> {
-
+    
     void ajouter(T t) throws SQLException;
-
+    
     void modifier(T t) throws SQLException;
-
+    
     void supprimer(T t) throws SQLException;
-
+    
     List<T> recuperer() throws SQLException;
-
+    
 }
