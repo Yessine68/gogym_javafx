@@ -295,7 +295,7 @@ public class SalleService implements IService<Salle> {
                 com.itextpdf.text.Document doc;
                 doc = new Document();
                 doc.setPageSize(PageSize.A4.rotate());
-                com.itextpdf.text.pdf.PdfWriter.getInstance(doc, new FileOutputStream("../../../Liste_des_Salles.pdf"));
+                com.itextpdf.text.pdf.PdfWriter.getInstance(doc, new FileOutputStream("../Liste_des_Salles.pdf"));
                 
                 doc.open();
                 

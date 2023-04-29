@@ -283,7 +283,7 @@ public class AbonnementService implements IService<Abonnement>{
             try {
                 com.itextpdf.text.Document doc;
                 doc = new Document();
-                com.itextpdf.text.pdf.PdfWriter.getInstance(doc, new FileOutputStream("../../../Liste_des_Abonnements.pdf"));
+                com.itextpdf.text.pdf.PdfWriter.getInstance(doc, new FileOutputStream("../Liste_des_Abonnements.pdf"));
                 
                 doc.open();
                 
