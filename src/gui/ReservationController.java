@@ -26,6 +26,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.geometry.Pos;
 import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.DateCell;
@@ -35,6 +36,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.KeyEvent;
+import javafx.stage.Stage;
 import javafx.util.Duration;
 import org.controlsfx.control.Notifications;
 import services.ServiceRes;
@@ -270,10 +272,12 @@ refreshTable();
     @FXML
     private void rtr(ActionEvent event) throws IOException{
         
-          FXMLLoader loader = new FXMLLoader(getClass().getResource("/gui/InterfaceCoursReservation.fxml"));
-                Parent root = loader.load();
-                InterfaceCoursReservationController aa = loader.getController();
-                type.getScene().setRoot(root);
+  FXMLLoader loader = new FXMLLoader(getClass().getResource("Dashboard.fxml"));
+Parent root = loader.load();
+Scene scene = new Scene(root);
+Stage stage = new Stage();
+stage.setScene(scene);
+stage.show();
         
     }
 

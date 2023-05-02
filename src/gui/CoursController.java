@@ -150,10 +150,11 @@ public class CoursController implements Initializable {
     @FXML
     private void rtr(ActionEvent event)  throws IOException{
         
-          FXMLLoader loader = new FXMLLoader(getClass().getResource("/gui/InterfaceCoursReservation.fxml"));
-                Parent root = loader.load();
-                InterfaceCoursReservationController aa = loader.getController();
-                nom.getScene().setRoot(root);
+          Parent root = FXMLLoader.load(getClass().getResource("/gui/reservation.fxml"));
+        Scene scene = new Scene(root);
+        Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        app_stage.setScene(scene);
+        app_stage.show();
         
     }
 

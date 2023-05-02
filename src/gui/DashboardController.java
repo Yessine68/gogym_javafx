@@ -38,6 +38,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.util.ArrayList;
 import javafx.scene.control.TextField;
+
 /**
  * FXML Controller class
  *
@@ -160,12 +161,13 @@ public class DashboardController implements Initializable {
                             User user = getTableView().getItems().get(getIndex());
                             System.out.println(user);
                             System.out.println(user.getStatus());
-                                //System.out.println(user);
+                            //System.out.println(user);
                             // Set the blocked flag on the user object
-                               if (user.getStatus().equals("enabled"))
-                                       user.setStatus("disabled");
-                               else 
-                                     user.setStatus("enabled");
+                            if (user.getStatus().equals("enabled")) {
+                                user.setStatus("disabled");
+                            } else {
+                                user.setStatus("enabled");
+                            }
 
                             // Update the database or perform any other action to prevent the user from logging in
                             try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/login", "root", "")) {
@@ -194,7 +196,8 @@ public class DashboardController implements Initializable {
                         super.updateItem(item, empty);
                         if (empty) {
                             setGraphic(null);
-                        } else {                            blockButton.setText(user.getStatus());
+                        } else {
+                            blockButton.setText(user.getStatus());
 
 //                            if (user.getStatus().equals("disabled")) {
 //                                
@@ -226,9 +229,7 @@ public class DashboardController implements Initializable {
         }
     }
 
-
-    
-   @FXML
+    @FXML
     public void Logout(ActionEvent event) throws IOException {
         // Load the login screen
         FXMLLoader loader = new FXMLLoader(getClass().getResource("Login.fxml"));
@@ -242,28 +243,83 @@ public class DashboardController implements Initializable {
         stage.setScene(scene);
         stage.show();
     }
-    
+
     @FXML
     private void filterTable(javafx.scene.input.KeyEvent event) {
         refreshTable();
         String filter = filterInput.getText();
-    if (filter == null || filter.length() == 0) {
-        // if the filter is empty, show all blogs
-        tbUsers.setItems(FXCollections.observableArrayList(usersList));
-        
-    } else {
-        // otherwise, filter the list of blogs by name
-        List<User> filteredList = new ArrayList<>();
-        
-        for (User user : usersList) {
-            if (user.getNom().toLowerCase().contains(filter.toLowerCase()) || user.getEmail().toLowerCase().contains(filter.toLowerCase())) {
-                
-                filteredList.add(user);
+        if (filter == null || filter.length() == 0) {
+            // if the filter is empty, show all blogs
+            tbUsers.setItems(FXCollections.observableArrayList(usersList));
+
+        } else {
+            // otherwise, filter the list of blogs by name
+            List<User> filteredList = new ArrayList<>();
+
+            for (User user : usersList) {
+                if (user.getNom().toLowerCase().contains(filter.toLowerCase()) || user.getEmail().toLowerCase().contains(filter.toLowerCase())) {
+
+                    filteredList.add(user);
+                }
             }
+            tbUsers.setItems(FXCollections.observableArrayList(filteredList));
         }
-        tbUsers.setItems(FXCollections.observableArrayList(filteredList));
     }
+
+    @FXML
+    private void Event(ActionEvent event) throws IOException {
+        Parent root1 = FXMLLoader.load(getClass().getResource("Gestionevenement.fxml"));
+        Scene scene1 = new Scene(root1);
+        Stage stage1 = new Stage();
+        stage1.setScene(scene1);
+        stage1.show();
+
     }
-    
+
+    @FXML
+    private void Categorie(ActionEvent event) throws IOException {
+        Parent root1 = FXMLLoader.load(getClass().getResource("Gestioncatevent.fxml"));
+        Scene scene1 = new Scene(root1);
+        Stage stage1 = new Stage();
+        stage1.setScene(scene1);
+        stage1.show();
+    }
+
+    @FXML
+    private void Abonnement(ActionEvent event) throws IOException {
+        Parent root1 = FXMLLoader.load(getClass().getResource("/gui/Admin/Abonnement.fxml"));
+        Scene scene1 = new Scene(root1);
+        Stage stage1 = new Stage();
+        stage1.setScene(scene1);
+        stage1.show();
+    }
+
+    @FXML
+    private void Salle(ActionEvent event) throws IOException {
+        Parent root1 = FXMLLoader.load(getClass().getResource("/gui/Admin/Salle.fxml"));
+        Scene scene1 = new Scene(root1);
+        Stage stage1 = new Stage();
+        stage1.setScene(scene1);
+        stage1.show();
+    }
+
+    @FXML
+    private void Cours(ActionEvent event) throws IOException {
+        Parent root1 = FXMLLoader.load(getClass().getResource("/gui/cours.fxml"));
+        Scene scene1 = new Scene(root1);
+        Stage stage1 = new Stage();
+        stage1.setScene(scene1);
+        stage1.show();
+    }
+
+    @FXML
+    private void Reservation(ActionEvent event) throws IOException {
+
+        Parent root1 = FXMLLoader.load(getClass().getResource("/gui/reservation.fxml"));
+        Scene scene1 = new Scene(root1);
+        Stage stage1 = new Stage();
+        stage1.setScene(scene1);
+        stage1.show();
+    }
 
 }
