@@ -2,6 +2,19 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/C:/Users/don7a/Documents/GitHub/gogym_javafx/src/gui/affCours.fxml</file>
+            <file>file:/C:/Users/don7a/Documents/GitHub/gogym_javafx/src/gui/InterfaceCoursReservation.fxml</file>
+            <file>file:/C:/Users/don7a/Documents/GitHub/gogym_javafx/src/gui/InterfaceCoursReservationController.java</file>
+            <file>file:/C:/Users/don7a/Documents/GitHub/gogym_javafx/src/utils/MyDB.java</file>
+            <file>file:/C:/Users/don7a/Documents/GitHub/gogym_javafx/src/gui/StatisticsController.java</file>
+            <file>file:/C:/Users/don7a/Documents/GitHub/gogym_javafx/src/gui/ReservationController.java</file>
+            <file>file:/C:/Users/don7a/Documents/GitHub/gogym_javafx/src/gui/reservation.fxml</file>
+            <file>file:/C:/Users/don7a/Documents/GitHub/gogym_javafx/src/services/ServiceRes.java</file>
+            <file>file:/C:/Users/don7a/Documents/GitHub/gogym_javafx/src/gui/CoursController.java</file>
+            <file>file:/C:/Users/don7a/Documents/GitHub/gogym_javafx/src/services/ServiceCr.java</file>
+            <file>file:/C:/Users/don7a/Documents/GitHub/gogym_javafx/src/gui/AcceuilController.java</file>
+            <file>file:/C:/Users/don7a/Documents/GitHub/gogym_javafx/src/gui/cours.fxml</file>
+        </group>
     </open-files>
 </project-private>

@@ -71,6 +71,16 @@ stage2.setScene(scene2);
 stage2.show();
         
     }
+
+    @FXML
+    private void goToInes(ActionEvent event) throws IOException {
+         Parent root = FXMLLoader.load(getClass().getResource("InterfaceCoursReservation.fxml"));
+        Scene scene = new Scene(root);
+        Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        app_stage.setScene(scene);
+        app_stage.show();
+        
+    }
     
     
 }
