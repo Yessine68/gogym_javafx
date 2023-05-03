@@ -79,7 +79,8 @@ public class ProdDetailController implements Initializable {
             Quantitefxid.setText(String.valueOf(produit.getNbr_prods()));
             Image image = new Image(getClass().getResourceAsStream("../images/"+produit.getImage()));
             imagefxid.setImage(image);
-            int id_user = 2;
+            User currentUser = GlobalData.getCurrentUser();
+            int id_user = currentUser.getId();
             produit_service service = new produit_service();
             int checkrate = service.hasUserRatedProduct(produit.getId(),id_user);
             System.out.println(checkrate);
@@ -109,7 +110,8 @@ public class ProdDetailController implements Initializable {
     @FXML
     private void rate(ActionEvent event) throws SQLException {
         System.out.println("rating donner par user: " +rating.getRating());
-        int id_user = 2;
+        User currentUser = GlobalData.getCurrentUser();
+        int id_user = currentUser.getId();
         produit_service service = new produit_service();
         service.addRating(produit.getId(),id_user,(int) rating.getRating());
         rating.setDisable(true);

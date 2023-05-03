@@ -3,8 +3,18 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/don7a/Documents/GitHub/gogym_javafx/nbproject/build-impl.xml</file>
-            <file>file:/C:/Users/don7a/Documents/GitHub/gogym_javafx/src/gui/AjouterEvenementController.java</file>
+            <file>file:/C:/Users/don7a/Documents/GitHub/gogym_javafx/src/gui/GlobalData.java</file>
+            <file>file:/C:/Users/don7a/Documents/GitHub/gogym_javafx/src/gui/ProdFrontItemController.java</file>
+            <file>file:/C:/Users/don7a/Documents/GitHub/gogym_javafx/src/gui/EventDetailController.java</file>
+            <file>file:/C:/Users/don7a/Documents/GitHub/gogym_javafx/src/gui/ProdDetailController.java</file>
+            <file>file:/C:/Users/don7a/Documents/GitHub/gogym_javafx/src/gui/LoginController.java</file>
+            <file>file:/C:/Users/don7a/Documents/GitHub/gogym_javafx/src/gui/EventDetail.fxml</file>
+            <file>file:/C:/Users/don7a/Documents/GitHub/gogym_javafx/src/services/EvenementService.java</file>
+            <file>file:/C:/Users/don7a/Documents/GitHub/gogym_javafx/src/entities/User.java</file>
+            <file>file:/C:/Users/don7a/Documents/GitHub/gogym_javafx/src/gui/ProfileController.java</file>
+            <file>file:/C:/Users/don7a/Documents/GitHub/gogym_javafx/src/gui/ProdDetail.fxml</file>
+            <file>file:/C:/Users/don7a/Documents/GitHub/gogym_javafx/src/test/NewFXMain.java</file>
+            <file>file:/C:/Users/don7a/Documents/GitHub/gogym_javafx/src/gui/ProdfrontController.java</file>
         </group>
     </open-files>
 </project-private>
