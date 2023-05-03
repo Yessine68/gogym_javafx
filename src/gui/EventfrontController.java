@@ -82,8 +82,8 @@ public class EventfrontController implements Initializable {
     private MediaView mediaView;
     @FXML
     private AnchorPane mainpane;
-    @FXML
-    private Button btnRetour;
+   // @FXML
+    //private Button btnRetour;
     @FXML
     private Button btnChercher;
     @FXML
@@ -112,7 +112,7 @@ public class EventfrontController implements Initializable {
         media = new Media(file.toURI().toString());
         mediaPlayer = new MediaPlayer(media);
         mediaPlayer.play();
-       // mediaPlayer.setMute(true);
+        mediaPlayer.setMute(true);
         mediaView.setMediaPlayer(mediaPlayer);
         
         Collections.addAll(possibleWordSet, words);
@@ -269,7 +269,7 @@ public class EventfrontController implements Initializable {
         window.show(); 
     }
     
-
+/*
     @FXML
    public void retour(ActionEvent event) throws IOException {
         Parent tableViewParent = FXMLLoader.load(getClass().getResource("Ibrahimhome.fxml"));
@@ -278,7 +278,7 @@ public class EventfrontController implements Initializable {
         window.setScene(tabbleViewScene);
         window.show();
     }
-
+*/
     @FXML
     private void pause(MouseEvent event) {
          mediaPlayer.pause();
@@ -305,7 +305,7 @@ public class EventfrontController implements Initializable {
        public void Traduction(){
         if ("Fr".equals(this.Langue))
         {
-                btnRetour.setText("Retour");
+                //btnRetour.setText("Retour");
                 btnChercher.setText("Rechercher");
                 btnTrier.setText("Trier");
                 Title.setText("Liste des Evenements:");
@@ -315,7 +315,7 @@ public class EventfrontController implements Initializable {
             
         }
         else {
-                btnRetour.setText("Back");
+                //btnRetour.setText("Back");
                 btnChercher.setText("Search");
                 btnTrier.setText("Sort");
                 Title.setText("Events list:");

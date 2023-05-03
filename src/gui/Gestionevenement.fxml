@@ -11,29 +11,20 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" fx:id="mainpane" prefHeight="652.0" prefWidth="1200.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.GestionevenementController">
+<AnchorPane id="AnchorPane" fx:id="mainpane" prefHeight="652.0" prefWidth="1200.0" style="-fx-background-color: #2b255a;" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.GestionevenementController">
     <stylesheets>
         <URL value="@gestionevenement.css" />
     </stylesheets>
    <children>
-      <ImageView fitHeight="703.0" fitWidth="1076.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../images/31491.jpg" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../images/gogymlogo-removebg-preview.png" />
-         </image>
-      </ImageView>
-      <Label fx:id="titlefxid" layoutX="278.0" layoutY="31.0" prefHeight="21.0" prefWidth="393.0" text="Gestion Evenement:" textFill="#0c2d48">
+      <Label fx:id="titlefxid" layoutX="157.0" layoutY="36.0" prefHeight="21.0" prefWidth="393.0" text="Gestion Evenement:" textFill="#f79517">
          <font>
             <Font name="System Bold" size="30.0" />
          </font>
       </Label>
-      <ScrollPane fx:id="scrollPane" layoutX="14.0" layoutY="152.0" prefHeight="457.0" prefWidth="1020.0">
+      <ScrollPane fx:id="scrollPane" layoutX="157.0" layoutY="151.0" prefHeight="447.0" prefWidth="1020.0">
          <content>
             <GridPane fx:id="grid" prefHeight="10.0" prefWidth="21.0">
                <columnConstraints>
@@ -42,25 +33,31 @@
             </GridPane>
          </content>
       </ScrollPane>
-            <Button fx:id="btnajout" layoutX="200.0" layoutY="637.0" mnemonicParsing="false" onAction="#btnaddhome" prefHeight="31.0" prefWidth="137.0" text="Ajouter" />
-            <Button fx:id="btnretour" layoutX="32.0" layoutY="637.0" mnemonicParsing="false" onAction="#retour" prefHeight="31.0" prefWidth="137.0" text="Retour" />
-      <Button fx:id="btnrecherche" layoutX="177.0" layoutY="89.0" mnemonicParsing="false" onAction="#btnrecherce" prefHeight="31.0" prefWidth="137.0" text="Rchercher" />
-      <TextField fx:id="tfrecherche" layoutX="337.0" layoutY="89.0" prefHeight="31.0" prefWidth="300.0" />
-      <ComboBox fx:id="cbdesasc" layoutX="671.0" layoutY="89.0" prefHeight="31.0" prefWidth="137.0" promptText="DES/ASC" />
-      <Button fx:id="btntrier" layoutX="862.0" layoutY="89.0" mnemonicParsing="false" onAction="#btntrier" prefHeight="31.0" prefWidth="137.0" text="Trier" />
-      <ImageView fitHeight="45.0" fitWidth="56.0" layoutX="954.0" layoutY="630.0" onMouseClicked="#PDFevenement" pickOnBounds="true" preserveRatio="true">
+            <Button fx:id="btnajout" layoutX="157.0" layoutY="605.0" mnemonicParsing="false" onAction="#btnaddhome" prefHeight="31.0" prefWidth="137.0" text="Ajouter" />
+      <Button fx:id="btnrecherche" layoutX="491.0" layoutY="104.0" mnemonicParsing="false" onAction="#btnrecherce" prefHeight="31.0" prefWidth="137.0" text="Rchercher" />
+      <TextField fx:id="tfrecherche" layoutX="639.0" layoutY="104.0" prefHeight="31.0" prefWidth="300.0" />
+      <ComboBox fx:id="cbdesasc" layoutX="1040.0" layoutY="104.0" prefHeight="31.0" prefWidth="137.0" promptText="DES/ASC" />
+      <Button fx:id="btntrier" layoutX="959.0" layoutY="104.0" mnemonicParsing="false" onAction="#btntrier" prefHeight="31.0" prefWidth="75.0" text="Trier" />
+      <ImageView fitHeight="45.0" fitWidth="56.0" layoutX="430.0" layoutY="90.0" onMouseClicked="#PDFevenement" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/80942.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="An" fitHeight="45.0" fitWidth="41.0" layoutX="956.0" layoutY="24.0" onMouseClicked="#langueAng" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="An" fitHeight="45.0" fitWidth="41.0" layoutX="1100.0" layoutY="22.0" onMouseClicked="#langueAng" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/eng-removebg-preview.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="Fr" fitHeight="45.0" fitWidth="41.0" layoutX="993.0" layoutY="22.0" onMouseClicked="#langueFr" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="Fr" fitHeight="45.0" fitWidth="41.0" layoutX="1137.0" layoutY="20.0" onMouseClicked="#langueFr" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/fr-removebg-preview.png" />
+         </image>
+      </ImageView>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f79517" height="703.0" stroke="#f79517" strokeType="INSIDE" style="-fx-background-color: #f79517;" width="143.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="150.0" stroke="WHITE" strokeType="INSIDE" style="-fx-background-color: #f79517;" width="143.0" />
+      <ImageView fitHeight="122.0" fitWidth="115.0" layoutX="14.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="file:/C:/Users/don7a/Desktop/logo%20(1).png" />
          </image>
       </ImageView>
    </children>

@@ -12,17 +12,17 @@
 
 <AnchorPane id="AnchorPane" prefHeight="652.0" prefWidth="1200.0" style="-fx-background-color: #2b255a;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.DashboardController">
    <children>
-      <TableView fx:id="tbUsers" layoutX="199.0" layoutY="150.0" prefHeight="200.0" prefWidth="626.0">
+      <TableView fx:id="tbUsers" layoutX="335.0" layoutY="189.0" prefHeight="270.0" prefWidth="584.0">
         <columns>
           <TableColumn fx:id="Cid" prefWidth="32.00006103515625" text="ID" />
-          <TableColumn fx:id="cUsername" prefWidth="78.4000244140625" text="Username" />
-            <TableColumn fx:id="cName" prefWidth="92.00006103515625" text="Name" />
-            <TableColumn fx:id="cLastName" prefWidth="100.00006103515625" text="Last Name" />
-            <TableColumn fx:id="cEmail" prefWidth="142.39996337890625" text="Email" />
+          <TableColumn fx:id="cUsername" prefWidth="96.800048828125" text="Username" />
+            <TableColumn fx:id="cName" prefWidth="103.19998168945312" text="Name" />
+            <TableColumn fx:id="cLastName" prefWidth="118.4000244140625" text="Last Name" />
+            <TableColumn fx:id="cEmail" prefWidth="222.4000244140625" text="Email" />
         </columns>
       </TableView>
-      <Button layoutX="818.0" layoutY="640.0" mnemonicParsing="false" onAction="#Logout" style="-fx-background-color: #13123A; -fx-border-color: #f79517;" text="Logout" textFill="WHITE" />
-      <TextField fx:id="filterInput" layoutX="675.0" layoutY="388.0" onKeyReleased="#filterTable" />
+      <Button layoutX="1102.0" layoutY="645.0" mnemonicParsing="false" onAction="#Logout" style="-fx-background-color: #13123A; -fx-border-color: #f79517;" text="Logout" textFill="WHITE" />
+      <TextField fx:id="filterInput" layoutX="769.0" layoutY="137.0" onKeyReleased="#filterTable" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f79517" height="700.0" stroke="#f79517" strokeType="INSIDE" style="-fx-background-color: #f79517;" width="143.0" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="150.0" stroke="WHITE" strokeType="INSIDE" style="-fx-background-color: #f79517;" width="143.0" />
       <ImageView fitHeight="122.0" fitWidth="115.0" layoutX="14.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true">
@@ -36,6 +36,8 @@
       <Button layoutX="10.0" layoutY="342.0" mnemonicParsing="false" onAction="#Salle" prefHeight="27.0" prefWidth="123.0" style="-fx-background-color: #13123A;" text="Salle" textFill="WHITE" />
       <Button layoutX="10.0" layoutY="387.0" mnemonicParsing="false" onAction="#Cours" prefHeight="27.0" prefWidth="123.0" style="-fx-background-color: #13123A;" text="Cours" textFill="WHITE" />
       <Button layoutX="10.0" layoutY="431.0" mnemonicParsing="false" onAction="#Reservation" prefHeight="27.0" prefWidth="123.0" style="-fx-background-color: #13123A;" text="Resevation" textFill="WHITE" />
-      <Label layoutX="599.0" layoutY="392.0" text="Recherche :" textFill="#fafafa" />
+      <Label layoutX="693.0" layoutY="141.0" text="Recherche :" textFill="#f79517" />
+      <Button layoutX="10.0" layoutY="518.0" mnemonicParsing="false" onAction="#Gestioncategorie" prefHeight="27.0" prefWidth="123.0" style="-fx-background-color: #13123A;" text="Categorie Produit" textFill="WHITE" />
+      <Button layoutX="10.0" layoutY="475.0" mnemonicParsing="false" onAction="#GestionProd" prefHeight="27.0" prefWidth="123.0" style="-fx-background-color: #13123A;" text="Produit" textFill="WHITE" />
    </children>
 </AnchorPane>

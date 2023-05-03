@@ -70,7 +70,7 @@ public class ProdfrontController implements Initializable {
             }
         } // TODO
     }    
-
+/*
     @FXML
    public void retour(ActionEvent event) throws IOException {
         Parent tableViewParent = FXMLLoader.load(getClass().getResource("Ademhome.fxml"));
@@ -79,7 +79,7 @@ public class ProdfrontController implements Initializable {
         window.setScene(tabbleViewScene);
         window.show();
     }
-
+*/
     @FXML
     private void Search(MouseEvent event) {
            try {

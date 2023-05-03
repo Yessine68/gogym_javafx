@@ -7,34 +7,32 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="652.0" prefWidth="1200.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.ModifierCategorieEvenementController">
+<AnchorPane id="AnchorPane" prefHeight="652.0" prefWidth="1200.0" style="-fx-background-color: #2b255a;" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.ModifierCategorieEvenementController">
     <stylesheets>
         <URL value="@modifiercategorieevenement.css" />
     </stylesheets>
    <children>
-      <ImageView fitHeight="703.0" fitWidth="1221.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../images/31491.jpg" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../images/gogymlogo-removebg-preview.png" />
-         </image>
-      </ImageView>
-      <Label layoutX="373.0" layoutY="77.0" prefHeight="70.0" prefWidth="562.0" text="Modifier Categorie Evenement :" textFill="#0c2d48">
+      <Label layoutX="246.0" layoutY="55.0" prefHeight="70.0" prefWidth="562.0" text="Modifier Categorie Evenement :" textFill="#f79517">
          <font>
             <Font name="System Bold" size="30.0" />
          </font>
       </Label>
-      <Label layoutX="318.0" layoutY="204.0" prefHeight="70.0" prefWidth="245.0" text="Nom_Categorie:">
+      <Label layoutX="388.0" layoutY="251.0" prefHeight="70.0" prefWidth="245.0" text="Nom_Categorie:" textFill="#f79517">
          <font>
             <Font name="System Italic" size="24.0" />
          </font>
       </Label>
-      <TextField fx:id="editNom" layoutX="527.0" layoutY="224.0" prefHeight="31.0" prefWidth="245.0" promptText="Nom_Categorie" />
-      <Button layoutX="578.0" layoutY="355.0" mnemonicParsing="false" onAction="#btnedit" prefHeight="31.0" prefWidth="141.0" text="modifier" />
+      <TextField fx:id="editNom" layoutX="597.0" layoutY="271.0" prefHeight="31.0" prefWidth="245.0" promptText="Nom_Categorie" />
+      <Button layoutX="542.0" layoutY="384.0" mnemonicParsing="false" onAction="#btnedit" prefHeight="31.0" prefWidth="141.0" text="modifier" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f79517" height="703.0" stroke="#f79517" strokeType="INSIDE" style="-fx-background-color: #f79517;" width="143.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="150.0" stroke="WHITE" strokeType="INSIDE" style="-fx-background-color: #f79517;" width="143.0" />
+      <ImageView fitHeight="122.0" fitWidth="115.0" layoutX="14.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="file:/C:/Users/don7a/Desktop/logo%20(1).png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

@@ -28,10 +28,10 @@
                   <Image url="@../Images/Salles/no%20image.jpg" />
                </image>
             </ImageView>
-            <Text fill="#0860b2" layoutX="14.0" layoutY="170.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nom " />
-            <Text fill="#0860b2" layoutX="14.0" layoutY="200.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email" />
-            <Text fill="#0860b2" layoutX="14.0" layoutY="230.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Téléphone" />
-            <Text fill="#0860b2" layoutX="17.0" layoutY="260.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ville" />
+            <Text fill="#f79517" layoutX="14.0" layoutY="170.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nom " />
+            <Text fill="#f79517" layoutX="14.0" layoutY="200.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email" />
+            <Text fill="#f79517" layoutX="14.0" layoutY="230.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Téléphone" />
+            <Text fill="#f79517" layoutX="17.0" layoutY="260.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ville" />
             <Text layoutX="100.0" layoutY="170.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lac" />
             <Line endX="8.0" endY="87.0" layoutX="84.0" layoutY="191.0" startX="8.0" startY="-32.0" stroke="#b5b5b5" />
             <Text layoutX="100.0" layoutY="200.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lac@gogym.com" />
@@ -49,10 +49,10 @@
                   <Image url="@../Images/Salles/no%20image.jpg" />
                </image>
             </ImageView>
-            <Text fill="#0860b2" layoutX="14.0" layoutY="170.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nom " />
-            <Text fill="#0860b2" layoutX="14.0" layoutY="200.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email" />
-            <Text fill="#0860b2" layoutX="14.0" layoutY="230.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Téléphone" />
-            <Text fill="#0860b2" layoutX="17.0" layoutY="260.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ville" />
+            <Text fill="#f79517" layoutX="14.0" layoutY="170.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nom " />
+            <Text fill="#f79517" layoutX="14.0" layoutY="200.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email" />
+            <Text fill="#f79517" layoutX="14.0" layoutY="230.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Téléphone" />
+            <Text fill="#f79517" layoutX="17.0" layoutY="260.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ville" />
             <Text layoutX="100.0" layoutY="170.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lac" />
             <Line endX="8.0" endY="87.0" layoutX="84.0" layoutY="191.0" startX="8.0" startY="-32.0" stroke="#b5b5b5" />
             <Text layoutX="100.0" layoutY="200.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lac@gogym.com" />
@@ -70,10 +70,10 @@
                   <Image url="@../Images/Salles/no%20image.jpg" />
                </image>
             </ImageView>
-            <Text fill="#0860b2" layoutX="14.0" layoutY="170.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nom " />
-            <Text fill="#0860b2" layoutX="14.0" layoutY="200.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email" />
-            <Text fill="#0860b2" layoutX="14.0" layoutY="230.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Téléphone" />
-            <Text fill="#0860b2" layoutX="17.0" layoutY="260.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ville" />
+            <Text fill="#f79517" layoutX="14.0" layoutY="170.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nom " />
+            <Text fill="#f79517" layoutX="14.0" layoutY="200.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email" />
+            <Text fill="#f79517" layoutX="14.0" layoutY="230.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Téléphone" />
+            <Text fill="#f79517" layoutX="17.0" layoutY="260.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ville" />
             <Text layoutX="100.0" layoutY="170.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lac" />
             <Line endX="8.0" endY="87.0" layoutX="84.0" layoutY="191.0" startX="8.0" startY="-32.0" stroke="#b5b5b5" />
             <Text layoutX="100.0" layoutY="200.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lac@gogym.com" />
@@ -91,10 +91,10 @@
                   <Image url="@../Images/Salles/no%20image.jpg" />
                </image>
             </ImageView>
-            <Text fill="#0860b2" layoutX="14.0" layoutY="170.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nom " />
-            <Text fill="#0860b2" layoutX="14.0" layoutY="200.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email" />
-            <Text fill="#0860b2" layoutX="14.0" layoutY="230.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Téléphone" />
-            <Text fill="#0860b2" layoutX="17.0" layoutY="260.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ville" />
+            <Text fill="#f79517" layoutX="14.0" layoutY="170.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nom " />
+            <Text fill="#f79517" layoutX="14.0" layoutY="200.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email" />
+            <Text fill="#f79517" layoutX="14.0" layoutY="230.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Téléphone" />
+            <Text fill="#f79517" layoutX="17.0" layoutY="260.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ville" />
             <Text layoutX="100.0" layoutY="170.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lac" />
             <Line endX="8.0" endY="87.0" layoutX="84.0" layoutY="191.0" startX="8.0" startY="-32.0" stroke="#b5b5b5" />
             <Text layoutX="100.0" layoutY="200.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lac@gogym.com" />
@@ -112,10 +112,10 @@
                   <Image url="@../Images/Salles/no%20image.jpg" />
                </image>
             </ImageView>
-            <Text fill="#0860b2" layoutX="14.0" layoutY="170.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nom " />
-            <Text fill="#0860b2" layoutX="14.0" layoutY="200.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email" />
-            <Text fill="#0860b2" layoutX="14.0" layoutY="230.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Téléphone" />
-            <Text fill="#0860b2" layoutX="17.0" layoutY="260.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ville" />
+            <Text fill="#f79517" layoutX="14.0" layoutY="170.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nom " />
+            <Text fill="#f79517" layoutX="14.0" layoutY="200.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email" />
+            <Text fill="#f79517" layoutX="14.0" layoutY="230.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Téléphone" />
+            <Text fill="#f79517" layoutX="17.0" layoutY="260.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ville" />
             <Text layoutX="100.0" layoutY="170.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lac" />
             <Line endX="8.0" endY="87.0" layoutX="84.0" layoutY="191.0" startX="8.0" startY="-32.0" stroke="#b5b5b5" />
             <Text layoutX="100.0" layoutY="200.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lac@gogym.com" />
@@ -133,10 +133,10 @@
                   <Image url="@../Images/Salles/no%20image.jpg" />
                </image>
             </ImageView>
-            <Text fill="#0860b2" layoutX="14.0" layoutY="170.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nom " />
-            <Text fill="#0860b2" layoutX="14.0" layoutY="200.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email" />
-            <Text fill="#0860b2" layoutX="14.0" layoutY="230.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Téléphone" />
-            <Text fill="#0860b2" layoutX="17.0" layoutY="260.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ville" />
+            <Text fill="#f79517" layoutX="14.0" layoutY="170.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nom " />
+            <Text fill="#f79517" layoutX="14.0" layoutY="200.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email" />
+            <Text fill="#f79517" layoutX="14.0" layoutY="230.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Téléphone" />
+            <Text fill="#f79517" layoutX="17.0" layoutY="260.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ville" />
             <Text layoutX="100.0" layoutY="170.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lac" />
             <Line endX="8.0" endY="87.0" layoutX="84.0" layoutY="191.0" startX="8.0" startY="-32.0" stroke="#b5b5b5" />
             <Text layoutX="100.0" layoutY="200.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lac@gogym.com" />
@@ -154,10 +154,10 @@
                   <Image url="@../Images/Salles/no%20image.jpg" />
                </image>
             </ImageView>
-            <Text fill="#0860b2" layoutX="14.0" layoutY="170.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nom " />
-            <Text fill="#0860b2" layoutX="14.0" layoutY="200.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email" />
-            <Text fill="#0860b2" layoutX="14.0" layoutY="230.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Téléphone" />
-            <Text fill="#0860b2" layoutX="17.0" layoutY="260.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ville" />
+            <Text fill="#f79517" layoutX="14.0" layoutY="170.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nom " />
+            <Text fill="#f79517" layoutX="14.0" layoutY="200.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email" />
+            <Text fill="#f79517" layoutX="14.0" layoutY="230.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Téléphone" />
+            <Text fill="#f79517" layoutX="17.0" layoutY="260.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ville" />
             <Text layoutX="100.0" layoutY="170.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lac" />
             <Line endX="8.0" endY="87.0" layoutX="84.0" layoutY="191.0" startX="8.0" startY="-32.0" stroke="#b5b5b5" />
             <Text layoutX="100.0" layoutY="200.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lac@gogym.com" />
@@ -175,10 +175,10 @@
                   <Image url="@../Images/Salles/no%20image.jpg" />
                </image>
             </ImageView>
-            <Text fill="#0860b2" layoutX="14.0" layoutY="170.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nom " />
-            <Text fill="#0860b2" layoutX="14.0" layoutY="200.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email" />
-            <Text fill="#0860b2" layoutX="14.0" layoutY="230.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Téléphone" />
-            <Text fill="#0860b2" layoutX="17.0" layoutY="260.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ville" />
+            <Text fill="#f79517" layoutX="14.0" layoutY="170.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nom " />
+            <Text fill="#f79517" layoutX="14.0" layoutY="200.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email" />
+            <Text fill="#f79517" layoutX="14.0" layoutY="230.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Téléphone" />
+            <Text fill="#f79517" layoutX="17.0" layoutY="260.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ville" />
             <Text layoutX="100.0" layoutY="170.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lac" />
             <Line endX="8.0" endY="87.0" layoutX="84.0" layoutY="191.0" startX="8.0" startY="-32.0" stroke="#b5b5b5" />
             <Text layoutX="100.0" layoutY="200.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lac@gogym.com" />
@@ -196,10 +196,10 @@
                   <Image url="@../Images/Salles/no%20image.jpg" />
                </image>
             </ImageView>
-            <Text fill="#0860b2" layoutX="14.0" layoutY="170.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nom " />
-            <Text fill="#0860b2" layoutX="14.0" layoutY="200.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email" />
-            <Text fill="#0860b2" layoutX="14.0" layoutY="230.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Téléphone" />
-            <Text fill="#0860b2" layoutX="17.0" layoutY="260.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ville" />
+            <Text fill="#f79517" layoutX="14.0" layoutY="170.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nom " />
+            <Text fill="#f79517" layoutX="14.0" layoutY="200.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email" />
+            <Text fill="#f79517" layoutX="14.0" layoutY="230.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Téléphone" />
+            <Text fill="#f79517" layoutX="17.0" layoutY="260.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ville" />
             <Text layoutX="100.0" layoutY="170.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lac" />
             <Line endX="8.0" endY="87.0" layoutX="84.0" layoutY="191.0" startX="8.0" startY="-32.0" stroke="#b5b5b5" />
             <Text layoutX="100.0" layoutY="200.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lac@gogym.com" />
@@ -218,10 +218,10 @@
                   <Image url="@../Images/Salles/no%20image.jpg" />
                </image>
             </ImageView>
-            <Text fill="#0860b2" layoutX="14.0" layoutY="170.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nom " />
-            <Text fill="#0860b2" layoutX="14.0" layoutY="200.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email" />
-            <Text fill="#0860b2" layoutX="14.0" layoutY="230.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Téléphone" />
-            <Text fill="#0860b2" layoutX="17.0" layoutY="260.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ville" />
+            <Text fill="#f79517" layoutX="14.0" layoutY="170.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nom " />
+            <Text fill="#f79517" layoutX="14.0" layoutY="200.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email" />
+            <Text fill="#f79517" layoutX="14.0" layoutY="230.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Téléphone" />
+            <Text fill="#f79517" layoutX="17.0" layoutY="260.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ville" />
             <Text layoutX="100.0" layoutY="170.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lac" />
             <Line endX="8.0" endY="87.0" layoutX="84.0" layoutY="191.0" startX="8.0" startY="-32.0" stroke="#b5b5b5" />
             <Text layoutX="100.0" layoutY="200.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lac@gogym.com" />

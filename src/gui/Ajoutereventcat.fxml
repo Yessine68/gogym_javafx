@@ -7,34 +7,32 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="652.0" prefWidth="1200.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.AjoutereventcatController">
+<AnchorPane id="AnchorPane" prefHeight="652.0" prefWidth="1200.0" style="-fx-background-color: #2b255a;" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.AjoutereventcatController">
     <stylesheets>
         <URL value="@ajoutereventcat.css" />
     </stylesheets>
    <children>
-      <ImageView fitHeight="702.0" fitWidth="1081.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../images/31491.jpg" />
-         </image>
-      </ImageView>
-      <Label layoutX="485.0" layoutY="87.0" prefHeight="70.0" prefWidth="442.0" text="Ajouter Categorie Evenement :" textFill="#0c2d48">
+      <Label layoutX="403.0" layoutY="91.0" prefHeight="70.0" prefWidth="442.0" text="Ajouter Categorie Evenement :" textFill="#f79517">
          <font>
             <Font name="System Bold" size="30.0" />
          </font>
       </Label>
-      <Label layoutX="317.0" layoutY="219.0" prefHeight="70.0" prefWidth="245.0" text="Nom_Categorie:">
+      <Label layoutX="371.0" layoutY="219.0" prefHeight="70.0" prefWidth="177.0" text="Nom_Categorie:" textFill="#f79517">
          <font>
             <Font name="System Italic" size="24.0" />
          </font>
       </Label>
-      <TextField fx:id="tfNomCat" layoutX="527.0" layoutY="239.0" prefHeight="34.0" prefWidth="294.0" promptText="Nom_Categorie" />
-      <Button fx:id="btnAjouter" layoutX="539.0" layoutY="389.0" mnemonicParsing="false" onAction="#ajouter" prefHeight="34.0" prefWidth="166.0" text="Ajouter" />
-      <Button fx:id="btnRetour" layoutX="789.0" layoutY="391.0" mnemonicParsing="false" onAction="#retour" prefHeight="31.0" prefWidth="166.0" text="Retour" />
-      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+      <TextField fx:id="tfNomCat" layoutX="570.0" layoutY="237.0" prefHeight="34.0" prefWidth="294.0" promptText="Nom_Categorie" />
+      <Button fx:id="btnAjouter" layoutX="541.0" layoutY="342.0" mnemonicParsing="false" onAction="#ajouter" prefHeight="34.0" prefWidth="166.0" text="Ajouter" />
+      <Button fx:id="btnRetour" layoutX="985.0" layoutY="633.0" mnemonicParsing="false" onAction="#retour" prefHeight="31.0" prefWidth="166.0" text="Retour" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f79517" height="703.0" stroke="#f79517" strokeType="INSIDE" style="-fx-background-color: #f79517;" width="143.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="150.0" stroke="WHITE" strokeType="INSIDE" style="-fx-background-color: #f79517;" width="143.0" />
+      <ImageView fitHeight="122.0" fitWidth="115.0" layoutX="14.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../images/gogymlogo-removebg-preview.png" />
+            <Image url="file:/C:/Users/don7a/Desktop/logo%20(1).png" />
          </image>
       </ImageView>
    </children>

@@ -9,40 +9,36 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="652.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.ReservationController">
+<AnchorPane id="AnchorPane" prefHeight="652.0" prefWidth="1200.0" style="-fx-background-color: #2b255a;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.ReservationController">
    <children>
-      <ImageView fitHeight="875.0" fitWidth="1510.0" layoutX="-352.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../img/sport.jpg" />
-         </image>
-      </ImageView>
-      <TextField fx:id="idr" layoutX="218.0" layoutY="132.0" />
-      <TextField fx:id="idcour" layoutX="219.0" layoutY="221.0" />
-      <Label layoutX="79.0" layoutY="130.0" text="Id" textFill="#e8e4e0">
+      <TextField fx:id="idr" layoutX="285.0" layoutY="190.0" />
+      <TextField fx:id="idcour" layoutX="285.0" layoutY="233.0" />
+      <Label layoutX="196.0" layoutY="188.0" text="Id" textFill="#f79517">
          <font>
-            <Font size="24.0" />
+            <Font size="16.0" />
          </font>
       </Label>
-      <Label layoutX="26.0" layoutY="219.0" text="Id du cours" textFill="#fffcf8">
+      <Label layoutX="196.0" layoutY="231.0" text="Id du cours" textFill="#f79517">
          <font>
-            <Font size="24.0" />
+            <Font size="16.0" />
          </font>
       </Label>
-      <Label layoutX="42.0" layoutY="417.0" text="Type" textFill="#fffcf8">
+      <Label layoutX="197.0" layoutY="316.0" text="Type" textFill="#f79517">
          <font>
-            <Font size="24.0" />
+            <Font size="16.0" />
          </font>
       </Label>
-      <TextField fx:id="type" layoutX="216.0" layoutY="419.0" />
-      <TextField fx:id="date" layoutX="214.0" layoutY="317.0" />
-      <Label layoutX="54.0" layoutY="315.0" text="Date" textFill="#f2f1ef">
+      <TextField fx:id="type" layoutX="285.0" layoutY="312.0" />
+      <TextField fx:id="date" layoutX="285.0" layoutY="273.0" />
+      <Label layoutX="197.0" layoutY="271.0" text="Date" textFill="#f79517">
          <font>
-            <Font size="24.0" />
+            <Font size="16.0" />
          </font>
       </Label>
-      <Button fx:id="su" layoutX="316.0" layoutY="528.0" mnemonicParsing="false" onAction="#supp" prefHeight="49.0" prefWidth="119.0" text="Supprimer">
+      <Button fx:id="su" layoutX="1055.0" layoutY="570.0" mnemonicParsing="false" onAction="#supp" prefHeight="49.0" prefWidth="119.0" text="Supprimer">
          <graphic>
             <ImageView fitHeight="150.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -51,7 +47,7 @@
             </ImageView>
          </graphic>
       </Button>
-      <Button fx:id="aj" layoutX="41.0" layoutY="525.0" mnemonicParsing="false" onAction="#ajt" prefHeight="49.0" prefWidth="126.0" text="Ajouter">
+      <Button fx:id="aj" layoutX="464.0" layoutY="570.0" mnemonicParsing="false" onAction="#ajt" prefHeight="49.0" prefWidth="126.0" text="Ajouter">
          <graphic>
             <ImageView fitHeight="150.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -60,7 +56,7 @@
             </ImageView>
          </graphic>
       </Button>
-      <Button fx:id="mod" layoutX="181.0" layoutY="527.0" mnemonicParsing="false" onAction="#modifier" prefHeight="49.0" prefWidth="126.0" text="Modifier">
+      <Button fx:id="mod" layoutX="913.0" layoutY="570.0" mnemonicParsing="false" onAction="#modifier" prefHeight="49.0" prefWidth="126.0" text="Modifier">
          <graphic>
             <ImageView fitHeight="150.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -69,7 +65,7 @@
             </ImageView>
          </graphic>
       </Button>
-      <TableView fx:id="affiche" layoutX="425.0" layoutY="72.0" prefHeight="424.0" prefWidth="709.0">
+      <TableView fx:id="affiche" layoutX="464.0" layoutY="136.0" prefHeight="424.0" prefWidth="709.0">
         <columns>
           <TableColumn fx:id="id" prefWidth="90.0" text="Id" />
           <TableColumn fx:id="idc" prefWidth="103.0" text="id du cours" />
@@ -77,7 +73,7 @@
             <TableColumn fx:id="tp" prefWidth="248.0" text="Type de reservation" />
         </columns>
       </TableView>
-      <Button layoutX="-5.0" layoutY="-1.0" mnemonicParsing="false" onAction="#rtr" text="&lt;&lt;" textFill="#bf1d1d">
+      <Button layoutX="153.0" layoutY="14.0" mnemonicParsing="false" onAction="#rtr" text="&lt;&lt;" textFill="#bf1d1d">
          <font>
             <Font size="14.0" />
          </font>
@@ -89,15 +85,22 @@
             </ImageView>
          </graphic>
       </Button>
-      <DatePicker fx:id="reservationDatePicker" layoutX="834.0" layoutY="592.0" prefHeight="41.0" prefWidth="209.0" />
-      <Label layoutX="834.0" layoutY="542.0" text="Calendrier" textFill="#f20000">
+      <DatePicker fx:id="reservationDatePicker" layoutX="203.0" layoutY="448.0" prefHeight="41.0" prefWidth="209.0" />
+      <Label layoutX="203.0" layoutY="398.0" text="Calendrier" textFill="#f79517">
          <font>
             <Font name="System Bold Italic" size="29.0" />
          </font>
       </Label>
-      <Button fx:id="statbutt" layoutX="539.0" layoutY="588.0" mnemonicParsing="false" onAction="#stat" prefHeight="49.0" prefWidth="216.0" text="Staistiques" />
-      <Button layoutX="680.0" layoutY="23.0" mnemonicParsing="false" onAction="#search" text="rechercher" />
-      <TextField fx:id="rec" layoutX="435.0" layoutY="23.0" onKeyTyped="#rec" />
-      <Button fx:id="btnTrier" layoutX="241.0" layoutY="23.0" mnemonicParsing="false" onAction="#affichrtTri" prefHeight="31.0" prefWidth="150.0" text="Trier" />
+      <Button fx:id="statbutt" layoutX="464.0" layoutY="75.0" mnemonicParsing="false" onAction="#stat" prefHeight="49.0" prefWidth="216.0" text="Staistiques" />
+      <Button layoutX="940.0" layoutY="93.0" mnemonicParsing="false" onAction="#search" text="rechercher" />
+      <TextField fx:id="rec" layoutX="790.0" layoutY="93.0" onKeyTyped="#rec" />
+      <Button fx:id="btnTrier" layoutX="1023.0" layoutY="90.0" mnemonicParsing="false" onAction="#affichrtTri" prefHeight="31.0" prefWidth="150.0" text="Trier" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f79517" height="703.0" layoutY="5.0" stroke="#f79517" strokeType="INSIDE" style="-fx-background-color: #f79517;" width="143.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="150.0" layoutY="1.0" stroke="WHITE" strokeType="INSIDE" style="-fx-background-color: #f79517;" width="143.0" />
+      <ImageView fitHeight="122.0" fitWidth="115.0" layoutX="14.0" layoutY="29.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="file:/C:/Users/don7a/Desktop/logo%20(1).png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

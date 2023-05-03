@@ -73,8 +73,8 @@ public class GestionevenementController implements Initializable {
     private ScrollPane scrollPane;
     @FXML
     private Button btnajout;
-    @FXML
-    private Button btnretour;
+    //@FXML
+   // private Button btnretour;
     @FXML
     private Button btnrecherche;
     @FXML
@@ -259,7 +259,7 @@ public class GestionevenementController implements Initializable {
         app_stage.show();
     }
    
-    
+    /*
     @FXML
      public void retour(ActionEvent event) throws IOException {
         Parent tableViewParent = FXMLLoader.load(getClass().getResource("Ibrahimhome.fxml"));
@@ -268,6 +268,7 @@ public class GestionevenementController implements Initializable {
         window.setScene(tabbleViewScene);
         window.show();
     }
+*/
 
     @FXML
     private void langueAng(MouseEvent event) {
@@ -285,7 +286,7 @@ public class GestionevenementController implements Initializable {
         if ("Fr".equals(this.Langue))
         {
                 btnajout.setText("Ajouter");
-                btnretour.setText("Retour");
+               // btnretour.setText("Retour");
                 btnrecherche.setText("Rechercher");
                 btntrier.setText("Trier");
                 titlefxid.setText("Gestion Evenement:");
@@ -296,7 +297,7 @@ public class GestionevenementController implements Initializable {
         }
         else {
                 btnajout.setText("Add");
-                btnretour.setText("Back");
+              //  btnretour.setText("Back");
                 btnrecherche.setText("Search");
                 btntrier.setText("Sort");
                 titlefxid.setText("Event Manegement:");

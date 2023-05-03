@@ -37,8 +37,8 @@
       <TextField fx:id="longitude" editable="false" layoutX="499.0" layoutY="539.0" />
       <TextField fx:id="latitude" editable="false" layoutX="759.0" layoutY="539.0" />
       <MapView fx:id="mapView" layoutX="483.0" layoutY="86.0" prefHeight="422.0" prefWidth="490.0" />
-      <Text fill="WHITE" layoutX="499.0" layoutY="535.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Longitude" />
-      <Text fill="WHITE" layoutX="759.0" layoutY="535.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Latitude" />
+      <Text fill="#f79517" layoutX="499.0" layoutY="535.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Longitude" />
+      <Text fill="#f79517" layoutX="759.0" layoutY="535.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Latitude" />
       <ImageView fx:id="coeur1" fitHeight="59.0" fitWidth="105.0" layoutX="409.0" layoutY="146.0" onMouseClicked="#coeur1Clicked" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../Images/Icons/coeurs%20(1).png" />

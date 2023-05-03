@@ -10,27 +10,18 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="652.0" prefWidth="1200.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.ProdfrontController">
+<AnchorPane id="AnchorPane" prefHeight="652.0" prefWidth="1200.0" style="-fx-background-color: #2b255a;" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.ProdfrontController">
   
    <children>
-      <ImageView fitHeight="762.0" fitWidth="1139.0" layoutY="-15.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../images/hh.jpg" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../images/gogymlogo-removebg-preview.png" />
-         </image>
-      </ImageView>
-      <Label fx:id="title" layoutX="466.0" layoutY="29.0" prefHeight="21.0" prefWidth="393.0" text="Liste des Produits:" textFill="#0c2d48">
+      <Label fx:id="title" layoutX="179.0" layoutY="63.0" prefHeight="21.0" prefWidth="393.0" text="Liste des Produits:" textFill="#f79517">
          <font>
             <Font name="System Bold" size="30.0" />
          </font>
       </Label>
-      <ScrollPane layoutX="26.0" layoutY="159.0" prefHeight="457.0" prefWidth="791.0">
+      <ScrollPane layoutX="216.0" layoutY="189.0" prefHeight="450.0" prefWidth="954.0">
          <content>
             <GridPane fx:id="grid" prefHeight="10.0" prefWidth="21.0">
                <columnConstraints>
@@ -39,11 +30,17 @@
             </GridPane>
          </content>
       </ScrollPane>
-      <Button layoutX="846.0" layoutY="636.0" mnemonicParsing="false" onAction="#retour" prefHeight="31.0" prefWidth="168.0" text="Retour" />
-      <TextField fx:id="Search" layoutX="837.0" layoutY="165.0" promptText="Search" />
-      <Button layoutX="1040.0" layoutY="165.0" mnemonicParsing="false" onMouseClicked="#Search" text="Search" />
-      <ComboBox fx:id="tri" layoutX="844.0" layoutY="224.0" prefHeight="31.0" prefWidth="174.0" />
-      <Button layoutX="1055.0" layoutY="231.0" mnemonicParsing="false" onMouseClicked="#Trier" text="Trier" />
-      <Button layoutX="846.0" layoutY="294.0" mnemonicParsing="false" onMouseClicked="#mppr" prefHeight="45.0" prefWidth="257.0" text="Meilleurs produits" />
+      <TextField fx:id="Search" layoutX="714.0" layoutY="139.0" promptText="Search" />
+      <Button layoutX="866.0" layoutY="139.0" mnemonicParsing="false" onMouseClicked="#Search" text="Search" />
+      <ComboBox fx:id="tri" layoutX="1018.0" layoutY="136.0" prefHeight="31.0" prefWidth="150.0" />
+      <Button layoutX="969.0" layoutY="139.0" mnemonicParsing="false" onMouseClicked="#Trier" text="Trier" />
+      <Button layoutX="430.0" layoutY="129.0" mnemonicParsing="false" onMouseClicked="#mppr" prefHeight="45.0" prefWidth="257.0" text="Meilleurs produits" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f79517" height="703.0" layoutY="3.0" stroke="#f79517" strokeType="INSIDE" style="-fx-background-color: #f79517;" width="143.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="150.0" layoutY="2.0" stroke="WHITE" strokeType="INSIDE" style="-fx-background-color: #f79517;" width="143.0" />
+      <ImageView fitHeight="122.0" fitWidth="115.0" layoutX="14.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="file:/C:/Users/don7a/Desktop/logo%20(1).png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

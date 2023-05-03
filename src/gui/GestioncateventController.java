@@ -25,6 +25,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
@@ -52,8 +53,8 @@ public class GestioncateventController implements Initializable {
     private TextField tfrecherche;
     @FXML
     private Button btnajout;
-    @FXML
-    private Button btnretour;
+  //  @FXML
+  //  private Button btnretour;
     @FXML
     private Button btnrecherche;
     @FXML
@@ -65,6 +66,8 @@ public class GestioncateventController implements Initializable {
      String[] words = {"categorie", "categorie2", "categorie3", "categorie4"};
     Set<String> possibleWordSet = new HashSet<>();
     AutoCompletionBinding<String> autoCompletionBinding;
+    @FXML
+    private Label titlefxid;
 
     /**
      * Initializes the controller class.
@@ -179,7 +182,7 @@ public class GestioncateventController implements Initializable {
         window.setScene(tabbleViewScene);
         window.show();
     }
-
+/*
     @FXML
    public void retour(ActionEvent event) throws IOException {
         Parent tableViewParent = FXMLLoader.load(getClass().getResource("Ibrahimhome.fxml"));
@@ -188,6 +191,7 @@ public class GestioncateventController implements Initializable {
         window.setScene(tabbleViewScene);
         window.show();
     }
+*/
 
     @FXML
     private void langueAng(MouseEvent event) {
@@ -205,9 +209,10 @@ public class GestioncateventController implements Initializable {
         if ("Fr".equals(this.Langue))
         {
                 btnajout.setText("Ajouter");
-                btnretour.setText("Retour");
+                //btnretour.setText("Retour");
                 btnrecherche.setText("Rechercher");
-                
+                titlefxid.setText("Gestion Categorie Evenement :");
+
                
 
                  
@@ -215,9 +220,10 @@ public class GestioncateventController implements Initializable {
         }
         else {
                 btnajout.setText("Add");
-                btnretour.setText("Back");
+            //    btnretour.setText("Back");
                 btnrecherche.setText("Search");
-                
+               titlefxid.setText("Event cat Manegement:");
+
                 
         }
     }

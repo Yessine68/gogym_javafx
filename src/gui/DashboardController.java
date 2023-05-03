@@ -322,4 +322,26 @@ public class DashboardController implements Initializable {
         stage1.show();
     }
 
+     @FXML
+    private void GestionProd(ActionEvent event) throws IOException {
+
+        Parent root1 = FXMLLoader.load(getClass().getResource("GestionProduit.fxml"));
+        Scene scene1 = new Scene(root1);
+        Stage stage1 = new Stage();
+        stage1.setScene(scene1);
+        stage1.show();
+    } 
+  
+  
+  
+     @FXML
+  private void Gestioncategorie(ActionEvent event) throws IOException {
+
+        Parent root1 = FXMLLoader.load(getClass().getResource("GestionCatProd.fxml"));
+        Scene scene1 = new Scene(root1);
+        Stage stage1 = new Stage();
+        stage1.setScene(scene1);
+        stage1.show();
+    } 
+
 }

@@ -5,6 +5,8 @@
  */
 package gui;
 
+import com.sun.speech.freetts.Voice;
+import com.sun.speech.freetts.VoiceManager;
 import entities.User;
 import java.io.IOException;
 import java.net.URL;
@@ -41,13 +43,27 @@ public class LoginController implements Initializable {
     @FXML
     private Button LoginButton;
     private User connectedUser;
+     private static final String VOICENAME = "kevin16";
 
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        //TODO
+       
+       Voice voice;
+        VoiceManager vm = VoiceManager.getInstance();
+        voice = vm.getVoice(VOICENAME);                    //TODO
+                voice.allocate();
+                  try {
+             voice.speak("Welcome Back to Gogym");
+          
+
+            System.out.println("welcome");
+        } catch (Exception e) {
+
+        }
+
     }
 
     public void setUser(User user) {

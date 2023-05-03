@@ -70,14 +70,6 @@ public class GestionProduitController implements Initializable {
     }
    
     
-    @FXML
-     public void retour(ActionEvent event) throws IOException {
-        Parent tableViewParent = FXMLLoader.load(getClass().getResource("Ademhome.fxml"));
-        Scene tabbleViewScene = new Scene(tableViewParent);
-        Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        window.setScene(tabbleViewScene);
-        window.show();
-    }
 
     @FXML
     private void Stat(ActionEvent event)throws IOException {

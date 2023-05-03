@@ -312,7 +312,7 @@ public class EventDetailController implements Initializable {
 
         //circleu.setFill(new ImagePattern(i));
         // paneNoir.setVisible(false);
-        webcamPane.setVisible(false);
+      //  webcamPane.setVisible(false);
         //tf_image.setText(f.toURI().toString());
     }
     
