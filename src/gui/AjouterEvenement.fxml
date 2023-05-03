@@ -11,7 +11,7 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="652.0" prefWidth="1200.0" style="-fx-background-color: #2b255a;" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.AjouterEvenementController">
+<AnchorPane id="AnchorPane" prefHeight="652.0" prefWidth="1200.0" style="-fx-background-color: #2b255a;" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.AjouterEvenementController">
     <stylesheets>
         <URL value="@ajouterevenement.css" />
     </stylesheets>
@@ -28,15 +28,18 @@
       <Label layoutX="520.0" layoutY="320.0" text="nbr_participants:" textFill="#f79517" />
       <Label layoutX="519.0" layoutY="371.0" text="image:" textFill="#f79517" />
       <Label layoutX="519.0" layoutY="414.0" text="categorie_evenement_id:" textFill="#f79517" />
-      <TextField fx:id="tfNom" layoutX="677.0" layoutY="157.0" promptText="nom" />
-      <TextField fx:id="tfDescription" layoutX="677.0" layoutY="195.0" promptText="description" />
-      <TextField fx:id="tfDate" layoutX="677.0" layoutY="240.0" promptText="date" />
-      <TextField fx:id="tfLieu" layoutX="677.0" layoutY="279.0" promptText="lieu" />
-      <TextField fx:id="tfNbrParticipants" layoutX="677.0" layoutY="316.0" promptText="nbrparticipants" />
-      <ComboBox fx:id="cbcategorie" layoutX="677.0" layoutY="410.0" prefWidth="150.0" promptText="categories" />
-      <Button layoutX="677.0" layoutY="364.0" mnemonicParsing="false" onAction="#uploadimage" prefHeight="31.0" prefWidth="150.0" text="upload" />
-      <Button fx:id="btnAjouter" layoutX="608.0" layoutY="517.0" mnemonicParsing="false" onAction="#ajouterEvenement" prefHeight="31.0" prefWidth="164.0" text="Ajouter" />
-      <Button layoutX="993.0" layoutY="626.0" mnemonicParsing="false" onAction="#retour" prefHeight="31.0" prefWidth="164.0" text="Retour" />
+      <TextField fx:id="tfNom" layoutX="697.0" layoutY="157.0" promptText="nom" />
+      <TextField fx:id="tfDescription" layoutX="697.0" layoutY="195.0" promptText="description" />
+      <TextField fx:id="tfDate" layoutX="697.0" layoutY="240.0" promptText="date" />
+      <TextField fx:id="tfLieu" layoutX="697.0" layoutY="279.0" promptText="lieu" />
+      <TextField fx:id="tfNbrParticipants" layoutX="697.0" layoutY="316.0" promptText="nbrparticipants" />
+      <ComboBox fx:id="cbcategorie" layoutX="697.0" layoutY="410.0" prefWidth="150.0" promptText="categories" />
+      <Button layoutX="697.0" layoutY="364.0" mnemonicParsing="false" onAction="#uploadimage" prefHeight="31.0" prefWidth="150.0" text="upload" />
+      <Button fx:id="btnAjouter" layoutX="608.0" layoutY="517.0" mnemonicParsing="false" onAction="#ajouterEvenement" prefHeight="31.0" prefWidth="164.0" style="-fx-background-color: #f79517;" text="Ajouter" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font></Button>
+      <Button layoutX="993.0" layoutY="626.0" mnemonicParsing="false" onAction="#retour" prefHeight="31.0" prefWidth="164.0" style="-fx-background-color: #f79517;" text="Retour" textFill="WHITE" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f79517" height="703.0" layoutY="3.0" stroke="#f79517" strokeType="INSIDE" style="-fx-background-color: #f79517;" width="143.0" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="150.0" stroke="WHITE" strokeType="INSIDE" style="-fx-background-color: #f79517;" width="143.0" />
       <ImageView fitHeight="122.0" fitWidth="115.0" layoutX="14.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true">

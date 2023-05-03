@@ -13,7 +13,7 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="652.0" prefWidth="1200.0" style="-fx-background-color: #2b255a;" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.GestioncateventController">
+<AnchorPane id="AnchorPane" prefHeight="652.0" prefWidth="1200.0" style="-fx-background-color: #2b255a;" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.GestioncateventController">
     <stylesheets>
         <URL value="@gestioncatevent.css" />
     </stylesheets>
@@ -32,7 +32,10 @@
             </GridPane>
          </content>
       </ScrollPane>
-      <Button fx:id="btnajout" layoutX="207.0" layoutY="647.0" mnemonicParsing="false" onAction="#btnaddhome" prefHeight="31.0" prefWidth="98.0" text="Ajouter" />
+      <Button fx:id="btnajout" layoutX="207.0" layoutY="647.0" mnemonicParsing="false" onAction="#btnaddhome" prefHeight="31.0" prefWidth="98.0" style="-fx-background-color: #f79517;" text="Ajouter" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font></Button>
       <Button fx:id="btnrecherche" layoutX="501.0" layoutY="129.0" mnemonicParsing="false" onAction="#btnrecherce" prefHeight="31.0" prefWidth="98.0" text="Rechercher" />
       <TextField fx:id="tfrecherche" layoutX="609.0" layoutY="129.0" prefHeight="31.0" prefWidth="303.0" />
       <ImageView fx:id="An" fitHeight="45.0" fitWidth="41.0" layoutX="1088.0" layoutY="27.0" onMouseClicked="#langueAng" pickOnBounds="true" preserveRatio="true">

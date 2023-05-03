@@ -12,16 +12,16 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="703.2" prefWidth="1200.0" style="-fx-background-color: #2b255a;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.Admin.SalleController">
+<AnchorPane id="AnchorPane" prefHeight="703.2" prefWidth="1200.0" style="-fx-background-color: #2b255a;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.Admin.SalleController">
    <children>
-      <Button fx:id="btnAjout" graphicTextGap="5.0" layoutX="162.0" layoutY="631.0" mnemonicParsing="false" onAction="#CreateSalle" prefHeight="57.0" prefWidth="120.0" style="-fx-background-color: #18b146;" text="Ajouter" textAlignment="CENTER" textFill="WHITE">
+      <Button fx:id="btnAjout" graphicTextGap="5.0" layoutX="162.0" layoutY="631.0" mnemonicParsing="false" onAction="#CreateSalle" prefHeight="57.0" prefWidth="120.0" style="-fx-background-color: #f79517;" text="Ajouter" textAlignment="CENTER" textFill="WHITE">
          <font>
-            <Font size="18.0" />
+            <Font name="System Bold" size="18.0" />
          </font>
       </Button>
       <Label fx:id="SalleL" layoutX="584.0" layoutY="25.0" text="Les Salles" textFill="#f79517">
          <font>
-            <Font size="30.0" />
+            <Font name="System Bold" size="30.0" />
          </font>
       </Label>
       <TableView fx:id="SalleTv" layoutX="160.0" layoutY="162.0" prefHeight="453.0" prefWidth="1025.0">
@@ -39,22 +39,22 @@
             <TableColumn fx:id="LatitudeC" prefWidth="110.0" text="Latitude" />
         </columns>
       </TableView>
-      <Button fx:id="btnSupp" layoutX="1066.0" layoutY="631.0" mnemonicParsing="false" onAction="#DeleteSalle" prefHeight="57.0" prefWidth="120.0" style="-fx-background-color: red;" text="Supprimer" textAlignment="CENTER" textFill="WHITE">
+      <Button fx:id="btnSupp" layoutX="1066.0" layoutY="631.0" mnemonicParsing="false" onAction="#DeleteSalle" prefHeight="57.0" prefWidth="120.0" style="-fx-background-color: #f79517;" text="Supprimer" textAlignment="CENTER" textFill="WHITE">
         <font>
-            <Font size="18.0" />
+            <Font name="System Bold" size="18.0" />
         </font>
       </Button>
-      <Button fx:id="btnModif" graphicTextGap="5.0" layoutX="925.0" layoutY="631.0" mnemonicParsing="false" onAction="#UpdateSalle" prefHeight="57.0" prefWidth="120.0" style="-fx-background-color: orange;" text="Modifier" textAlignment="CENTER" textFill="WHITE">
+      <Button fx:id="btnModif" graphicTextGap="5.0" layoutX="925.0" layoutY="631.0" mnemonicParsing="false" onAction="#UpdateSalle" prefHeight="57.0" prefWidth="120.0" style="-fx-background-color: #f79517;" text="Modifier" textAlignment="CENTER" textFill="WHITE">
          <font>
-            <Font size="18.0" />
+            <Font name="System Bold" size="18.0" />
          </font>
       </Button>
-      <TextField fx:id="entrySearch" layoutX="966.0" layoutY="114.0" />
-      <ComboBox fx:id="searchCombo" layoutX="853.0" layoutY="114.0" prefHeight="26.0" prefWidth="114.0" />
-      <Button layoutX="1126.0" layoutY="114.0" mnemonicParsing="false" onAction="#search" text="Search" />
-    <Button layoutX="748.0" layoutY="640.0" mnemonicParsing="false" onAction="#toPDF" style="-fx-background-color: orange;" text="Exporter To PDF" textAlignment="CENTER" textFill="#fcf9f5">
+      <TextField fx:id="entrySearch" layoutX="928.0" layoutY="114.0" />
+      <ComboBox fx:id="searchCombo" layoutX="816.0" layoutY="114.0" prefHeight="26.0" prefWidth="114.0" />
+      <Button layoutX="1118.0" layoutY="114.0" mnemonicParsing="false" onAction="#search" text="Search" />
+    <Button layoutX="162.0" layoutY="108.0" mnemonicParsing="false" onAction="#toPDF" text="Exporter To PDF" textAlignment="CENTER">
          <font>
-            <Font size="18.0" />
+            <Font name="System Bold" size="18.0" />
          </font>
     </Button>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f79517" height="703.0" layoutY="1.0" stroke="#f79517" strokeType="INSIDE" style="-fx-background-color: #f79517;" width="143.0" />

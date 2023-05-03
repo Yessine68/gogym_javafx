@@ -14,11 +14,11 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="703.2" prefWidth="1200.0" style="-fx-background-color: #2b255a" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.Client.AbonnementClientController">
+<AnchorPane prefHeight="703.2" prefWidth="1200.0" style="-fx-background-color: #2b255a" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.Client.AbonnementClientController">
    <children>
       <Text fill="#f79517" layoutX="564.0" layoutY="72.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Les Abonnements">
          <font>
-            <Font size="32.0" />
+            <Font name="System Bold" size="30.0" />
          </font>
       </Text>
       <Pagination fx:id="pagination" layoutX="590.0" layoutY="603.0" prefHeight="66.0" prefWidth="200.0" />
@@ -222,11 +222,11 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Pane>
-      <TextField fx:id="entrySearch" layoutX="280.0" layoutY="158.0" prefHeight="31.0" prefWidth="150.0" />
-      <ComboBox fx:id="searchCombo" layoutX="167.0" layoutY="158.0" prefHeight="31.0" prefWidth="114.0" />
-      <Button layoutX="444.0" layoutY="161.0" mnemonicParsing="false" onAction="#search" text="Search" />
+      <TextField fx:id="entrySearch" layoutX="293.0" layoutY="158.0" prefHeight="31.0" prefWidth="150.0" />
+      <ComboBox fx:id="searchCombo" layoutX="180.0" layoutY="158.0" prefHeight="31.0" prefWidth="114.0" />
+      <Button layoutX="450.0" layoutY="158.0" mnemonicParsing="false" onAction="#search" text="Search" />
       <ComboBox fx:id="trieCombo" layoutX="975.0" layoutY="155.0" onAction="#trierPar" prefHeight="31.0" prefWidth="133.0" />
-      <Text fill="WHITE" layoutX="920.0" layoutY="176.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Trier Par" />
+      <Text fill="WHITE" layoutX="909.0" layoutY="176.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Trier Par" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f79517" height="703.0" stroke="#f79517" strokeType="INSIDE" style="-fx-background-color: #f79517;" width="143.0" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="150.0" stroke="WHITE" strokeType="INSIDE" style="-fx-background-color: #f79517;" width="143.0" />
       <ImageView fitHeight="122.0" fitWidth="115.0" layoutX="14.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true">

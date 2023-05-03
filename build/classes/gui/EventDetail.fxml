@@ -11,7 +11,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="652.0" prefWidth="1200.0" style="-fx-background-color: #2b255a;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.EventDetailController">
+<AnchorPane prefHeight="652.0" prefWidth="1200.0" style="-fx-background-color: #2b255a;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.EventDetailController">
    <children>
       <HBox layoutX="207.0" layoutY="77.0" prefHeight="49.0" prefWidth="265.0">
          <children>
@@ -80,8 +80,11 @@
          <children>
             <ImageView fx:id="qrView" fitHeight="103.0" fitWidth="110.0" pickOnBounds="true" preserveRatio="true" />
          </children></HBox>
-      <Button layoutX="201.0" layoutY="29.0" mnemonicParsing="false" onAction="#retour" prefHeight="31.0" prefWidth="139.0" text="Retour" />
-      <Button fx:id="btnparticiper" layoutX="979.0" layoutY="648.0" mnemonicParsing="false" onAction="#participer" prefHeight="31.0" prefWidth="196.0" text="Participer" />
+      <Button layoutX="201.0" layoutY="29.0" mnemonicParsing="false" onAction="#retour" prefHeight="31.0" prefWidth="139.0" style="-fx-background-color: #f79517;" text="Retour" textFill="WHITE" />
+      <Button fx:id="btnparticiper" layoutX="979.0" layoutY="648.0" mnemonicParsing="false" onAction="#participer" prefHeight="31.0" prefWidth="196.0" style="-fx-background-color: #f79517;" text="Participer" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font></Button>
       <Label fx:id="descrip1" layoutX="683.0" layoutY="228.0" text="Description:" textFill="#f79517">
          <font>
             <Font name="System Bold Italic" size="27.0" />
@@ -97,7 +100,7 @@
             <ImageView fx:id="imgPrevWeb" fitHeight="173.0" fitWidth="248.0" pickOnBounds="true" preserveRatio="true" />
          </children>
       </Pane>
-      <Text fill="RED" layoutX="777.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="take a photo for your badge!">
+      <Text fill="WHITE" layoutX="777.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="take a photo for your badge!">
          <font>
             <Font name="System Bold Italic" size="20.0" />
          </font>

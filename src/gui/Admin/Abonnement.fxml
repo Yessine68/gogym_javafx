@@ -15,22 +15,22 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="703.2" prefWidth="1200.0" style="-fx-background-color: #2b255a;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.Admin.AbonnementController">
+<AnchorPane id="AnchorPane" prefHeight="703.2" prefWidth="1200.0" style="-fx-background-color: #2b255a;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.Admin.AbonnementController">
    <children>
-      <TextArea fx:id="DescriptionTa" layoutX="252.0" layoutY="300.0" prefHeight="10.0" prefWidth="200.0" promptText="Description de l'abonnement" />
+      <TextArea fx:id="DescriptionTa" layoutX="252.0" layoutY="300.0" prefHeight="31.0" prefWidth="200.0" promptText="Description de l'abonnement" />
       <TextField fx:id="NomTf" layoutX="252.0" layoutY="173.0" prefHeight="10.0" prefWidth="200.0" promptText="Nom de l'abonnement" />
       <TextField fx:id="TypeTf" layoutX="252.0" layoutY="216.0" prefHeight="10.0" prefWidth="200.0" promptText="Type de l'abonnement" />
       <TextField fx:id="PrixTf" layoutX="252.0" layoutY="256.0" prefHeight="31.0" prefWidth="159.0" promptText="Prix de l'abonnement" />
-      <Label fx:id="NomL" layoutX="160.0" layoutY="178.0" text="Nom" textFill="#f79517" />
-      <Label fx:id="TypeL" layoutX="160.0" layoutY="220.0" text="Type" textFill="#f79517" />
-      <Label fx:id="PrixL" layoutX="160.0" layoutY="262.0" text="Prix" textFill="#f79517" />
-      <Label fx:id="DescriptionL" layoutX="160.0" layoutY="310.0" text="Description" textFill="#f79517" />
-      <Label fx:id="DebutL" layoutX="161.0" layoutY="524.0" text="Date de début" textFill="#f79517" />
-      <Label fx:id="FinL" layoutX="161.0" layoutY="564.0" text="Date de fin" textFill="#f79517" />
+      <Label fx:id="NomL" layoutX="154.0" layoutY="178.0" text="Nom" textFill="#f79517" />
+      <Label fx:id="TypeL" layoutX="154.0" layoutY="220.0" text="Type" textFill="#f79517" />
+      <Label fx:id="PrixL" layoutX="154.0" layoutY="262.0" text="Prix" textFill="#f79517" />
+      <Label fx:id="DescriptionL" layoutX="154.0" layoutY="310.0" text="Description" textFill="#f79517" />
+      <Label fx:id="DebutL" layoutX="151.0" layoutY="524.0" text="Date de début" textFill="#f79517" />
+      <Label fx:id="FinL" layoutX="151.0" layoutY="564.0" text="Date de fin" textFill="#f79517" />
       <Label fx:id="TNDL" layoutX="422.0" layoutY="263.0" text="TND" textFill="WHITE" />
       <Label fx:id="AbonnementL" layoutX="564.0" layoutY="43.0" text="Abonnement" textFill="#f79517">
          <font>
-            <Font size="30.0" />
+            <Font name="System Bold" size="30.0" />
          </font>
       </Label>
       <TableView fx:id="AbonnementTv" layoutX="466.0" layoutY="167.0" prefHeight="422.0" prefWidth="696.0">
@@ -44,21 +44,21 @@
             <TableColumn fx:id="FinC" prefWidth="88.0" text="Fin" />
         </columns>
       </TableView>
-      <Button fx:id="btnSupp" layoutX="1055.0" layoutY="617.0" mnemonicParsing="false" onAction="#DeleteAbonnement" text="Supprimer" textAlignment="CENTER" textFill="#ff8400">
+      <Button fx:id="btnSupp" layoutX="1055.0" layoutY="617.0" mnemonicParsing="false" onAction="#DeleteAbonnement" style="-fx-background-color: #f79517;" text="Supprimer" textAlignment="CENTER" textFill="WHITE">
         <font>
-            <Font size="18.0" />
+            <Font name="System Bold" size="18.0" />
         </font>
       </Button>
-      <Button fx:id="btnModif" graphicTextGap="5.0" layoutX="943.0" layoutY="617.0" mnemonicParsing="false" onAction="#UpdateAbonnement" text="Modifier" textAlignment="CENTER" textFill="#ff8400">
+      <Button fx:id="btnModif" graphicTextGap="5.0" layoutX="943.0" layoutY="617.0" mnemonicParsing="false" onAction="#UpdateAbonnement" style="-fx-background-color: #f79517;" text="Modifier" textAlignment="CENTER" textFill="WHITE">
          <font>
-            <Font size="18.0" />
+            <Font name="System Bold" size="18.0" />
          </font>
       </Button>
-      <Label fx:id="DescriptionL1" layoutX="161.0" layoutY="360.0" text="Salles" textFill="#f79517" />
-      <TextField fx:id="entrySearch" layoutX="948.0" layoutY="128.0" />
-      <ComboBox fx:id="searchCombo" layoutX="835.0" layoutY="128.0" prefHeight="26.0" prefWidth="114.0" />
-      <Button layoutX="1109.0" layoutY="128.0" mnemonicParsing="false" onAction="#search" text="Search" />
-   <Button layoutX="772.0" layoutY="617.0" mnemonicParsing="false" onAction="#toPDF" text="Exporter To PDF" textAlignment="CENTER" textFill="#ff8400">
+      <Label fx:id="DescriptionL1" layoutX="155.0" layoutY="360.0" text="Salles" textFill="#f79517" />
+      <TextField fx:id="entrySearch" layoutX="891.0" layoutY="128.0" />
+      <ComboBox fx:id="searchCombo" layoutX="778.0" layoutY="128.0" prefHeight="26.0" prefWidth="114.0" />
+      <Button layoutX="1094.0" layoutY="128.0" mnemonicParsing="false" onAction="#search" text="Search" />
+   <Button layoutX="466.0" layoutY="120.0" mnemonicParsing="false" onAction="#toPDF" prefHeight="31.0" prefWidth="152.0" text="Exporter To PDF" textAlignment="CENTER">
          <font>
             <Font size="18.0" />
          </font>
@@ -68,9 +68,9 @@
           <AnchorPane fx:id="scrollPane" minHeight="0.0" minWidth="0.0" prefHeight="445.0" prefWidth="200.0" />
         </content>
       </ScrollPane>
-      <Button fx:id="btnAjout" graphicTextGap="5.0" layoutX="310.0" layoutY="617.0" mnemonicParsing="false" onAction="#CreateAbonnement" text="Ajouter" textAlignment="CENTER" textFill="#ff8400">
+      <Button fx:id="btnAjout" graphicTextGap="5.0" layoutX="310.0" layoutY="617.0" mnemonicParsing="false" onAction="#CreateAbonnement" style="-fx-background-color: #f79517;" text="Ajouter" textAlignment="CENTER" textFill="WHITE">
          <font>
-            <Font size="18.0" />
+            <Font name="System Bold" size="18.0" />
          </font>
       </Button>
       <DatePicker fx:id="FinDp" layoutX="252.0" layoutY="557.0" prefHeight="10.0" prefWidth="200.0" />

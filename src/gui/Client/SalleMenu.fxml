@@ -18,7 +18,7 @@
    <children>
       <Text fill="#f79517" layoutX="600.0" layoutY="66.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Les Salles">
          <font>
-            <Font size="32.0" />
+            <Font name="System Bold" size="30.0" />
          </font>
       </Text>
       <Pane fx:id="pane2" layoutX="367.0" layoutY="131.0" onMouseClicked="#paneClicked" prefHeight="286.0" prefWidth="221.0" scaleX="0.8" scaleY="0.8" style="-fx-background-color: #eeeeee; -fx-background-radius: 20;">

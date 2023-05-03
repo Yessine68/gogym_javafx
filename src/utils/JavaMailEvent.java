@@ -317,9 +317,9 @@ public class JavaMailEvent {
 "                                            <td style=\"overflow-wrap:break-word;word-break:break-word;padding:40px 40px 30px;font-family:'Lato',sans-serif;\" align=\"left\">\n" +
 "\n" +
 "                                                <div style=\"line-height: 140%; text-align: left; word-wrap: break-word;\">\n" +
-"                                                    <p style=\"font-size: 14px; line-height: 140%;\"><span style=\"font-size: 18px; line-height: 25.2px; color: #666666;\">Dear {{ name }},</span></p>\n" +
+"                                                    <p style=\"font-size: 14px; line-height: 140%;\"><span style=\"font-size: 18px; line-height: 25.2px; color: #666666;\">Dear Participant,</span></p>\n" +
 "                                                    <p style=\"font-size: 14px; line-height: 140%;\">&nbsp;</p>\n" +
-"                                                    <p style=\"font-size: 14px; line-height: 140%;\"><span style=\"font-size: 18px; line-height: 25.2px; color: #666666;\">We are pleased to inform you that your participation in the {{ nomEvent }} has been confirmed.</span></p>\n" +
+"                                                    <p style=\"font-size: 14px; line-height: 140%;\"><span style=\"font-size: 18px; line-height: 25.2px; color: #666666;\">We are pleased to inform you that your participation has been confirmed.</span></p>\n" +
             
 "                                                    <p style=\"font-size: 14px; line-height: 140%;\">&nbsp;</p>\n" +
 "                                                    <p style=\"font-size: 14px; line-height: 140%;\"><span style=\"font-size: 18px; line-height: 25.2px; color: #666666;\">Your seat is reserved, and you can look forward to an unforgettable experience.</span></p>\n" +

@@ -10,7 +10,7 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="652.0" prefWidth="1200.0" style="-fx-background-color: #2b255a;" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.ModifierProduitController">
+<AnchorPane id="AnchorPane" prefHeight="652.0" prefWidth="1200.0" style="-fx-background-color: #2b255a;" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.ModifierProduitController">
     
    <children>
       <Label layoutX="260.0" layoutY="66.0" prefHeight="21.0" prefWidth="393.0" text="Modifier Produit:" textFill="#f79517">
@@ -48,7 +48,10 @@
       <TextField fx:id="Prix" layoutX="654.0" layoutY="339.0" promptText="Prix" />
       <ComboBox fx:id="categorieCB" layoutX="653.0" layoutY="437.0" prefWidth="150.0" promptText="Categories" />
       <Button layoutX="654.0" layoutY="384.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="150.0" text="upload" />
-      <Button layoutX="553.0" layoutY="530.0" mnemonicParsing="false" onAction="#modifierProduit" prefHeight="31.0" prefWidth="200.0" text="Modifier" />
+      <Button layoutX="553.0" layoutY="530.0" mnemonicParsing="false" onAction="#modifierProduit" prefHeight="31.0" prefWidth="200.0" style="-fx-background-color: #f79517;" text="Modifier" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font></Button>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f79517" height="703.0" stroke="#f79517" strokeType="INSIDE" style="-fx-background-color: #f79517;" width="143.0" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="150.0" stroke="WHITE" strokeType="INSIDE" style="-fx-background-color: #f79517;" width="143.0" />
       <ImageView fitHeight="122.0" fitWidth="115.0" layoutX="14.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true">

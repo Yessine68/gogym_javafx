@@ -11,7 +11,7 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="652.0" prefWidth="1200.0" style="-fx-background-color: #2b255a;" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.GestionProduitController">
+<AnchorPane id="AnchorPane" prefHeight="652.0" prefWidth="1200.0" style="-fx-background-color: #2b255a;" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.GestionProduitController">
    
    <children>
       <Label layoutX="162.0" layoutY="89.0" prefHeight="21.0" prefWidth="393.0" text="Gestion Produit :" textFill="#f79517">
@@ -28,7 +28,10 @@
             </GridPane>
          </content>
       </ScrollPane>
-            <Button layoutX="162.0" layoutY="648.0" mnemonicParsing="false" onAction="#btnaddhome" prefHeight="31.0" prefWidth="159.0" style="-fx-background-color: #f79517;" text="Ajouter" textFill="WHITE" />
+            <Button layoutX="162.0" layoutY="648.0" mnemonicParsing="false" onAction="#btnaddhome" prefHeight="31.0" prefWidth="159.0" style="-fx-background-color: #f79517;" text="Ajouter" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font></Button>
       <Button layoutX="1014.0" layoutY="126.0" mnemonicParsing="false" onAction="#Stat" prefHeight="31.0" prefWidth="168.0" text="Statistique" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f79517" height="703.0" stroke="#f79517" strokeType="INSIDE" style="-fx-background-color: #f79517;" width="143.0" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="150.0" stroke="WHITE" strokeType="INSIDE" style="-fx-background-color: #f79517;" width="143.0" />

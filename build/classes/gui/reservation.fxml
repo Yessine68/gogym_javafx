@@ -12,10 +12,10 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="652.0" prefWidth="1200.0" style="-fx-background-color: #2b255a;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.ReservationController">
+<AnchorPane id="AnchorPane" prefHeight="652.0" prefWidth="1200.0" style="-fx-background-color: #2b255a;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.ReservationController">
    <children>
-      <TextField fx:id="idr" layoutX="285.0" layoutY="190.0" />
-      <TextField fx:id="idcour" layoutX="285.0" layoutY="233.0" />
+      <TextField fx:id="idr" layoutX="285.0" layoutY="190.0" prefHeight="31.0" prefWidth="160.0" />
+      <TextField fx:id="idcour" layoutX="285.0" layoutY="233.0" prefHeight="31.0" prefWidth="160.0" />
       <Label layoutX="196.0" layoutY="188.0" text="Id" textFill="#f79517">
          <font>
             <Font size="16.0" />
@@ -31,14 +31,14 @@
             <Font size="16.0" />
          </font>
       </Label>
-      <TextField fx:id="type" layoutX="285.0" layoutY="312.0" />
-      <TextField fx:id="date" layoutX="285.0" layoutY="273.0" />
+      <TextField fx:id="type" layoutX="285.0" layoutY="312.0" prefHeight="31.0" prefWidth="160.0" />
+      <TextField fx:id="date" layoutX="285.0" layoutY="273.0" prefHeight="31.0" prefWidth="160.0" />
       <Label layoutX="197.0" layoutY="271.0" text="Date" textFill="#f79517">
          <font>
             <Font size="16.0" />
          </font>
       </Label>
-      <Button fx:id="su" layoutX="1055.0" layoutY="570.0" mnemonicParsing="false" onAction="#supp" prefHeight="49.0" prefWidth="119.0" text="Supprimer">
+      <Button fx:id="su" layoutX="1055.0" layoutY="570.0" mnemonicParsing="false" onAction="#supp" prefHeight="49.0" prefWidth="119.0" style="-fx-background-color: #f79517;" text="Supprimer" textFill="WHITE">
          <graphic>
             <ImageView fitHeight="150.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -46,8 +46,11 @@
                </image>
             </ImageView>
          </graphic>
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
       </Button>
-      <Button fx:id="aj" layoutX="464.0" layoutY="570.0" mnemonicParsing="false" onAction="#ajt" prefHeight="49.0" prefWidth="126.0" text="Ajouter">
+      <Button fx:id="aj" layoutX="464.0" layoutY="570.0" mnemonicParsing="false" onAction="#ajt" prefHeight="49.0" prefWidth="126.0" style="-fx-background-color: #f79517;" text="Ajouter" textFill="WHITE">
          <graphic>
             <ImageView fitHeight="150.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -55,8 +58,11 @@
                </image>
             </ImageView>
          </graphic>
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
       </Button>
-      <Button fx:id="mod" layoutX="913.0" layoutY="570.0" mnemonicParsing="false" onAction="#modifier" prefHeight="49.0" prefWidth="126.0" text="Modifier">
+      <Button fx:id="mod" layoutX="913.0" layoutY="570.0" mnemonicParsing="false" onAction="#modifier" prefHeight="49.0" prefWidth="126.0" style="-fx-background-color: #f79517;" text="Modifier" textFill="WHITE">
          <graphic>
             <ImageView fitHeight="150.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -64,6 +70,9 @@
                </image>
             </ImageView>
          </graphic>
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
       </Button>
       <TableView fx:id="affiche" layoutX="464.0" layoutY="136.0" prefHeight="424.0" prefWidth="709.0">
         <columns>
@@ -92,8 +101,8 @@
          </font>
       </Label>
       <Button fx:id="statbutt" layoutX="464.0" layoutY="75.0" mnemonicParsing="false" onAction="#stat" prefHeight="49.0" prefWidth="216.0" text="Staistiques" />
-      <Button layoutX="940.0" layoutY="93.0" mnemonicParsing="false" onAction="#search" text="rechercher" />
-      <TextField fx:id="rec" layoutX="790.0" layoutY="93.0" onKeyTyped="#rec" />
+      <Button layoutX="921.0" layoutY="90.0" mnemonicParsing="false" onAction="#search" text="rechercher" />
+      <TextField fx:id="rec" layoutX="734.0" layoutY="90.0" onKeyTyped="#rec" />
       <Button fx:id="btnTrier" layoutX="1023.0" layoutY="90.0" mnemonicParsing="false" onAction="#affichrtTri" prefHeight="31.0" prefWidth="150.0" text="Trier" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f79517" height="703.0" layoutY="5.0" stroke="#f79517" strokeType="INSIDE" style="-fx-background-color: #f79517;" width="143.0" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="150.0" layoutY="1.0" stroke="WHITE" strokeType="INSIDE" style="-fx-background-color: #f79517;" width="143.0" />

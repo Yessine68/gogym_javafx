@@ -11,7 +11,7 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="652.0" prefWidth="1200.0" style="-fx-background-color: #2b255a;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.CoursController">
+<AnchorPane id="AnchorPane" prefHeight="652.0" prefWidth="1200.0" style="-fx-background-color: #2b255a;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.CoursController">
    <children>
       <Button layoutX="151.0" layoutY="7.0" mnemonicParsing="false" onAction="#rtr" text="&lt;&lt;" textFill="#bf1d1d">
          <font>
@@ -25,8 +25,8 @@
             </ImageView>
          </graphic>
       </Button>
-      <TextField fx:id="id" layoutX="278.0" layoutY="168.0" />
-      <TextField fx:id="nom" layoutX="278.0" layoutY="210.0" />
+      <TextField fx:id="id" layoutX="278.0" layoutY="168.0" prefHeight="31.0" prefWidth="156.0" />
+      <TextField fx:id="nom" layoutX="278.0" layoutY="210.0" prefHeight="31.0" prefWidth="156.0" />
       <Label layoutX="167.0" layoutY="172.0" text="Id" textFill="WHITE">
          <font>
             <Font size="16.0" />
@@ -42,8 +42,8 @@
             <Font size="16.0" />
          </font>
       </Label>
-      <TextField fx:id="it" layoutX="278.0" layoutY="284.0" />
-      <Button fx:id="su" layoutX="1067.0" layoutY="576.0" mnemonicParsing="false" onAction="#supp" text="Supprimer">
+      <TextField fx:id="it" layoutX="278.0" layoutY="284.0" prefHeight="31.0" prefWidth="156.0" />
+      <Button fx:id="su" layoutX="1051.0" layoutY="576.0" mnemonicParsing="false" onAction="#supp" style="-fx-background-color: #f79517;" text="Supprimer" textFill="WHITE">
          <graphic>
             <ImageView fitHeight="150.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -51,8 +51,11 @@
                </image>
             </ImageView>
          </graphic>
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
       </Button>
-      <Button fx:id="aj" layoutX="451.0" layoutY="572.0" mnemonicParsing="false" onAction="#ajt" prefHeight="49.0" prefWidth="126.0" text="Ajouter">
+      <Button fx:id="aj" layoutX="451.0" layoutY="572.0" mnemonicParsing="false" onAction="#ajt" prefHeight="49.0" prefWidth="126.0" style="-fx-background-color: #f79517;" text="Ajouter" textFill="WHITE">
          <graphic>
             <ImageView fitHeight="150.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -60,8 +63,11 @@
                </image>
             </ImageView>
          </graphic>
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
       </Button>
-      <Button fx:id="mod" layoutX="948.0" layoutY="574.0" mnemonicParsing="false" onAction="#modifier" text="Modifier">
+      <Button fx:id="mod" layoutX="916.0" layoutY="574.0" mnemonicParsing="false" onAction="#modifier" style="-fx-background-color: #f79517;" text="Modifier" textFill="WHITE">
          <graphic>
             <ImageView fitHeight="150.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -69,8 +75,11 @@
                </image>
             </ImageView>
          </graphic>
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
       </Button>
-      <TextField fx:id="duree" layoutX="278.0" layoutY="247.0" />
+      <TextField fx:id="duree" layoutX="278.0" layoutY="247.0" prefHeight="31.0" prefWidth="156.0" />
       <Label layoutX="168.0" layoutY="251.0" text="Duree" textFill="#fcf8f2">
          <font>
             <Font size="16.0" />
@@ -81,7 +90,7 @@
             <Font size="16.0" />
          </font>
       </Label>
-      <TextField fx:id="bien" layoutX="278.0" layoutY="324.0" />
+      <TextField fx:id="bien" layoutX="278.0" layoutY="324.0" prefHeight="31.0" prefWidth="156.0" />
             <ImageView fx:id="Image" fitHeight="145.0" fitWidth="252.0" layoutX="176.0" layoutY="445.0" pickOnBounds="true" preserveRatio="true" />
 
       <Label layoutX="168.0" layoutY="366.0" text="Image" textFill="#f8f5f1">
@@ -89,7 +98,7 @@
             <Font size="16.0" />
          </font>
       </Label>
-      <TextField fx:id="img" layoutX="278.0" layoutY="367.0" />
+      <TextField fx:id="img" layoutX="278.0" layoutY="367.0" prefHeight="31.0" prefWidth="156.0" />
       <TableView fx:id="affiche" layoutX="451.0" layoutY="95.0" prefHeight="465.0" prefWidth="726.0">
         <columns>
           <TableColumn fx:id="idcr" prefWidth="75.0" text="Id" />
@@ -101,8 +110,8 @@
         </columns>
       </TableView>
       <Button fx:id="AddImage" layoutX="302.0" layoutY="409.0" mnemonicParsing="false" onAction="#AddImage" prefHeight="25.0" prefWidth="125.0" text="Image" />
-      <Button layoutX="1015.0" layoutY="54.0" mnemonicParsing="false" onAction="#search" text="rechercher" />
-      <TextField fx:id="rec" layoutX="867.0" layoutY="54.0" onKeyTyped="#rec" />
+      <Button layoutX="962.0" layoutY="53.0" mnemonicParsing="false" onAction="#search" text="rechercher" />
+      <TextField fx:id="rec" layoutX="771.0" layoutY="53.0" onKeyTyped="#rec" />
       <Button fx:id="btnTrier" layoutX="1110.0" layoutY="53.0" mnemonicParsing="false" onAction="#affichrtTri" prefHeight="26.0" prefWidth="66.0" text="Trier" />
       <Button layoutX="600.0" layoutY="575.0" mnemonicParsing="false" onAction="#GoToPDF" prefHeight="42.0" prefWidth="61.0" text="PDF" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f79517" height="703.0" layoutY="-2.0" stroke="#f79517" strokeType="INSIDE" style="-fx-background-color: #f79517;" width="143.0" />
