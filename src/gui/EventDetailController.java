@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package gui;
-
+import entities.User;
 import entities.Evenement;
 import services.EvenementService;
 import com.google.zxing.BarcodeFormat;
@@ -56,6 +56,8 @@ import javafx.scene.layout.Pane;
 import javafx.scene.paint.ImagePattern;
 import javafx.scene.text.Text;
 import javax.imageio.ImageIO;
+import test.NewFXMain;
+import static test.NewFXMain.connectedUser;
 
 
 
@@ -87,8 +89,8 @@ public class EventDetailController implements Initializable {
     int randomcode = rand.nextInt(9999);
     String code = String.valueOf(randomcode);
 
-    String usernom = "ibrahim"; 
-    int userid = 1 ;
+  //  String usernom = "ibrahim"; 
+    //int userid = 1 ;
  
     @FXML
     private Button btnparticiper;
@@ -145,11 +147,13 @@ public class EventDetailController implements Initializable {
     private void participer(ActionEvent event) throws Exception {
          EvenementService ths = new EvenementService();
          Evenement e = evenement;
-        JavaMailEvent mail = new JavaMailEvent();
+         JavaMailEvent mail = new JavaMailEvent();
        // System.out.println(e);
+       User currentUser = GlobalData.getCurrentUser();
+
+           System.out.println("AAAAAAAAAAAAAAAAAAA" + currentUser);
         
-        
-        if (ths.check(e.getId(), userid) == true) {
+        if (ths.check(e.getId(), GlobalData.currentUser.getId()) == true) {
              Alert alertType=new Alert(Alert.AlertType.ERROR);
         alertType.setTitle("Error");
         alertType.setHeaderText("vous avez deja participé");
@@ -161,13 +165,13 @@ public class EventDetailController implements Initializable {
         
         
         else {
-            ths.Participer(e, code,userid);
+            ths.Participer(e, code,GlobalData.currentUser);
             ths.decrement(e);
             nbrfxid.setText(String.valueOf(evenement.getNbr_participants()-1));
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Succès");   
             alert.setHeaderText(null);
-            alert.setContentText("Bonjour mr/mme " + usernom + "Merci pour votre participation et voici votre pass pour l'evenement" +"on vous attend chaleurheusement !");
+            alert.setContentText("Bonjour mr/mme " + GlobalData.currentUser.getNom() + " Merci pour votre participation et voici votre pass pour l'evenement" +" on vous attend chaleurheusement !");
             alert.showAndWait();
             
             
@@ -191,7 +195,7 @@ public class EventDetailController implements Initializable {
         public void qr() throws IOException{
       Evenement e = evenement;
         QRCodeWriter qrCodeWriter = new QRCodeWriter();
-        String myWeb = "bonjour" + usernom + "votre code de participation a l'evenement:" +e.getNom_e()+ "est" +code+ "."   ;
+        String myWeb = "bonjour " + GlobalData.currentUser.getNom() + " votre code de participation a l'evenement:" +e.getNom_e()+ " est :" +code+ "."   ;
         int width = 300;
         int height = 300;
         String fileType = "png";

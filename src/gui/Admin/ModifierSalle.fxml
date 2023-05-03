@@ -8,58 +8,63 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" prefHeight="703.2" prefWidth="1200.0" style="-fx-background-color: #bbdefb;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.Admin.ModifierSalleController">
+<AnchorPane id="AnchorPane" prefHeight="703.2" prefWidth="1200.0" style="-fx-background-color: #2b255a;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.Admin.ModifierSalleController">
    <children>
-      <Button fx:id="btnAjout" graphicTextGap="5.0" layoutX="377.0" layoutY="587.0" mnemonicParsing="false" onAction="#UpdateSalle" prefHeight="45.0" prefWidth="119.0" style="-fx-background-color: #3ddd52;" text="Modifier" textAlignment="CENTER" textFill="WHITE">
+      <Button fx:id="btnAjout" graphicTextGap="5.0" layoutX="395.0" layoutY="624.0" mnemonicParsing="false" onAction="#UpdateSalle" prefHeight="45.0" prefWidth="119.0" style="-fx-background-color: #f79517;" text="Modifier" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font size="18.0" />
          </font>
       </Button>
-      <TextField fx:id="NomTf" layoutX="197.0" layoutY="86.0" prefHeight="10.0" prefWidth="200.0" promptText="Nom de la salle" />
-      <TextField fx:id="EmailTf" layoutX="197.0" layoutY="136.0" prefHeight="10.0" prefWidth="200.0" promptText="NomDeLaSalle@gogym.tn" />
-      <TextField fx:id="TelTf" layoutX="238.0" layoutY="186.0" prefHeight="31.0" prefWidth="159.0" promptText="Numéro de téléphone" />
-      <Label fx:id="NomL" layoutX="70.0" layoutY="91.0" text="Nom" />
-      <Label fx:id="EmailL" layoutX="70.0" layoutY="141.0" text="E-mail" />
-      <Label fx:id="TelL" layoutX="70.0" layoutY="191.0" text="Téléphone" />
-      <Label fx:id="AdresseL" layoutX="70.0" layoutY="241.0" text="Adresse" />
-      <Label fx:id="VilleL" layoutX="70.0" layoutY="291.0" text="Ville" />
-      <Label fx:id="ImageL" layoutX="476.0" layoutY="87.0" text="Image" />
-      <Label fx:id="tel216L" layoutX="197.0" layoutY="191.0" text="+216" />
-      <Label fx:id="SalleL" layoutX="346.0" layoutY="13.0" text="Modifier Salle" textFill="#002b4d">
+      <TextField fx:id="NomTf" layoutX="349.0" layoutY="116.0" prefHeight="10.0" prefWidth="200.0" promptText="Nom de la salle" />
+      <TextField fx:id="EmailTf" layoutX="349.0" layoutY="166.0" prefHeight="10.0" prefWidth="200.0" promptText="NomDeLaSalle@gogym.tn" />
+      <TextField fx:id="TelTf" layoutX="390.0" layoutY="216.0" prefHeight="31.0" prefWidth="159.0" promptText="Numéro de téléphone" />
+      <Label fx:id="NomL" layoutX="222.0" layoutY="121.0" text="Nom" textFill="#f79517" />
+      <Label fx:id="EmailL" layoutX="222.0" layoutY="171.0" text="E-mail" textFill="#f79517" />
+      <Label fx:id="TelL" layoutX="222.0" layoutY="221.0" text="Téléphone" textFill="#f79517" />
+      <Label fx:id="AdresseL" layoutX="223.0" layoutY="272.0" text="Adresse" textFill="#f79517" />
+      <Label fx:id="VilleL" layoutX="223.0" layoutY="322.0" text="Ville" textFill="#f79517" />
+      <Label fx:id="ImageL" layoutX="736.0" layoutY="99.0" text="Image" textFill="#f79517" />
+      <Label fx:id="tel216L" layoutX="349.0" layoutY="221.0" text="+216" textFill="WHITE" />
+      <Label fx:id="SalleL" layoutX="286.0" layoutY="29.0" text="Modifier Salle" textFill="#f79517">
          <font>
             <Font size="30.0" />
          </font>
       </Label>
-      <Label fx:id="PerimetreL" layoutX="70.0" layoutY="514.0" text="Périmetre" />
-      <TextField fx:id="VilleTf" layoutX="197.0" layoutY="286.0" prefHeight="31.0" prefWidth="200.0" promptText="Ville" />
-      <TextField fx:id="PerimetreTf" layoutX="197.0" layoutY="509.0" prefHeight="31.0" prefWidth="159.0" promptText="Périmetre" />
-      <TextField fx:id="AdresseTf" layoutX="197.0" layoutY="236.0" prefHeight="31.0" prefWidth="200.0" promptText="Adresse de la salle" />
-      <Label fx:id="m2L" layoutX="365.0" layoutY="514.0" text="m²" />
-      <ImageView fx:id="imageSalle" fitHeight="145.0" fitWidth="200.0" layoutX="558.0" layoutY="136.0" pickOnBounds="true" />
-      <Button layoutX="557.0" layoutY="81.0" mnemonicParsing="false" onAction="#importImage" prefHeight="31.0" prefWidth="200.0" text="Import image" />
-      <Button fx:id="buttontrash" layoutX="719.0" layoutY="135.0" mnemonicParsing="false" onAction="#deleteImage">
-         <graphic>
-            <ImageView fitHeight="19.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../Images/Icons/trash.png" />
-               </image>
-            </ImageView>
-         </graphic>
-      </Button>
-      <Text fx:id="pathImage" layoutX="558.0" layoutY="130.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="200.00000596046448" />
-      <Label fx:id="ImageL1" layoutX="70.0" layoutY="344.0" text="Type" />
-      <Label fx:id="ImageL2" layoutX="499.0" layoutY="517.0" text="Longitude" />
-      <MapView fx:id="mapView" layoutX="473.0" layoutY="304.0" prefHeight="212.0" prefWidth="349.0" />
-      <TextField fx:id="longitude" editable="false" layoutX="496.0" layoutY="537.0" prefHeight="31.0" prefWidth="126.0" promptText="Ville" />
-      <Label fx:id="ImageL21" layoutX="684.0" layoutY="517.0" text="Latitude" />
-      <TextField fx:id="latitude" editable="false" layoutX="681.0" layoutY="537.0" prefHeight="31.0" prefWidth="126.0" promptText="Ville" />
-      <Label fx:id="ImageL3" layoutX="480.0" layoutY="283.0" text="Location " />
-      <ScrollPane layoutX="197.0" layoutY="333.0" prefHeight="154.0" prefWidth="200.0">
+      <Label fx:id="PerimetreL" layoutX="230.0" layoutY="561.0" text="Périmetre" textFill="#f79517" />
+      <TextField fx:id="VilleTf" layoutX="350.0" layoutY="317.0" prefHeight="31.0" prefWidth="200.0" promptText="Ville" />
+      <TextField fx:id="PerimetreTf" layoutX="356.0" layoutY="554.0" prefHeight="31.0" prefWidth="159.0" promptText="Périmetre" />
+      <TextField fx:id="AdresseTf" layoutX="350.0" layoutY="267.0" prefHeight="31.0" prefWidth="200.0" promptText="Adresse de la salle" />
+      <Label fx:id="m2L" layoutX="527.0" layoutY="561.0" text="m²" textFill="WHITE" />
+      <ImageView fx:id="imageSalle" fitHeight="145.0" fitWidth="200.0" layoutX="790.0" layoutY="166.0" pickOnBounds="true" />
+      <Button layoutX="777.0" layoutY="92.0" mnemonicParsing="false" onAction="#importImage" prefHeight="31.0" prefWidth="200.0" text="Import image" />
+      <Button fx:id="buttontrash" layoutX="968.0" layoutY="167.0" mnemonicParsing="false" onAction="#deleteImage" />
+      <Text fx:id="pathImage" layoutX="776.0" layoutY="143.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="200.00000596046448" />
+      <Label fx:id="ImageL1" layoutX="222.0" layoutY="393.0" text="Type" textFill="#f79517" />
+      <Label fx:id="ImageL2" layoutX="676.0" layoutY="539.0" text="Longitude" textFill="#f79517" />
+      <MapView fx:id="mapView" layoutX="650.0" layoutY="326.0" prefHeight="212.0" prefWidth="349.0" />
+      <TextField fx:id="longitude" editable="false" layoutX="673.0" layoutY="559.0" prefHeight="31.0" prefWidth="126.0" promptText="Ville" />
+      <Label fx:id="ImageL21" layoutX="861.0" layoutY="539.0" text="Latitude" textFill="#f79517" />
+      <TextField fx:id="latitude" editable="false" layoutX="858.0" layoutY="559.0" prefHeight="31.0" prefWidth="126.0" promptText="Ville" />
+      <Label fx:id="ImageL3" layoutX="657.0" layoutY="305.0" text="Location " textFill="#f79517" />
+      <ImageView fitHeight="19.0" fitWidth="21.0" layoutX="967.0" layoutY="167.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../Images/Icons/trash.png" />
+         </image>
+      </ImageView>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f79517" height="703.0" layoutY="5.0" stroke="#f79517" strokeType="INSIDE" style="-fx-background-color: #f79517;" width="143.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="150.0" stroke="WHITE" strokeType="INSIDE" style="-fx-background-color: #f79517;" width="143.0" />
+      <ImageView fitHeight="122.0" fitWidth="115.0" layoutX="14.0" layoutY="29.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="file:/C:/Users/don7a/Desktop/logo%20(1).png" />
+         </image>
+      </ImageView>
+      <ScrollPane layoutX="349.0" layoutY="377.0" prefHeight="154.0" prefWidth="200.0">
          <content>
-            <AnchorPane fx:id="scrollPane" minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="200.0" />
+            <AnchorPane fx:id="scrollPane" minHeight="0.0" minWidth="0.0" prefHeight="154.0" prefWidth="200.0" />
          </content>
       </ScrollPane>
    </children>

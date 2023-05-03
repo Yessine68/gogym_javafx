@@ -12,34 +12,28 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="703.2" prefWidth="1200.0" style="-fx-background-color: #bbdefb;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.Admin.AbonnementController">
+<AnchorPane id="AnchorPane" prefHeight="703.2" prefWidth="1200.0" style="-fx-background-color: #2b255a;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.Admin.AbonnementController">
    <children>
-      <Button fx:id="btnAjout" graphicTextGap="5.0" layoutX="119.0" layoutY="531.0" mnemonicParsing="false" onAction="#CreateAbonnement" text="Ajouter" textAlignment="CENTER" textFill="#ff8400">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Button>
-      <DatePicker fx:id="DebutDp" layoutX="132.0" layoutY="449.0" prefHeight="10.0" prefWidth="200.0" />
-      <DatePicker fx:id="FinDp" layoutX="132.0" layoutY="489.0" prefHeight="10.0" prefWidth="200.0" />
-      <TextArea fx:id="DescriptionTa" layoutX="132.0" layoutY="225.0" prefHeight="10.0" prefWidth="200.0" promptText="Description de l'abonnement" />
-      <TextField fx:id="NomTf" layoutX="132.0" layoutY="98.0" prefHeight="10.0" prefWidth="200.0" promptText="Nom de l'abonnement" />
-      <TextField fx:id="TypeTf" layoutX="132.0" layoutY="141.0" prefHeight="10.0" prefWidth="200.0" promptText="Type de l'abonnement" />
-      <TextField fx:id="PrixTf" layoutX="132.0" layoutY="181.0" prefHeight="31.0" prefWidth="159.0" promptText="Prix de l'abonnement" />
-      <Label fx:id="NomL" layoutX="16.0" layoutY="102.0" text="Nom" />
-      <Label fx:id="TypeL" layoutX="16.0" layoutY="144.0" text="Type" />
-      <Label fx:id="PrixL" layoutX="16.0" layoutY="186.0" text="Prix" />
-      <Label fx:id="DescriptionL" layoutX="16.0" layoutY="239.0" text="Description" />
-      <Label fx:id="DebutL" layoutX="16.0" layoutY="454.0" text="Date de début" />
-      <Label fx:id="FinL" layoutX="16.0" layoutY="494.0" text="Date de fin" />
-      <Label fx:id="TNDL" layoutX="302.0" layoutY="188.0" text="TND" />
-      <Label fx:id="AbonnementL" layoutX="514.0" layoutY="9.0" text="Abonnement" textFill="#002b4d">
+      <TextArea fx:id="DescriptionTa" layoutX="252.0" layoutY="300.0" prefHeight="10.0" prefWidth="200.0" promptText="Description de l'abonnement" />
+      <TextField fx:id="NomTf" layoutX="252.0" layoutY="173.0" prefHeight="10.0" prefWidth="200.0" promptText="Nom de l'abonnement" />
+      <TextField fx:id="TypeTf" layoutX="252.0" layoutY="216.0" prefHeight="10.0" prefWidth="200.0" promptText="Type de l'abonnement" />
+      <TextField fx:id="PrixTf" layoutX="252.0" layoutY="256.0" prefHeight="31.0" prefWidth="159.0" promptText="Prix de l'abonnement" />
+      <Label fx:id="NomL" layoutX="160.0" layoutY="178.0" text="Nom" textFill="#f79517" />
+      <Label fx:id="TypeL" layoutX="160.0" layoutY="220.0" text="Type" textFill="#f79517" />
+      <Label fx:id="PrixL" layoutX="160.0" layoutY="262.0" text="Prix" textFill="#f79517" />
+      <Label fx:id="DescriptionL" layoutX="160.0" layoutY="310.0" text="Description" textFill="#f79517" />
+      <Label fx:id="DebutL" layoutX="161.0" layoutY="524.0" text="Date de début" textFill="#f79517" />
+      <Label fx:id="FinL" layoutX="161.0" layoutY="564.0" text="Date de fin" textFill="#f79517" />
+      <Label fx:id="TNDL" layoutX="422.0" layoutY="263.0" text="TND" textFill="WHITE" />
+      <Label fx:id="AbonnementL" layoutX="564.0" layoutY="43.0" text="Abonnement" textFill="#f79517">
          <font>
             <Font size="30.0" />
          </font>
       </Label>
-      <TableView fx:id="AbonnementTv" layoutX="377.0" layoutY="99.0" prefHeight="422.0" prefWidth="777.0">
+      <TableView fx:id="AbonnementTv" layoutX="466.0" layoutY="167.0" prefHeight="422.0" prefWidth="696.0">
         <columns>
             <TableColumn fx:id="NomC" prefWidth="75.0" text="Nom" />
             <TableColumn fx:id="TypeC" prefWidth="75.0" text="Type" />
@@ -47,40 +41,46 @@
             <TableColumn fx:id="DescriptionC" prefWidth="158.0" text="Description" />
             <TableColumn fx:id="sallesC" prefWidth="141.0" text="Salles" />
             <TableColumn fx:id="DebutC" prefWidth="90.0" text="Début" />
-            <TableColumn fx:id="FinC" prefWidth="61.0" text="Fin" />
+            <TableColumn fx:id="FinC" prefWidth="88.0" text="Fin" />
         </columns>
       </TableView>
-      <Button fx:id="btnSupp" layoutX="1047.0" layoutY="531.0" mnemonicParsing="false" onAction="#DeleteAbonnement" text="Supprimer" textAlignment="CENTER" textFill="#ff8400">
+      <Button fx:id="btnSupp" layoutX="1055.0" layoutY="617.0" mnemonicParsing="false" onAction="#DeleteAbonnement" text="Supprimer" textAlignment="CENTER" textFill="#ff8400">
         <font>
             <Font size="18.0" />
         </font>
       </Button>
-      <Button fx:id="btnModif" graphicTextGap="5.0" layoutX="935.0" layoutY="531.0" mnemonicParsing="false" onAction="#UpdateAbonnement" text="Modifier" textAlignment="CENTER" textFill="#ff8400">
+      <Button fx:id="btnModif" graphicTextGap="5.0" layoutX="943.0" layoutY="617.0" mnemonicParsing="false" onAction="#UpdateAbonnement" text="Modifier" textAlignment="CENTER" textFill="#ff8400">
          <font>
             <Font size="18.0" />
          </font>
       </Button>
-      <Button fx:id="retourbtna" layoutX="3.0" layoutY="4.0" mnemonicParsing="false" onAction="#Retour">
-         <graphic>
-            <ImageView fitHeight="24.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../Images/Icons/previous.png" />
-               </image>
-            </ImageView>
-         </graphic></Button>
-      <Label fx:id="DescriptionL1" layoutX="16.0" layoutY="296.0" text="Salles" />
-      <ScrollPane layoutX="132.0" layoutY="280.0" prefHeight="159.0" prefWidth="200.0">
+      <Label fx:id="DescriptionL1" layoutX="161.0" layoutY="360.0" text="Salles" textFill="#f79517" />
+      <TextField fx:id="entrySearch" layoutX="948.0" layoutY="128.0" />
+      <ComboBox fx:id="searchCombo" layoutX="835.0" layoutY="128.0" prefHeight="26.0" prefWidth="114.0" />
+      <Button layoutX="1109.0" layoutY="128.0" mnemonicParsing="false" onAction="#search" text="Search" />
+   <Button layoutX="772.0" layoutY="617.0" mnemonicParsing="false" onAction="#toPDF" text="Exporter To PDF" textAlignment="CENTER" textFill="#ff8400">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+   <ScrollPane layoutX="252.0" layoutY="348.0" prefHeight="159.0" prefWidth="200.0">
         <content>
           <AnchorPane fx:id="scrollPane" minHeight="0.0" minWidth="0.0" prefHeight="445.0" prefWidth="200.0" />
         </content>
       </ScrollPane>
-      <TextField fx:id="entrySearch" layoutX="912.0" layoutY="16.0" />
-      <ComboBox fx:id="searchCombo" layoutX="799.0" layoutY="16.0" prefHeight="31.0" prefWidth="114.0" />
-      <Button layoutX="1099.0" layoutY="16.0" mnemonicParsing="false" onAction="#search" text="Search" />
-   <Button layoutX="1002.0" layoutY="60.0" mnemonicParsing="false" onAction="#toPDF" text="Exporter To PDF" textAlignment="CENTER" textFill="#ff8400">
+      <Button fx:id="btnAjout" graphicTextGap="5.0" layoutX="310.0" layoutY="617.0" mnemonicParsing="false" onAction="#CreateAbonnement" text="Ajouter" textAlignment="CENTER" textFill="#ff8400">
          <font>
             <Font size="18.0" />
          </font>
       </Button>
+      <DatePicker fx:id="FinDp" layoutX="252.0" layoutY="557.0" prefHeight="10.0" prefWidth="200.0" />
+      <DatePicker fx:id="DebutDp" layoutX="252.0" layoutY="520.0" prefHeight="10.0" prefWidth="200.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f79517" height="703.0" layoutY="5.0" stroke="#f79517" strokeType="INSIDE" style="-fx-background-color: #f79517;" width="143.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="150.0" layoutY="-1.0" stroke="WHITE" strokeType="INSIDE" style="-fx-background-color: #f79517;" width="143.0" />
+      <ImageView fitHeight="122.0" fitWidth="115.0" layoutX="14.0" layoutY="29.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="file:/C:/Users/don7a/Desktop/logo%20(1).png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

@@ -67,6 +67,8 @@ public class LoginController implements Initializable {
                 UserService userService = new UserService();
                 User loggedInUser = userService.login(nom, password);
                 connectedUser = loggedInUser;
+                GlobalData.setCurrentUser(connectedUser);
+
                 System.out.println("connected user = "+ connectedUser);
                 if (loggedInUser != null) {
                      if (loggedInUser.getStatus().equals("disabled")) {

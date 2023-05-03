@@ -19,11 +19,11 @@ import javafx.stage.Stage;
  */
 public class NewFXMain extends Application {
    
-    private static User connectedUser;
+    public static User connectedUser;
     
     @Override
     public void start(Stage primaryStage) {
-         connectedUser = new User();
+        connectedUser = new User();
     // rest of the code
         try {
                     //    FXMLLoader loader = new FXMLLoader(getClass().getResource("../gui/Ibrahimhome.fxml"));

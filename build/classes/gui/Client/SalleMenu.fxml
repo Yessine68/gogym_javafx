@@ -10,17 +10,18 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.shape.Line?>
+<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="703.2" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.Client.SalleMenuController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="703.2" prefWidth="1200.0" style="-fx-background-color: #2b255a;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.Client.SalleMenuController">
    <children>
-      <Text fill="#514ee1" layoutX="524.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Les Salles">
+      <Text fill="#f79517" layoutX="600.0" layoutY="66.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Les Salles">
          <font>
             <Font size="32.0" />
          </font>
       </Text>
-      <Pane fx:id="pane2" layoutX="280.0" layoutY="72.0" onMouseClicked="#paneClicked" prefHeight="286.0" prefWidth="221.0" scaleX="0.8" scaleY="0.8" style="-fx-background-color: #eeeeee; -fx-background-radius: 20;">
+      <Pane fx:id="pane2" layoutX="367.0" layoutY="131.0" onMouseClicked="#paneClicked" prefHeight="286.0" prefWidth="221.0" scaleX="0.8" scaleY="0.8" style="-fx-background-color: #eeeeee; -fx-background-radius: 20;">
          <children>
             <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="11.0" layoutY="6.0" pickOnBounds="true">
                <image>
@@ -41,7 +42,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Pane>
-      <Pane fx:id="pane3" layoutX="480.0" layoutY="72.0" onMouseClicked="#paneClicked" prefHeight="286.0" prefWidth="221.0" scaleX="0.8" scaleY="0.8" style="-fx-background-color: #eeeeee; -fx-background-radius: 20;">
+      <Pane fx:id="pane3" layoutX="567.0" layoutY="131.0" onMouseClicked="#paneClicked" prefHeight="286.0" prefWidth="221.0" scaleX="0.8" scaleY="0.8" style="-fx-background-color: #eeeeee; -fx-background-radius: 20;">
          <children>
             <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="11.0" layoutY="6.0" pickOnBounds="true">
                <image>
@@ -62,7 +63,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Pane>
-      <Pane fx:id="pane4" layoutX="680.0" layoutY="72.0" onMouseClicked="#paneClicked" prefHeight="286.0" prefWidth="221.0" scaleX="0.8" scaleY="0.8" style="-fx-background-color: #eeeeee; -fx-background-radius: 20;">
+      <Pane fx:id="pane4" layoutX="767.0" layoutY="131.0" onMouseClicked="#paneClicked" prefHeight="286.0" prefWidth="221.0" scaleX="0.8" scaleY="0.8" style="-fx-background-color: #eeeeee; -fx-background-radius: 20;">
          <children>
             <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="11.0" layoutY="6.0" pickOnBounds="true">
                <image>
@@ -83,7 +84,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Pane>
-      <Pane fx:id="pane5" layoutX="880.0" layoutY="72.0" onMouseClicked="#paneClicked" prefHeight="286.0" prefWidth="221.0" scaleX="0.8" scaleY="0.8" style="-fx-background-color: #eeeeee; -fx-background-radius: 20;">
+      <Pane fx:id="pane5" layoutX="967.0" layoutY="131.0" onMouseClicked="#paneClicked" prefHeight="286.0" prefWidth="221.0" scaleX="0.8" scaleY="0.8" style="-fx-background-color: #eeeeee; -fx-background-radius: 20;">
          <children>
             <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="11.0" layoutY="6.0" pickOnBounds="true">
                <image>
@@ -104,7 +105,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Pane>
-      <Pane fx:id="pane6" layoutX="80.0" layoutY="312.0" onMouseClicked="#paneClicked" prefHeight="286.0" prefWidth="221.0" scaleX="0.8" scaleY="0.8" style="-fx-background-color: #eeeeee; -fx-background-radius: 20;">
+      <Pane fx:id="pane6" layoutX="167.0" layoutY="371.0" onMouseClicked="#paneClicked" prefHeight="286.0" prefWidth="221.0" scaleX="0.8" scaleY="0.8" style="-fx-background-color: #eeeeee; -fx-background-radius: 20;">
          <children>
             <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="11.0" layoutY="6.0" pickOnBounds="true">
                <image>
@@ -125,7 +126,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Pane>
-      <Pane fx:id="pane7" layoutX="280.0" layoutY="312.0" onMouseClicked="#paneClicked" prefHeight="286.0" prefWidth="221.0" scaleX="0.8" scaleY="0.8" style="-fx-background-color: #eeeeee; -fx-background-radius: 20;">
+      <Pane fx:id="pane7" layoutX="367.0" layoutY="371.0" onMouseClicked="#paneClicked" prefHeight="286.0" prefWidth="221.0" scaleX="0.8" scaleY="0.8" style="-fx-background-color: #eeeeee; -fx-background-radius: 20;">
          <children>
             <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="11.0" layoutY="6.0" pickOnBounds="true">
                <image>
@@ -146,7 +147,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Pane>
-      <Pane fx:id="pane8" layoutX="480.0" layoutY="312.0" onMouseClicked="#paneClicked" prefHeight="286.0" prefWidth="221.0" scaleX="0.8" scaleY="0.8" style="-fx-background-color: #eeeeee; -fx-background-radius: 20;">
+      <Pane fx:id="pane8" layoutX="567.0" layoutY="371.0" onMouseClicked="#paneClicked" prefHeight="286.0" prefWidth="221.0" scaleX="0.8" scaleY="0.8" style="-fx-background-color: #eeeeee; -fx-background-radius: 20;">
          <children>
             <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="11.0" layoutY="6.0" pickOnBounds="true">
                <image>
@@ -167,7 +168,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Pane>
-      <Pane fx:id="pane9" layoutX="680.0" layoutY="312.0" onMouseClicked="#paneClicked" prefHeight="286.0" prefWidth="221.0" scaleX="0.8" scaleY="0.8" style="-fx-background-color: #eeeeee; -fx-background-radius: 20;">
+      <Pane fx:id="pane9" layoutX="767.0" layoutY="371.0" onMouseClicked="#paneClicked" prefHeight="286.0" prefWidth="221.0" scaleX="0.8" scaleY="0.8" style="-fx-background-color: #eeeeee; -fx-background-radius: 20;">
          <children>
             <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="11.0" layoutY="6.0" pickOnBounds="true">
                <image>
@@ -188,7 +189,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Pane>
-      <Pane fx:id="pane10" layoutX="880.0" layoutY="312.0" onMouseClicked="#paneClicked" prefHeight="286.0" prefWidth="221.0" scaleX="0.8" scaleY="0.8" style="-fx-background-color: #eeeeee; -fx-background-radius: 20;">
+      <Pane fx:id="pane10" layoutX="967.0" layoutY="371.0" onMouseClicked="#paneClicked" prefHeight="286.0" prefWidth="221.0" scaleX="0.8" scaleY="0.8" style="-fx-background-color: #eeeeee; -fx-background-radius: 20;">
          <children>
             <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="11.0" layoutY="6.0" pickOnBounds="true">
                <image>
@@ -209,17 +210,8 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Pane>
-      <Pagination fx:id="pagination" layoutX="491.0" layoutY="585.0" prefHeight="66.0" prefWidth="200.0" />
-      <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#retour">
-         <graphic>
-            <ImageView fitHeight="25.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../Images/Icons/previous.png" />
-               </image>
-            </ImageView>
-         </graphic>
-      </Button>
-      <Pane fx:id="pane1" layoutX="80.0" layoutY="72.0" onMouseClicked="#paneClicked" prefHeight="286.0" prefWidth="221.0" scaleX="0.8" scaleY="0.8" style="-fx-background-color: #eeeeee; -fx-background-radius: 20;">
+      <Pagination fx:id="pagination" layoutX="578.0" layoutY="629.0" prefHeight="66.0" prefWidth="200.0" />
+      <Pane fx:id="pane1" layoutX="167.0" layoutY="131.0" onMouseClicked="#paneClicked" prefHeight="286.0" prefWidth="221.0" scaleX="0.8" scaleY="0.8" style="-fx-background-color: #eeeeee; -fx-background-radius: 20;">
          <children>
             <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="11.0" layoutY="6.0" pickOnBounds="true">
                <image>
@@ -240,10 +232,17 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Pane>
-      <TextField fx:id="entrySearch" layoutX="227.0" layoutY="50.0" />
-      <ComboBox fx:id="searchCombo" layoutX="114.0" layoutY="50.0" prefHeight="31.0" prefWidth="114.0" />
-      <Button layoutX="414.0" layoutY="50.0" mnemonicParsing="false" onAction="#search" text="Search" />
-      <ComboBox fx:id="trieCombo" layoutX="945.0" layoutY="39.0" onAction="#trierPar" prefHeight="31.0" prefWidth="133.0" />
-      <Text layoutX="879.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Trier Par" />
+      <TextField fx:id="entrySearch" layoutX="302.0" layoutY="100.0" prefHeight="31.0" prefWidth="150.0" />
+      <ComboBox fx:id="searchCombo" layoutX="189.0" layoutY="100.0" prefHeight="31.0" prefWidth="114.0" />
+      <Button layoutX="459.0" layoutY="100.0" mnemonicParsing="false" onAction="#search" text="Search" />
+      <ComboBox fx:id="trieCombo" layoutX="1023.0" layoutY="100.0" onAction="#trierPar" prefHeight="31.0" prefWidth="133.0" />
+      <Text fill="WHITE" layoutX="957.0" layoutY="121.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Trier Par" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f79517" height="703.0" stroke="#f79517" strokeType="INSIDE" style="-fx-background-color: #f79517;" width="143.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="150.0" stroke="WHITE" strokeType="INSIDE" style="-fx-background-color: #f79517;" width="143.0" />
+      <ImageView fitHeight="122.0" fitWidth="115.0" layoutX="14.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="file:/C:/Users/don7a/Desktop/logo%20(1).png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

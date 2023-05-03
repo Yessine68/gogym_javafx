@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package services;
-
+import entities.User;
 import entities.Evenement;
 import utils.MyDB;
 import java.sql.Connection;
@@ -17,7 +17,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import Services.*;
+import services.*;
 import java.util.Comparator;
 import java.util.stream.Collectors;
 /**
@@ -258,12 +258,12 @@ public void decrement(Evenement e) {
     }
 }
  
- public void Participer(Evenement e, String verification,int userid) {
+ public void Participer(Evenement e, String verification,User u) {
         try {
             Statement st;
             st = cnx.createStatement();
             String query = "INSERT INTO `participate`(`id_user_id`,`id_event_id`, `verification_code`) "
-                    + "VALUES ('" + userid + "','" + e.getId() + "','" + verification + "')";
+                    + "VALUES ('" + u.getId() + "','" + e.getId() + "','" + verification + "')";
             st.executeUpdate(query);
             System.out.println("participation ajouté avec success");
         } catch (SQLException ex) {
