@@ -4,9 +4,9 @@
  * and open the template in the editor.
  */
 package gui;
-import Entities.CategorieEvenement;
-import Entities.Evenement;
-import Services.EvenementService;
+import entities.CategorieEvenement;
+import entities.Evenement;
+import services.EvenementService;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;

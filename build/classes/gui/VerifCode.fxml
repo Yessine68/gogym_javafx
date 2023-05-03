@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #2b255a;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.VerifCodeController">
+<AnchorPane id="AnchorPane" prefHeight="652.0" prefWidth="1200.0" style="-fx-background-color: #2b255a;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.VerifCodeController">
    <children>
       <TextField fx:id="tfCode" layoutX="252.0" layoutY="128.0" />
       <Button fx:id="btnConfirmerCode" layoutX="217.0" layoutY="200.0" mnemonicParsing="false" onAction="#btnConfirmerCodeAction" style="-fx-border-color: #f79517; -fx-background-color: #13123A;" text="Confirmer" textFill="WHITE" />

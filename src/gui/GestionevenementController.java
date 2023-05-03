@@ -5,10 +5,10 @@
  */
 package gui;
 
-import Entities.CategorieEvenement;
-import Entities.Evenement;
-import Services.EvenementService;
-import Services.PDFevenement;
+import entities.CategorieEvenement;
+import entities.Evenement;
+import services.EvenementService;
+import services.PDFevenement;
 import com.itextpdf.text.BadElementException;
 import com.itextpdf.text.DocumentException;
 import java.io.FileNotFoundException;

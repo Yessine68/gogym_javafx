@@ -5,9 +5,9 @@
  */
 package gui;
 
-import Entities.Evenement;
-import Services.CategorieEvenementService;
-import Services.EvenementService;
+import entities.Evenement;
+import services.CategorieEvenementService;
+import services.EvenementService;
 import static gui.ModifierCategorieEvenementController.categorie;
 import java.io.IOException;
 import java.net.URL;

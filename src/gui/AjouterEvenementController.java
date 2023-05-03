@@ -5,9 +5,10 @@
  */
 package gui;
 
-import Entities.CategorieEvenement;
-import Entities.Evenement;
-import Services.EvenementService;
+import entities.CategorieEvenement;
+import entities.Evenement;
+import services.CategorieEvenementService;
+import services.EvenementService;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -26,7 +27,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-import Services.*;
+import services.*;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;

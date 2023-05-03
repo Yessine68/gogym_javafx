@@ -5,6 +5,7 @@
  */
 package test;
 
+import entities.User;
 import java.io.IOException;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -18,10 +19,12 @@ import javafx.stage.Stage;
  */
 public class NewFXMain extends Application {
    
-  
+    private static User connectedUser;
+    
     @Override
     public void start(Stage primaryStage) {
-
+         connectedUser = new User();
+    // rest of the code
         try {
                     //    FXMLLoader loader = new FXMLLoader(getClass().getResource("../gui/Ibrahimhome.fxml"));
 

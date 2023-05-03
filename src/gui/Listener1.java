@@ -5,7 +5,7 @@
  */
 package gui;
 
-import Entities.CategorieEvenement;
+import entities.CategorieEvenement;
 
 /**
  *

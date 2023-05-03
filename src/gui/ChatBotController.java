@@ -5,7 +5,7 @@
  */
 package gui;
 
-import Entities.ChatBot;
+import entities.ChatBot;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;

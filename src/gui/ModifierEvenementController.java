@@ -5,10 +5,10 @@
  */
 package gui;
 
-import Entities.CategorieEvenement;
-import Entities.Evenement;
-import Services.CategorieEvenementService;
-import Services.EvenementService;
+import entities.CategorieEvenement;
+import entities.Evenement;
+import services.CategorieEvenementService;
+import services.EvenementService;
 import static gui.ModifierEvenementController.evenement;
 import java.io.IOException;
 import java.net.URL;

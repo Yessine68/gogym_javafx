@@ -5,8 +5,8 @@
  */
 package gui;
 
-import Entities.Evenement;
-import Services.EvenementService;
+import entities.Evenement;
+import services.EvenementService;
 import com.google.zxing.BarcodeFormat;
 import com.google.zxing.WriterException;
 import com.google.zxing.common.BitMatrix;

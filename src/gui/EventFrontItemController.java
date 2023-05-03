@@ -5,7 +5,7 @@
  */
 package gui;
 
-import Entities.Evenement;
+import entities.Evenement;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;

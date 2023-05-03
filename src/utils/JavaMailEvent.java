@@ -9,7 +9,7 @@ package utils;
  *
  * @author ahmed
  */
-import Entities.Evenement;
+import entities.Evenement;
 import gui.EventDetailController;
 import java.awt.image.BufferedImage;
 import java.io.ByteArrayOutputStream;

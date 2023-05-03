@@ -40,6 +40,7 @@ public class LoginController implements Initializable {
     private User user;
     @FXML
     private Button LoginButton;
+    private User connectedUser;
 
     /**
      * Initializes the controller class.
@@ -65,6 +66,8 @@ public class LoginController implements Initializable {
             try {
                 UserService userService = new UserService();
                 User loggedInUser = userService.login(nom, password);
+                connectedUser = loggedInUser;
+                System.out.println("connected user = "+ connectedUser);
                 if (loggedInUser != null) {
                      if (loggedInUser.getStatus().equals("disabled")) {
                     JOptionPane.showMessageDialog(null, "Your account has been disabled. Please contact the administrator for assistance.");

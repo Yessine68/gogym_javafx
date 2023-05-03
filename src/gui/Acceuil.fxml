@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="703.0" prefWidth="1389.0" style="-fx-background-color: #2b255a;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.AcceuilController">
+<AnchorPane id="AnchorPane" prefHeight="652.0" prefWidth="1200.0" style="-fx-background-color: #2b255a;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.AcceuilController">
    <children>
       <Button layoutX="181.0" layoutY="141.0" mnemonicParsing="false" onAction="#GoToEvent" prefHeight="31.0" prefWidth="163.0" style="-fx-border-color: #f79517; -fx-background-color: #13123A;" text="Event" textFill="WHITE">
        </Button>
