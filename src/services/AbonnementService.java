@@ -69,6 +69,8 @@ public class AbonnementService implements IService<Abonnement>{
         Statement st = cnx.createStatement();
         st.executeUpdate(req);
     }
+    
+    
     public void modifier(Abonnement a,List<String> sitesAdded,List<String> sitesDeleted) throws SQLException {
         String req = "UPDATE Abonnement SET nom_a = ?, type_a = ?, prix_a = ?, description_a = ?, debut_a = ?, fin_a = ? WHERE ID = ?";
         PreparedStatement as = cnx.prepareStatement(req, Statement.RETURN_GENERATED_KEYS);

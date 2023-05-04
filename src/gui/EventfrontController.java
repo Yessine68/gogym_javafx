@@ -113,7 +113,7 @@ public class EventfrontController implements Initializable {
         media = new Media(file.toURI().toString());
         mediaPlayer = new MediaPlayer(media);
         mediaPlayer.play();
-        mediaPlayer.setMute(true);
+        //mediaPlayer.setMute(true);
         mediaView.setMediaPlayer(mediaPlayer);
         
         Collections.addAll(possibleWordSet, words);
