@@ -12,7 +12,7 @@
 
 <AnchorPane id="AnchorPane" prefHeight="652.0" prefWidth="1200.0" style="-fx-background-color: #2b255a;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.DashboardController">
    <children>
-      <TableView fx:id="tbUsers" layoutX="335.0" layoutY="189.0" prefHeight="270.0" prefWidth="584.0">
+      <TableView fx:id="tbUsers" layoutX="248.0" layoutY="182.0" prefHeight="270.0" prefWidth="829.0">
         <columns>
           <TableColumn fx:id="Cid" prefWidth="32.00006103515625" text="ID" />
           <TableColumn fx:id="cUsername" prefWidth="96.800048828125" text="Username" />

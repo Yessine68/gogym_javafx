@@ -6,6 +6,7 @@
 package gui.Client;
 
 import entities.Abonnement;
+import java.io.IOException;
 import services.AbonnementService;
 import utils.Variables;
 import java.net.URL;
@@ -17,11 +18,16 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Stage;
 
 /**
  * FXML Controller class
@@ -69,6 +75,54 @@ public class AbonnementsSalleController implements Initializable {
             Logger.getLogger(AbonnementsSalleController.class.getName()).log(Level.SEVERE, null, ex);
         }
         
-    }    
+        
+    } 
+    @FXML
+    private void profile(ActionEvent event) throws IOException {
+        Parent root1 = FXMLLoader.load(getClass().getResource("Profile.fxml"));
+        Scene scene1 = new Scene(root1);
+        Stage stage1 = new Stage();
+        stage1.setScene(scene1);
+        stage1.show();
+        
+    }
+
+    @FXML
+    private void event(ActionEvent event) throws IOException {
+
+        Parent root1 = FXMLLoader.load(getClass().getResource("/gui/Eventfront.fxml"));
+        Scene scene1 = new Scene(root1);
+        Stage stage1 = new Stage();
+        stage1.setScene(scene1);
+        stage1.show();
+    }
+
+    @FXML
+    private void produit(ActionEvent event) throws IOException {
+         Parent root1 = FXMLLoader.load(getClass().getResource("/gui/Prodfront.fxml"));
+        Scene scene1 = new Scene(root1);
+        Stage stage1 = new Stage();
+        stage1.setScene(scene1);
+        stage1.show();
+    }
+
+    @FXML
+    private void abonnement(ActionEvent event) throws IOException {
+         Parent root1 = FXMLLoader.load(getClass().getResource("/gui/Client/AbonnementClient.fxml"));
+        Scene scene1 = new Scene(root1);
+        Stage stage1 = new Stage();
+        stage1.setScene(scene1);
+        stage1.show();
+    }
+
+    @FXML
+    private void salle(ActionEvent event) throws IOException {
+         Parent root1 = FXMLLoader.load(getClass().getResource("/gui/Client/SalleMenu.fxml"));
+        Scene scene1 = new Scene(root1);
+        Stage stage1 = new Stage();
+        stage1.setScene(scene1);
+        stage1.show();
+    }
+    
     
 }

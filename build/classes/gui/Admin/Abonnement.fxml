@@ -82,5 +82,13 @@
             <Image url="file:/C:/Users/don7a/Desktop/logo%20(1).png" />
          </image>
       </ImageView>
+      <Button layoutX="10.0" layoutY="222.0" mnemonicParsing="false" onAction="#Event" prefHeight="27.0" prefWidth="123.0" style="-fx-background-color: #13123A;" text="Evenement" textFill="WHITE" />
+      <Button layoutX="10.0" layoutY="262.0" mnemonicParsing="false" onAction="#Categorie" prefHeight="27.0" prefWidth="123.0" style="-fx-background-color: #13123A;" text="Categorie" textFill="WHITE" />
+      <Button layoutX="10.0" layoutY="301.0" mnemonicParsing="false" onAction="#Abonnement" prefHeight="27.0" prefWidth="123.0" style="-fx-background-color: #13123A;" text="Abonnement" textFill="WHITE" />
+      <Button layoutX="10.0" layoutY="342.0" mnemonicParsing="false" onAction="#Salle" prefHeight="27.0" prefWidth="123.0" style="-fx-background-color: #13123A;" text="Salle" textFill="WHITE" />
+      <Button layoutX="10.0" layoutY="387.0" mnemonicParsing="false" onAction="#Cours" prefHeight="27.0" prefWidth="123.0" style="-fx-background-color: #13123A;" text="Cours" textFill="WHITE" />
+      <Button layoutX="10.0" layoutY="431.0" mnemonicParsing="false" onAction="#Reservation" prefHeight="27.0" prefWidth="123.0" style="-fx-background-color: #13123A;" text="Resevation" textFill="WHITE" />
+      <Button layoutX="10.0" layoutY="518.0" mnemonicParsing="false" onAction="#Gestioncategorie" prefHeight="27.0" prefWidth="123.0" style="-fx-background-color: #13123A;" text="Categorie Produit" textFill="WHITE" />
+      <Button layoutX="10.0" layoutY="475.0" mnemonicParsing="false" onAction="#GestionProd" prefHeight="27.0" prefWidth="123.0" style="-fx-background-color: #13123A;" text="Produit" textFill="WHITE" />
    </children>
 </AnchorPane>

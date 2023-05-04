@@ -183,7 +183,6 @@ SalleService ss = new SalleService();
         }
     }
 
-    @FXML
     private void retour(ActionEvent event) {
         try {
             
@@ -266,6 +265,48 @@ SalleService ss = new SalleService();
         } catch (FileNotFoundException ex) {
             Logger.getLogger(SalleMenuController.class.getName()).log(Level.SEVERE, null, ex);
         }
+    }
+
+     @FXML
+    private void event(ActionEvent event) throws IOException {
+
+        Parent root1 = FXMLLoader.load(getClass().getResource("/gui/Eventfront.fxml"));
+        Scene scene1 = new Scene(root1);
+        Stage stage1 = new Stage();
+        stage1.setScene(scene1);
+        stage1.show();
+    }
+
+    @FXML
+    private void produit(ActionEvent event) throws IOException {
+         Parent root1 = FXMLLoader.load(getClass().getResource("/gui/Prodfront.fxml"));
+        Scene scene1 = new Scene(root1);
+        Stage stage1 = new Stage();
+        stage1.setScene(scene1);
+        stage1.show();
+    }
+
+    @FXML
+    private void abonnement(ActionEvent event) throws IOException {
+         Parent root1 = FXMLLoader.load(getClass().getResource("/gui/Client/AbonnementClient.fxml"));
+        Scene scene1 = new Scene(root1);
+        Stage stage1 = new Stage();
+        stage1.setScene(scene1);
+        stage1.show();
+    }
+
+    @FXML
+    private void salle(ActionEvent event) throws IOException {
+        
+    }
+     @FXML
+    private void profile(ActionEvent event) throws IOException {
+        Parent root1 = FXMLLoader.load(getClass().getResource("Profile.fxml"));
+        Scene scene1 = new Scene(root1);
+        Stage stage1 = new Stage();
+        stage1.setScene(scene1);
+        stage1.show();
+        
     }
 
 }

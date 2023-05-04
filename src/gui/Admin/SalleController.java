@@ -77,8 +77,6 @@ public class SalleController implements Initializable {
     SalleService ss = new SalleService();
     
     ObservableList<Salle> obs;
-    @FXML
-    private Button retourbtns;
 private boolean selectImage=false;
     @FXML
     private TableColumn<?, ?> LongitudeC;
@@ -215,7 +213,6 @@ private boolean selectImage=false;
         return isValid;
     }
 
-    @FXML
     private void Retour(ActionEvent event) {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("GoGym.fxml"));
@@ -258,5 +255,79 @@ private boolean selectImage=false;
         List<Salle> salles = ss.recuperer();
         ss.toPDF(salles);
     }
+
+    @FXML
+    private void Event(ActionEvent event) throws IOException {
+        Parent root1 = FXMLLoader.load(getClass().getResource("Gestionevenement.fxml"));
+        Scene scene1 = new Scene(root1);
+        Stage stage1 = new Stage();
+        stage1.setScene(scene1);
+        stage1.show();
+
+    }
+
+    @FXML
+    private void Categorie(ActionEvent event) throws IOException {
+        Parent root1 = FXMLLoader.load(getClass().getResource("Gestioncatevent.fxml"));
+        Scene scene1 = new Scene(root1);
+        Stage stage1 = new Stage();
+        stage1.setScene(scene1);
+        stage1.show();
+    }
+
+    @FXML
+    private void Abonnement(ActionEvent event) throws IOException {
+        Parent root1 = FXMLLoader.load(getClass().getResource("/gui/Admin/Abonnement.fxml"));
+        Scene scene1 = new Scene(root1);
+        Stage stage1 = new Stage();
+        stage1.setScene(scene1);
+        stage1.show();
+    }
+
+    @FXML
+    private void Salle(ActionEvent event) throws IOException {
+      
+    }
+
+    @FXML
+    private void Cours(ActionEvent event) throws IOException {
+        Parent root1 = FXMLLoader.load(getClass().getResource("/gui/cours.fxml"));
+        Scene scene1 = new Scene(root1);
+        Stage stage1 = new Stage();
+        stage1.setScene(scene1);
+        stage1.show();
+    }
+
+    @FXML
+    private void Reservation(ActionEvent event) throws IOException {
+
+        Parent root1 = FXMLLoader.load(getClass().getResource("/gui/reservation.fxml"));
+        Scene scene1 = new Scene(root1);
+        Stage stage1 = new Stage();
+        stage1.setScene(scene1);
+        stage1.show();
+    }
+
+     @FXML
+    private void GestionProd(ActionEvent event) throws IOException {
+
+        Parent root1 = FXMLLoader.load(getClass().getResource("GestionProduit.fxml"));
+        Scene scene1 = new Scene(root1);
+        Stage stage1 = new Stage();
+        stage1.setScene(scene1);
+        stage1.show();
+    } 
+  
+  
+  
+     @FXML
+  private void Gestioncategorie(ActionEvent event) throws IOException {
+
+        Parent root1 = FXMLLoader.load(getClass().getResource("GestionCatProd.fxml"));
+        Scene scene1 = new Scene(root1);
+        Stage stage1 = new Stage();
+        stage1.setScene(scene1);
+        stage1.show();
+    } 
     
 }
