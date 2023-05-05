@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="652.0" prefWidth="1200.0" style="-fx-background-color: #2b255a;" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.AjouterProduitController">
+    
+   <children>
+      <Label layoutX="567.0" layoutY="52.0" prefHeight="21.0" prefWidth="393.0" text="Ajouter Produit:" textFill="#f79517">
+         <font>
+            <Font name="System Bold" size="30.0" />
+         </font>
+      </Label>
+      <Label layoutX="516.0" layoutY="176.0" prefHeight="21.0" prefWidth="77.0" text="Nom:" textFill="#f79517">
+         <font>
+            <Font size="20.0" />
+         </font></Label>
+      <Label layoutX="517.0" layoutY="213.0" text="Description" textFill="#f79517">
+         <font>
+            <Font size="20.0" />
+         </font></Label>
+      <Label layoutX="516.0" layoutY="251.0" prefHeight="21.0" prefWidth="76.0" text="Quantite" textFill="#f79517">
+         <font>
+            <Font size="20.0" />
+         </font></Label>
+      <Label layoutX="517.0" layoutY="293.0" prefHeight="21.0" prefWidth="66.0" text="Prix" textFill="#f79517">
+         <font>
+            <Font size="20.0" />
+         </font></Label>
+      <Label layoutX="519.0" layoutY="356.0" text="image:" textFill="#f79517">
+         <font>
+            <Font size="20.0" />
+         </font></Label>
+      <Label layoutX="520.0" layoutY="402.0" text="categorie_Produit:" textFill="#f79517">
+         <font>
+            <Font size="20.0" />
+         </font></Label>
+      <TextField fx:id="nom" layoutX="699.0" layoutY="176.0" promptText="nom" />
+      <TextField fx:id="Description" layoutX="699.0" layoutY="214.0" promptText="description" />
+      <TextField fx:id="Quantite" layoutX="699.0" layoutY="254.0" promptText="Quantité" />
+     
+      <TextField fx:id="Prix" layoutX="699.0" layoutY="296.0" promptText="Prix" />
+      <ComboBox fx:id="Categorie" layoutX="699.0" layoutY="405.0" prefWidth="150.0" promptText="categories" />
+      <Button layoutX="699.0" layoutY="352.0" mnemonicParsing="false" onMouseClicked="#uploadimage" prefHeight="31.0" prefWidth="150.0" text="upload" />
+      <Button fx:id="btnAjouter" layoutX="617.0" layoutY="503.0" mnemonicParsing="false" onAction="#ajouterProduit" prefHeight="31.0" prefWidth="164.0" style="-fx-background-color: #f79517;" text="Ajouter" textFill="#f8f8f8">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font></Button>
+      <Button layoutX="979.0" layoutY="633.0" mnemonicParsing="false" onAction="#retour" prefHeight="31.0" prefWidth="164.0" style="-fx-background-color: #f79517;" text="Retour" textFill="WHITE" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f79517" height="703.0" stroke="#f79517" strokeType="INSIDE" style="-fx-background-color: #f79517;" width="143.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="150.0" stroke="WHITE" strokeType="INSIDE" style="-fx-background-color: #f79517;" width="143.0" />
+      <ImageView fitHeight="122.0" fitWidth="115.0" layoutX="14.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="file:/C:/Users/don7a/Desktop/logo%20(1).png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

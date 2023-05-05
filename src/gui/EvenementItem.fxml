@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+
+<AnchorPane id="AnchorPane" prefHeight="652.0" prefWidth="1200.0" style="-fx-background-color: #fcead1;" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.EvenementItemController">
+    <stylesheets>
+        <URL value="@evenementitem.css" />
+    </stylesheets>
+   <children>
+      <HBox layoutX="8.0" layoutY="13.0" prefHeight="62.0" prefWidth="1020.0">
+         <children>
+            <ImageView fx:id="imgitem" fitHeight="67.0" fitWidth="87.0" pickOnBounds="true" preserveRatio="true" />
+            <Label fx:id="cat" prefHeight="62.0" prefWidth="67.0" text="cat" />
+            <Label fx:id="nomlabel" prefHeight="62.0" prefWidth="100.0" text="   nom_e" />
+            <Label fx:id="descriptionlabel" prefHeight="62.0" prefWidth="125.0" text="  description_e" />
+            <Label fx:id="datelabel" prefHeight="70.0" prefWidth="86.0" text="      Date" />
+            <Label fx:id="lieulabel" prefHeight="65.0" prefWidth="126.0" text="  lieu_e" />
+            <Label fx:id="nbrparticipantslabel" prefHeight="66.0" prefWidth="134.0" text="nbr_participants" />
+            <Button mnemonicParsing="false" onAction="#btnclicked" prefHeight="67.0" prefWidth="95.0" text="Modifier" />
+            <Button mnemonicParsing="false" onAction="#delbtn" prefHeight="67.0" prefWidth="124.0" text="Supprimer" />
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>

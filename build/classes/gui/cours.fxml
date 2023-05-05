@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="652.0" prefWidth="1200.0" style="-fx-background-color: #2b255a;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.CoursController">
+   <children>
+      <Button layoutX="151.0" layoutY="7.0" mnemonicParsing="false" onAction="#rtr" text="&lt;&lt;" textFill="#bf1d1d">
+         <font>
+            <Font size="14.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="37.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/190238.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <TextField fx:id="id" layoutX="278.0" layoutY="168.0" prefHeight="31.0" prefWidth="156.0" />
+      <TextField fx:id="nom" layoutX="278.0" layoutY="210.0" prefHeight="31.0" prefWidth="156.0" />
+      <Label layoutX="167.0" layoutY="172.0" text="Id" textFill="WHITE">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="165.0" layoutY="210.0" text="Nom du cours" textFill="#fcf8f3">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="167.0" layoutY="288.0" text="Intensite" textFill="#fcf9f6">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <TextField fx:id="it" layoutX="278.0" layoutY="284.0" prefHeight="31.0" prefWidth="156.0" />
+      <Button fx:id="su" layoutX="1051.0" layoutY="576.0" mnemonicParsing="false" onAction="#supp" style="-fx-background-color: #f79517;" text="Supprimer" textFill="WHITE">
+         <graphic>
+            <ImageView fitHeight="150.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/sup.jpg" />
+               </image>
+            </ImageView>
+         </graphic>
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Button>
+      <Button fx:id="aj" layoutX="451.0" layoutY="572.0" mnemonicParsing="false" onAction="#ajt" prefHeight="49.0" prefWidth="126.0" style="-fx-background-color: #f79517;" text="Ajouter" textFill="WHITE">
+         <graphic>
+            <ImageView fitHeight="150.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/ajt.jpg" />
+               </image>
+            </ImageView>
+         </graphic>
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Button>
+      <Button fx:id="mod" layoutX="916.0" layoutY="574.0" mnemonicParsing="false" onAction="#modifier" style="-fx-background-color: #f79517;" text="Modifier" textFill="WHITE">
+         <graphic>
+            <ImageView fitHeight="150.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/mod.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Button>
+      <TextField fx:id="duree" layoutX="278.0" layoutY="247.0" prefHeight="31.0" prefWidth="156.0" />
+      <Label layoutX="168.0" layoutY="251.0" text="Duree" textFill="#fcf8f2">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="168.0" layoutY="324.0" text="Bienfaits" textFill="#f8f3ed">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <TextField fx:id="bien" layoutX="278.0" layoutY="324.0" prefHeight="31.0" prefWidth="156.0" />
+            <ImageView fx:id="Image" fitHeight="145.0" fitWidth="252.0" layoutX="176.0" layoutY="445.0" pickOnBounds="true" preserveRatio="true" />
+
+      <Label layoutX="168.0" layoutY="366.0" text="Image" textFill="#f8f5f1">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <TextField fx:id="img" layoutX="278.0" layoutY="367.0" prefHeight="31.0" prefWidth="156.0" />
+      <TableView fx:id="affiche" layoutX="451.0" layoutY="95.0" prefHeight="465.0" prefWidth="726.0">
+        <columns>
+          <TableColumn fx:id="idcr" prefWidth="75.0" text="Id" />
+          <TableColumn fx:id="nomcr" prefWidth="118.0" text="Nom du cours" />
+            <TableColumn fx:id="dureecr" prefWidth="126.0" text="Duree" />
+            <TableColumn fx:id="intcr" prefWidth="100.0" text="intensite" />
+            <TableColumn fx:id="biencr" prefWidth="146.0" text="Bienfait" />
+            <TableColumn fx:id="imgcr" prefWidth="160.0" text="Image" />
+        </columns>
+      </TableView>
+      <Button fx:id="AddImage" layoutX="302.0" layoutY="409.0" mnemonicParsing="false" onAction="#AddImage" prefHeight="25.0" prefWidth="125.0" text="Image" />
+      <Button layoutX="962.0" layoutY="53.0" mnemonicParsing="false" onAction="#search" text="rechercher" />
+      <TextField fx:id="rec" layoutX="771.0" layoutY="53.0" onKeyTyped="#rec" />
+      <Button fx:id="btnTrier" layoutX="1110.0" layoutY="53.0" mnemonicParsing="false" onAction="#affichrtTri" prefHeight="26.0" prefWidth="66.0" text="Trier" />
+      <Button layoutX="600.0" layoutY="575.0" mnemonicParsing="false" onAction="#GoToPDF" prefHeight="42.0" prefWidth="61.0" text="PDF" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f79517" height="703.0" layoutY="-2.0" stroke="#f79517" strokeType="INSIDE" style="-fx-background-color: #f79517;" width="143.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="150.0" layoutY="-2.0" stroke="WHITE" strokeType="INSIDE" style="-fx-background-color: #f79517;" width="143.0" />
+      <ImageView fitHeight="122.0" fitWidth="115.0" layoutX="14.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="file:/C:/Users/don7a/Desktop/logo%20(1).png" />
+         </image>
+      </ImageView>
+   <Button layoutX="10.0" layoutY="222.0" mnemonicParsing="false" onAction="#Event" prefHeight="27.0" prefWidth="123.0" style="-fx-background-color: #13123A;" text="Evenement" textFill="WHITE" />
+      <Button layoutX="10.0" layoutY="262.0" mnemonicParsing="false" onAction="#Categorie" prefHeight="27.0" prefWidth="123.0" style="-fx-background-color: #13123A;" text="Categorie" textFill="WHITE" />
+      <Button layoutX="10.0" layoutY="301.0" mnemonicParsing="false" onAction="#Abonnement" prefHeight="27.0" prefWidth="123.0" style="-fx-background-color: #13123A;" text="Abonnement" textFill="WHITE" />
+      <Button layoutX="10.0" layoutY="342.0" mnemonicParsing="false" onAction="#Salle" prefHeight="27.0" prefWidth="123.0" style="-fx-background-color: #13123A;" text="Salle" textFill="WHITE" />
+      <Button layoutX="10.0" layoutY="387.0" mnemonicParsing="false" onAction="#Cours" prefHeight="27.0" prefWidth="123.0" style="-fx-background-color: #13123A;" text="Cours" textFill="WHITE" />
+      <Button layoutX="10.0" layoutY="431.0" mnemonicParsing="false" onAction="#Reservation" prefHeight="27.0" prefWidth="123.0" style="-fx-background-color: #13123A;" text="Resevation" textFill="WHITE" />
+      <Button layoutX="10.0" layoutY="518.0" mnemonicParsing="false" onAction="#Gestioncategorie" prefHeight="27.0" prefWidth="123.0" style="-fx-background-color: #13123A;" text="Categorie Produit" textFill="WHITE" />
+      <Button layoutX="10.0" layoutY="475.0" mnemonicParsing="false" onAction="#GestionProd" prefHeight="27.0" prefWidth="123.0" style="-fx-background-color: #13123A;" text="Produit" textFill="WHITE" />
+   </children>
+</AnchorPane>

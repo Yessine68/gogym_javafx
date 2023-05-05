@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="652.0" prefWidth="1200.0" style="-fx-background-color: #2b255a;" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.AjouterProdCatController">
+   
+   <children>
+      <Label layoutX="485.0" layoutY="87.0" prefHeight="70.0" prefWidth="442.0" text="Ajouter Categorie Produit :" textFill="#f79517">
+         <font>
+            <Font name="System Bold" size="30.0" />
+         </font>
+      </Label>
+      <Label layoutX="322.0" layoutY="241.0" prefHeight="70.0" prefWidth="203.0" text="Nom_Categorie:" textFill="#f79517">
+         <font>
+            <Font name="System Italic" size="24.0" />
+         </font>
+      </Label>
+      <TextField fx:id="NomCat" layoutX="537.0" layoutY="259.0" prefHeight="34.0" prefWidth="294.0" promptText="Nom_Categorie" />
+      <Button fx:id="btnAjouter" layoutX="588.0" layoutY="375.0" mnemonicParsing="false" onAction="#ajouter" prefHeight="34.0" prefWidth="221.0" style="-fx-background-color: #f79517;" text="Ajouter" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font></Button>
+      <Button fx:id="btnRetour" layoutX="977.0" layoutY="626.0" mnemonicParsing="false" onAction="#retour" prefHeight="31.0" prefWidth="166.0" style="-fx-background-color: #f79517;" text="Retour" textFill="WHITE" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f79517" height="703.0" stroke="#f79517" strokeType="INSIDE" style="-fx-background-color: #f79517;" width="143.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="150.0" stroke="WHITE" strokeType="INSIDE" style="-fx-background-color: #f79517;" width="143.0" />
+      <ImageView fitHeight="122.0" fitWidth="115.0" layoutX="14.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="file:/C:/Users/don7a/Desktop/logo%20(1).png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>
