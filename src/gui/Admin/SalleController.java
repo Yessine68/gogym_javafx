@@ -131,6 +131,8 @@ private boolean selectImage=false;
             primaryStage2.setScene(scene);
             primaryStage2.setScene(scene);
             primaryStage2.show();
+            Stage primaryStage = (Stage) ((Button)event.getSource()).getScene().getWindow();
+            primaryStage.close();
         } catch (IOException ex) {
             System.out.println(ex.getMessage());
         }
@@ -146,6 +148,8 @@ private boolean selectImage=false;
                 Variables.stagee.setScene(scene);
                 Variables.stagee.setScene(scene);
                 Variables.stagee.show();
+                Stage primaryStage = (Stage) ((Button)event.getSource()).getScene().getWindow();
+            primaryStage.close();
             } catch (IOException ex) {
                 System.out.println(ex.getMessage());
             }

@@ -140,21 +140,20 @@ public class SalleService implements IService<Salle> {
         ss.setInt(3, s.getTel_s());
         ss.setString(4, s.getAdresse_s());
         ss.setString(5, s.getVille_s());
-        
-
         ss.setString(6, s.getImage_s());
         ss.setFloat(7, s.getPerimetre_s());
         ss.setInt(8, s.getLike_s());
+<<<<<<< Updated upstream
         ss.setString(9,s.getType());
         ss.setDouble(10, s.getLongitude_s());
         ss.setDouble(11, s.getLatitude_s());
         ss.setInt(12, s.getId());
+=======
+        ss.setDouble(9, s.getLongitude_s());
+        ss.setDouble(10, s.getLatitude_s());
+        ss.setInt(11, s.getId());
+>>>>>>> Stashed changes
         ss.executeUpdate();
-        
-        
-        
-        
-        
     }
 
     @Override

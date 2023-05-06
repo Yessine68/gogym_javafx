@@ -388,8 +388,6 @@ public class AbonnementService implements IService<Abonnement>{
                 System.out.println("done pdf exporté");
             } catch (FileNotFoundException ex) {
                 System.out.println(ex.getMessage());
-            } catch (IOException ex) {
-                System.out.println(ex.getMessage());
             }
     }
     

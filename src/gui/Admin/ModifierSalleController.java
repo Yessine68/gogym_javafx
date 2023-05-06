@@ -313,10 +313,13 @@ SalleService ss = new SalleService();
                 latitude_s=Double.parseDouble(latitude.getText());
                 longitude_s=Double.parseDouble(longitude.getText());
             }
+<<<<<<< Updated upstream
             Salle s = new Salle(nom_s, email_s, tel_s, adresse_s, ville_s, image_s, perimetre_s, Variables.salleDetail.getLike_s(),type,longitude_s,latitude_s);
             
+=======
+            Salle s = new Salle(nom_s, email_s, tel_s, adresse_s, ville_s, image_s, perimetre_s, Variables.salleDetail.getLike_s(),longitude_s,latitude_s);
+>>>>>>> Stashed changes
                 s.setId(selectedSalle.getId());
-                
                 List<String> abonnementsAdded = new ArrayList<String>();
                 List<String> abonnementsDelete = new ArrayList<String>();
 
@@ -341,8 +344,18 @@ SalleService ss = new SalleService();
                       selectImage=false;
                       Variables.salleDetail=null;
                                             Variables.allSalle = ss.recuperer(); 
-                                            
-                      Variables.stagee.close();
+                                         FXMLLoader loader = new FXMLLoader(getClass().getResource("Salle.fxml"));
+            Parent root = loader.load();
+            
+            SalleController controller = loader.getController();
+            
+            Scene scene = new Scene(root);
+            Stage stage = new Stage();
+            stage.setScene(scene);
+            stage.show();
+                Stage primaryStage = (Stage) ((Button)event.getSource()).getScene().getWindow();
+                primaryStage.close();
+                      
 
             } else {
                 Alert alert = new Alert(Alert.AlertType.WARNING);

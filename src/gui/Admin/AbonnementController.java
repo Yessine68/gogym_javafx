@@ -257,7 +257,9 @@ public class AbonnementController implements Initializable {
             DescriptionTa.setText("");
             DebutDp.setValue(null);
             FinDp.setValue(null);
-    
+            List<Abonnement> abonnements = as.recuperer();
+            obs = FXCollections.observableArrayList(abonnements); //Observablelist il peut detecter les changement 
+            AbonnementTv.setItems(obs);
             // Afficher une confirmation
             Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
             alert.setTitle("Ajout réussi");
@@ -328,7 +330,16 @@ public class AbonnementController implements Initializable {
                     alert.showAndWait();
                     return;
                 }
-            
+                List<String> sallesChecked = new ArrayList<String>();
+
+                for (Node node : scrollPane.getChildren()) {
+                    if (node instanceof CheckBox) {
+                        CheckBox checkBox = (CheckBox) node;
+                        if (checkBox.isSelected()){
+                            sallesChecked.add(checkBox.getText());
+                        }
+                    }
+                }
                 Abonnement a = new Abonnement(nom_a, type_a, prix_a, description_a, debut_a, fin_a);
                 a.setId(selectedAbonnement.getId());
                 
@@ -346,10 +357,16 @@ public class AbonnementController implements Initializable {
                         }
                     }
                 }
-                
+                for (Node node : scrollPane.getChildren()) {
+                    if (node instanceof CheckBox) {
+                        CheckBox checkBox = (CheckBox) node;
+                        checkBox.setSelected(false);
+                    }
+                }
                 as.modifier(a, sitesAdded, sitesDelete);
-                obs.set(selectedIndex, a);
-                
+                List<Abonnement> abonnements = as.recuperer();
+            obs = FXCollections.observableArrayList(abonnements); //Observablelist il peut detecter les changement 
+            AbonnementTv.setItems(obs);
                 // Mettre à jour la liste des abonnements
                 //AbonnementTv.setItems(FXCollections.observableArrayList(as.recuperer()));
                 //AbonnementTv.refresh();
@@ -412,7 +429,13 @@ public class AbonnementController implements Initializable {
                 DebutDp.setValue(null);
                 FinDp.setValue(null);
             
-                // Afficher une confirmation
+
+                for (Node node : scrollPane.getChildren()) {
+                    if (node instanceof CheckBox) {
+                        CheckBox checkBox = (CheckBox) node;
+                        checkBox.setSelected(false);
+                    }
+                }
                 Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
                 alert.setTitle("Suppression réussie");
                 alert.setHeaderText("L'abonnement a été supprimé avec succès.");

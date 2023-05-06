@@ -53,6 +53,7 @@ import javafx.scene.text.Text;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import javax.imageio.ImageIO;
+import utils.Variables;
 /**
  * FXML Controller class
  *
@@ -282,6 +283,12 @@ SalleService ss = new SalleService();
             alert.setTitle("Ajout réussi");
             alert.setHeaderText("La salle été ajouté avec succès.");
             alert.showAndWait();
+            Parent root = FXMLLoader.load(getClass().getResource("Salle.fxml"));
+                Scene scene = new Scene(root);
+                Variables.stagee.setTitle("Salle");
+                Variables.stagee.setScene(scene);
+                Variables.stagee.setScene(scene);
+                Variables.stagee.show();
             Stage primaryStage = (Stage) ((Button)event.getSource()).getScene().getWindow();
             primaryStage.close();
 

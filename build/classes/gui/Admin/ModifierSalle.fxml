@@ -44,10 +44,17 @@
          <font>
             <Font name="System Bold" size="16.0" />
          </font></Button>
+<<<<<<< Updated upstream
       <Button fx:id="buttontrash" layoutX="968.0" layoutY="167.0" mnemonicParsing="false" onAction="#deleteImage" />
       <Text fx:id="pathImage" layoutX="776.0" layoutY="143.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="200.00000596046448" />
       <Label fx:id="ImageL1" layoutX="222.0" layoutY="393.0" text="Type" textFill="#f79517" />
       <Label fx:id="ImageL2" layoutX="660.0" layoutY="567.0" text="Longitude" textFill="#f79517" />
+=======
+      <Button fx:id="buttontrash" layoutX="904.0" layoutY="167.0" mnemonicParsing="false" onAction="#deleteImage" />
+      <Text fx:id="pathImage" layoutX="790.0" layoutY="96.0" strokeType="OUTSIDE" strokeWidth="0.0" visible="false" wrappingWidth="200.00000596046448" />
+      <Label fx:id="ImageL1" layoutX="222.0" layoutY="383.0" text="Type" textFill="#f79517" />
+      <Label fx:id="ImageL2" layoutX="650.0" layoutY="567.0" text="Longitude" textFill="#f79517" />
+>>>>>>> Stashed changes
       <MapView fx:id="mapView" layoutX="650.0" layoutY="340.0" prefHeight="212.0" prefWidth="349.0" />
       <TextField fx:id="longitude" editable="false" layoutX="657.0" layoutY="587.0" prefHeight="31.0" prefWidth="126.0" promptText="Ville" />
       <Label fx:id="ImageL21" layoutX="845.0" layoutY="567.0" text="Latitude" textFill="#f79517" />
