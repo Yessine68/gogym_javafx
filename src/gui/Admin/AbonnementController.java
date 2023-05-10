@@ -124,7 +124,7 @@ public class AbonnementController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         searchCombo.setValue("Nom");
-            searchCombo.getItems().add("Nom");
+        searchCombo.getItems().add("Nom");
         
         
         SalleService ss = new SalleService();
@@ -159,6 +159,7 @@ public class AbonnementController implements Initializable {
                     DescriptionTa.setText(newValue.getDescription_a());
                     DebutDp.setValue(newValue.getDebut_a().toLocalDate());
                     FinDp.setValue(newValue.getFin_a().toLocalDate());
+                    
                     try {
                         List<Salle> abonnementSalles = as.getSallesAbonnement(newValue);
                         checks.stream().filter(c -> abonnementSalles.stream().anyMatch(s2 -> c.getText().equals(s2.getNom_s())))

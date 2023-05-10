@@ -194,7 +194,6 @@ SalleService ss = new SalleService();
             String adresse_s = AdresseTf.getText();
             String ville_s = VilleTf.getText();
             String image_s = "";
-            String type ="";
             float perimetre_s = Float.parseFloat(PerimetreTf.getText());
 
             if(NomTf.getText().isEmpty()){
@@ -275,7 +274,7 @@ SalleService ss = new SalleService();
             
             
             
-            Salle s = new Salle(nom_s, email_s, tel_s, adresse_s, ville_s, image_s, perimetre_s, 0,type,longitude_s,latitude_s);
+            Salle s = new Salle(nom_s, email_s, tel_s, adresse_s, ville_s, image_s, perimetre_s, 0,longitude_s,latitude_s);
             ss.ajouter(s,abonnementsChecked);
             
             

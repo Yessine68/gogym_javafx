@@ -44,7 +44,7 @@ public class SalleService implements IService<Salle> {
         cnx = MyDB.getInstance().getCnx();
     }
     public void ajouter(Salle s,List<String> abonnementsChecked) throws SQLException {
-        String req = "INSERT INTO Salle (nom_s, email_s, tel_s, adresse_s, ville_s, image_s, perimetre_s, like_s,type_s,longitude_s,latitude_s) VALUES ('"+s.getNom_s()+"','"+s.getEmail_s()+"',"+s.getTel_s()+",'"+s.getAdresse_s()+"','"+s.getVille_s()+"','"+s.getImage_s()+"',"+s.getPerimetre_s()+","+s.getLike_s()+",'"+s.getType()+"',"+s.getLongitude_s()+","+s.getLatitude_s()+")";
+        String req = "INSERT INTO Salle (nom_s, email_s, tel_s, adresse_s, ville_s, image_s, perimetre_s, like_s,longitude_s,latitude_s) VALUES ('"+s.getNom_s()+"','"+s.getEmail_s()+"',"+s.getTel_s()+",'"+s.getAdresse_s()+"','"+s.getVille_s()+"','"+s.getImage_s()+"','"+s.getPerimetre_s()+"','"+s.getLike_s()+"','"+s.getLongitude_s()+"','"+s.getLatitude_s()+"')";
         Statement st = cnx.createStatement();
         st.executeUpdate(req, Statement.RETURN_GENERATED_KEYS);
         ResultSet rs = st.getGeneratedKeys();
@@ -73,13 +73,13 @@ public class SalleService implements IService<Salle> {
     }
     @Override
     public void ajouter(Salle s) throws SQLException {
-        String req = "INSERT INTO Salle (nom_s, email_s, tel_s, adresse_s, ville_s, image_s, perimetre_s, like_s,type_s) VALUES ('"+s.getNom_s()+"','"+s.getEmail_s()+"',"+s.getTel_s()+",'"+s.getAdresse_s()+"','"+s.getVille_s()+"','"+s.getImage_s()+"',"+s.getPerimetre_s()+","+s.getLike_s()+",'"+s.getType()+"')";
+        String req = "INSERT INTO Salle (nom_s, email_s, tel_s, adresse_s, ville_s, image_s, perimetre_s, like_s) VALUES ('"+s.getNom_s()+"','"+s.getEmail_s()+"',"+s.getTel_s()+",'"+s.getAdresse_s()+"','"+s.getVille_s()+"','"+s.getImage_s()+"','"+s.getPerimetre_s()+"','"+s.getLike_s()+"')";
         Statement st = cnx.createStatement();
         st.executeUpdate(req);
     }
 
        public void modifier(Salle s, List<String> abonnementsAdded, List<String> abonnementsDeleted) throws SQLException {
-    String req = "UPDATE Salle SET nom_s = ?, email_s = ?, tel_s = ?, adresse_s = ?, ville_s = ?, image_s = ?, perimetre_s = ?, like_s = ?, type_s = ?, longitude_s = ?, latitude_s = ? WHERE ID = ?";
+    String req = "UPDATE Salle SET nom_s = ?, email_s = ?, tel_s = ?, adresse_s = ?, ville_s = ?, image_s = ?, perimetre_s = ?, like_s = ?, longitude_s = ?, latitude_s = ? WHERE ID = ?";
     PreparedStatement ps = cnx.prepareStatement(req, Statement.RETURN_GENERATED_KEYS);
     ps.setString(1, s.getNom_s());
     ps.setString(2, s.getEmail_s());
@@ -89,10 +89,9 @@ public class SalleService implements IService<Salle> {
     ps.setString(6, s.getImage_s());
     ps.setFloat(7, s.getPerimetre_s());
     ps.setInt(8, s.getLike_s());
-    ps.setString(9, s.getType());
-    ps.setDouble(10, s.getLongitude_s());
-    ps.setDouble(11, s.getLatitude_s());
-    ps.setInt(12, s.getId());
+    ps.setDouble(9, s.getLongitude_s());
+    ps.setDouble(10, s.getLatitude_s());
+    ps.setInt(11, s.getId());
     ps.executeUpdate();
 
     ResultSet rs = ps.getGeneratedKeys();
@@ -133,7 +132,7 @@ public class SalleService implements IService<Salle> {
         
     @Override
     public void modifier(Salle s) throws SQLException {
-        String req = "UPDATE Salle SET nom_s = ?, email_s = ?, tel_s = ?, adresse_s = ?, ville_s = ?, image_s = ?, perimetre_s = ?, like_s = ?,type_s=? ,longitude_s=?,latitude_s=? WHERE ID = ?";
+        String req = "UPDATE Salle SET nom_s = ?, email_s = ?, tel_s = ?, adresse_s = ?, ville_s = ?, image_s = ?, perimetre_s = ?, like_s = ?, longitude_s=?, latitude_s=? WHERE ID = ?";
         PreparedStatement ss = cnx.prepareStatement(req);
         ss.setString(1, s.getNom_s());
         ss.setString(2, s.getEmail_s());
@@ -143,16 +142,9 @@ public class SalleService implements IService<Salle> {
         ss.setString(6, s.getImage_s());
         ss.setFloat(7, s.getPerimetre_s());
         ss.setInt(8, s.getLike_s());
-<<<<<<< Updated upstream
-        ss.setString(9,s.getType());
-        ss.setDouble(10, s.getLongitude_s());
-        ss.setDouble(11, s.getLatitude_s());
-        ss.setInt(12, s.getId());
-=======
         ss.setDouble(9, s.getLongitude_s());
         ss.setDouble(10, s.getLatitude_s());
         ss.setInt(11, s.getId());
->>>>>>> Stashed changes
         ss.executeUpdate();
     }
 
@@ -190,7 +182,6 @@ public class SalleService implements IService<Salle> {
             s.setEmail_s(rs.getString("email_s"));
             s.setTel_s(rs.getInt("tel_s"));
             s.setAdresse_s(rs.getString("adresse_s"));
-            s.setType(rs.getString("type_s"));
             s.setVille_s(rs.getString("ville_s"));
             s.setImage_s(rs.getString("image_s"));
             s.setPerimetre_s(rs.getFloat("perimetre_s"));
@@ -220,8 +211,6 @@ public class SalleService implements IService<Salle> {
             s.setEmail_s(rs.getString("email_s"));
             s.setTel_s(rs.getInt("tel_s"));
             s.setAdresse_s(rs.getString("adresse_s"));
-            s.setType(rs.getString("type_s"));
-
             s.setVille_s(rs.getString("ville_s"));
             s.setImage_s(rs.getString("image_s"));
             s.setPerimetre_s(rs.getFloat("perimetre_s"));
@@ -275,7 +264,6 @@ public class SalleService implements IService<Salle> {
             s.setEmail_s(rs.getString("email_s"));
             s.setTel_s(rs.getInt("tel_s"));
             s.setAdresse_s(rs.getString("adresse_s"));
-            s.setType(rs.getString("type_s"));
             s.setVille_s(rs.getString("ville_s"));
             s.setImage_s(rs.getString("image_s"));
             s.setPerimetre_s(rs.getFloat("perimetre_s"));

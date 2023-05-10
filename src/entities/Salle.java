@@ -12,7 +12,7 @@ package entities;
 public class Salle {
     
     private int id, tel_s, like_s;
-    private String nom_s, email_s, adresse_s, ville_s ,image_s,type;
+    private String nom_s, email_s, adresse_s, ville_s ,image_s;
     private float perimetre_s;
     private double longitude_s,latitude_s;
     private String abonnements;
@@ -32,7 +32,7 @@ public class Salle {
         this.abonnements=abonnements;
     }
 
-    public Salle(String nom_s, String email_s, int tel_s, String adresse_s, String ville_s, String image_s, float perimetre_s, int like_s,String type,double longitude_s,double latitude_s) {
+    public Salle(String nom_s, String email_s, int tel_s, String adresse_s, String ville_s, String image_s, float perimetre_s, int like_s, double longitude_s, double latitude_s) {
         this.nom_s = nom_s;
         this.email_s = email_s;
         this.tel_s = tel_s;
@@ -41,11 +41,10 @@ public class Salle {
         this.image_s = image_s;
         this.perimetre_s = perimetre_s;
         this.like_s = like_s;
-        this.type=type;
         this.longitude_s=longitude_s;
         this.latitude_s=latitude_s;
     }
-    public Salle(String nom_s, String email_s, int tel_s, String adresse_s, String ville_s, String image_s, float perimetre_s, int like_s,String type,double longitude_s,double latitude_s,String abonnements) {
+    public Salle(String nom_s, String email_s, int tel_s, String adresse_s, String ville_s, String image_s, float perimetre_s, int like_s, double longitude_s,double latitude_s,String abonnements) {
         this.nom_s = nom_s;
         this.email_s = email_s;
         this.tel_s = tel_s;
@@ -54,7 +53,6 @@ public class Salle {
         this.image_s = image_s;
         this.perimetre_s = perimetre_s;
         this.like_s = like_s;
-        this.type=type;
         this.longitude_s=longitude_s;
         this.latitude_s=latitude_s;
         this.abonnements=abonnements;
@@ -133,20 +131,10 @@ public class Salle {
 
     @Override
     public String toString() {
-        return "Salle{" + "id=" + id + ", tel_s=" + tel_s + ", like_s=" + like_s + ", nom_s=" + nom_s + ", email_s=" + email_s + ", adresse_s=" + adresse_s + ", ville_s=" + ville_s + ", image_s=" + image_s + ", type=" + type + ", perimetre_s=" + perimetre_s + '}';
+        return "Salle{" + "id=" + id + ", tel_s=" + tel_s + ", like_s=" + like_s + ", nom_s=" + nom_s + ", email_s=" + email_s + ", adresse_s=" + adresse_s + ", ville_s=" + ville_s + ", image_s=" + image_s + ", perimetre_s=" + perimetre_s + ", longitude_s=" + longitude_s + ", latitude_s=" + latitude_s + ", abonnements=" + abonnements + '}';
     }
-
     
-
-    public String getType() {
-        return type;
-    }
-
-    public void setType(String type) {
-        this.type = type;
-    }
-
-    public Salle(int id, int tel_s, int like_s, String nom_s, String email_s, String adresse_s, String ville_s, String image_s, String type, float perimetre_s) {
+    public Salle(int id, int tel_s, int like_s, String nom_s, String email_s, String adresse_s, String ville_s, String image_s, float perimetre_s) {
         this.id = id;
         this.tel_s = tel_s;
         this.like_s = like_s;
@@ -155,11 +143,10 @@ public class Salle {
         this.adresse_s = adresse_s;
         this.ville_s = ville_s;
         this.image_s = image_s;
-        this.type = type;
         this.perimetre_s = perimetre_s;
     }
 
-    public Salle(int tel_s, int like_s, String nom_s, String email_s, String adresse_s, String ville_s, String image_s, String type, float perimetre_s) {
+    public Salle(int tel_s, int like_s, String nom_s, String email_s, String adresse_s, String ville_s, String image_s, float perimetre_s) {
         this.tel_s = tel_s;
         this.like_s = like_s;
         this.nom_s = nom_s;
@@ -167,7 +154,6 @@ public class Salle {
         this.adresse_s = adresse_s;
         this.ville_s = ville_s;
         this.image_s = image_s;
-        this.type = type;
         this.perimetre_s = perimetre_s;
     }
 

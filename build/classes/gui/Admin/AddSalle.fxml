@@ -14,7 +14,7 @@
 
 <AnchorPane id="AnchorPane" prefHeight="703.2" prefWidth="1200.0" style="-fx-background-color: #2b255a;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.Admin.AddSalleController">
    <children>
-      <Button fx:id="btnAjout" graphicTextGap="5.0" layoutX="384.0" layoutY="630.0" mnemonicParsing="false" onAction="#CreateSalle" prefHeight="45.0" prefWidth="119.0" style="-fx-background-color: #f79517;" text="Ajouter" textAlignment="CENTER" textFill="WHITE">
+      <Button fx:id="btnAjout" graphicTextGap="5.0" layoutX="384.0" layoutY="630.0" mnemonicParsing="false" onAction="#CreateSalle" prefHeight="50.0" prefWidth="120.0" style="-fx-background-color: #f79517;" text="Ajouter" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
@@ -27,7 +27,7 @@
       <Label fx:id="TelL" layoutX="265.0" layoutY="225.0" text="Téléphone" textFill="#f79517" />
       <Label fx:id="AdresseL" layoutX="265.0" layoutY="275.0" text="Adresse" textFill="#f79517" />
       <Label fx:id="VilleL" layoutX="265.0" layoutY="325.0" text="Ville" textFill="#f79517" />
-      <Label fx:id="ImageL" layoutX="686.0" layoutY="119.0" text="Image" textFill="#f79517" />
+      <Label fx:id="ImageL" layoutX="679.0" layoutY="119.0" text="Image" textFill="#f79517" />
       <Label fx:id="tel216L" layoutX="366.0" layoutY="225.0" text="+216" textFill="WHITE" />
       <Label fx:id="SalleL" layoutX="388.0" layoutY="29.0" text="Ajout Salle" textFill="#f79517">
          <font>
@@ -49,9 +49,9 @@
       <Label fx:id="ImageL1" layoutX="265.0" layoutY="378.0" text="Type" textFill="#f79517" />
       <Label fx:id="ImageL2" layoutX="680.0" layoutY="554.0" text="Longitude" textFill="#f79517" />
       <MapView fx:id="mapView" layoutX="678.0" layoutY="334.0" prefHeight="212.0" prefWidth="349.0" />
-      <TextField fx:id="longitude" editable="false" layoutX="677.0" layoutY="574.0" prefHeight="31.0" prefWidth="126.0" promptText="Ville" />
-      <Label fx:id="ImageL21" layoutX="865.0" layoutY="554.0" text="Latitude" textFill="#f79517" />
-      <TextField fx:id="latitude" editable="false" layoutX="862.0" layoutY="574.0" prefHeight="31.0" prefWidth="126.0" promptText="Ville" />
+      <TextField fx:id="longitude" editable="false" layoutX="679.0" layoutY="574.0" prefHeight="31.0" prefWidth="126.0" promptText="longitude" />
+      <Label fx:id="ImageL21" layoutX="862.0" layoutY="554.0" text="Latitude" textFill="#f79517" />
+      <TextField fx:id="latitude" editable="false" layoutX="862.0" layoutY="574.0" prefHeight="31.0" prefWidth="126.0" promptText="latitude" />
       <Label fx:id="ImageL3" layoutX="679.0" layoutY="312.0" text="Location " textFill="#f79517" />
       <ImageView fitHeight="19.0" fitWidth="21.0" layoutX="914.0" layoutY="171.0" pickOnBounds="true" preserveRatio="true">
          <image>

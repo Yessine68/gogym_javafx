@@ -89,13 +89,7 @@ public class DetailSalleController implements Initializable {
                 ((Text)anchorPane.getChildren().get(13)).setText(salleClicked.getVille_s());
                 ((Text)anchorPane.getChildren().get(14)).setText(salleClicked.getAdresse_s());
                 ((Text)anchorPane.getChildren().get(15)).setText(String.valueOf(salleClicked.getPerimetre_s()));
-                String[] types = salleClicked.getType().split("/");
-                String type = "";
-                for (int i=0;i<=types.length-1;i++){
-                    System.out.println(types[i]);
-                    type+=types[i]+"\n";
-                }
-                ((Text)anchorPane.getChildren().get(16)).setText(type);
+                String[] Abonnements = salleClicked.getAbonnements().split("/");
                 ((Text)anchorPane.getChildren().get(17)).setText(String.valueOf(salleClicked.getLike_s()));
                 ((TextField)anchorPane.getChildren().get(18)).setText(String.valueOf(salleClicked.getLongitude_s()));
                 ((TextField)anchorPane.getChildren().get(19)).setText(String.valueOf(salleClicked.getLatitude_s()));

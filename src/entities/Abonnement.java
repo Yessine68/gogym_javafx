@@ -104,12 +104,12 @@ public Abonnement(String nom_a, String type_a, int prix_a, String description_a,
     public void setFin_a(Date fin_a) {
         this.fin_a = fin_a;
     }
-    
+
     @Override
     public String toString() {
-        return "Abonnement{" + "id=" + id + ", nom_a=" + nom_a + ", type_a=" + type_a + ", prix_a=" + prix_a + ", description_a=" + description_a + ", debut_a=" + debut_a + ", fin_a=" + fin_a + '}';
+        return "Abonnement{" + "id=" + id + ", prix_a=" + prix_a + ", nom_a=" + nom_a + ", type_a=" + type_a + ", description_a=" + description_a + ", debut_a=" + debut_a + ", fin_a=" + fin_a + ", salles=" + salles + '}';
     }
-
+    
     public String getSalles() {
         return salles;
     }

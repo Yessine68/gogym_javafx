@@ -35,6 +35,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -181,7 +182,7 @@ SalleService ss = new SalleService();
             Logger.getLogger(SalleController.class.getName()).log(Level.SEVERE, null, ex);
         }
         PerimetreTf.setText(Float.toString(salleC.getPerimetre_s()));
-        String[] types = salleC.getType().split("/");
+        String[] Abonnements = salleC.getAbonnements().split("/");
         mapView.initialize();
         mapView.initializedProperty().addListener((obs, oldVal, newVal) -> {
             mapView.setMapType(MapType.OSM);
@@ -244,7 +245,6 @@ SalleService ss = new SalleService();
                 String ville_s = VilleTf.getText();
                 String image_s = "";
                 float perimetre_s = Float.parseFloat(PerimetreTf.getText());
-                String type="";
                 if(NomTf.getText().isEmpty()){
                     Alert alert = new Alert(Alert.AlertType.WARNING);
                     alert.setTitle("nom manquant");
@@ -313,12 +313,7 @@ SalleService ss = new SalleService();
                 latitude_s=Double.parseDouble(latitude.getText());
                 longitude_s=Double.parseDouble(longitude.getText());
             }
-<<<<<<< Updated upstream
-            Salle s = new Salle(nom_s, email_s, tel_s, adresse_s, ville_s, image_s, perimetre_s, Variables.salleDetail.getLike_s(),type,longitude_s,latitude_s);
-            
-=======
             Salle s = new Salle(nom_s, email_s, tel_s, adresse_s, ville_s, image_s, perimetre_s, Variables.salleDetail.getLike_s(),longitude_s,latitude_s);
->>>>>>> Stashed changes
                 s.setId(selectedSalle.getId());
                 List<String> abonnementsAdded = new ArrayList<String>();
                 List<String> abonnementsDelete = new ArrayList<String>();
@@ -367,6 +362,7 @@ SalleService ss = new SalleService();
         } catch (SQLException ex) {
             ex.printStackTrace();
         }
+   
     }
     
 

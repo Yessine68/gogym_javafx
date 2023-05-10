@@ -44,31 +44,33 @@
             <TableColumn fx:id="FinC" prefWidth="88.0" text="Fin" />
         </columns>
       </TableView>
-      <Button fx:id="btnSupp" layoutX="1055.0" layoutY="617.0" mnemonicParsing="false" onAction="#DeleteAbonnement" style="-fx-background-color: #f79517;" text="Supprimer" textAlignment="CENTER" textFill="WHITE">
+      <Button fx:id="btnSupp" layoutX="1040.0" layoutY="625.0" mnemonicParsing="false" onAction="#DeleteAbonnement" prefHeight="50.0" prefWidth="120.0" style="-fx-background-color: #f79517;" text="Supprimer" textAlignment="CENTER" textFill="WHITE">
         <font>
             <Font name="System Bold" size="18.0" />
         </font>
       </Button>
-      <Button fx:id="btnModif" graphicTextGap="5.0" layoutX="943.0" layoutY="617.0" mnemonicParsing="false" onAction="#UpdateAbonnement" style="-fx-background-color: #f79517;" text="Modifier" textAlignment="CENTER" textFill="WHITE">
+      <Button fx:id="btnModif" graphicTextGap="5.0" layoutX="910.0" layoutY="625.0" mnemonicParsing="false" onAction="#UpdateAbonnement" prefHeight="50.0" prefWidth="120.0" style="-fx-background-color: #f79517;" text="Modifier" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
       </Button>
       <Label fx:id="DescriptionL1" layoutX="155.0" layoutY="360.0" text="Salles" textFill="#f79517" />
-      <TextField fx:id="entrySearch" layoutX="891.0" layoutY="128.0" />
-      <ComboBox fx:id="searchCombo" layoutX="778.0" layoutY="128.0" prefHeight="26.0" prefWidth="114.0" />
-      <Button layoutX="1094.0" layoutY="128.0" mnemonicParsing="false" onAction="#search" text="Search" />
-   <Button layoutX="466.0" layoutY="120.0" mnemonicParsing="false" onAction="#toPDF" prefHeight="31.0" prefWidth="152.0" text="Exporter To PDF" textAlignment="CENTER">
+      
+      <TextField fx:id="entrySearch" layoutX="910.0" layoutY="122.0" />
+      <ComboBox fx:id="searchCombo" layoutX="798.0" layoutY="122.0" prefHeight="26.0" prefWidth="114.0" />
+      <Button layoutX="1100.0" layoutY="122.0" mnemonicParsing="false" onAction="#search" text="Search" />
+      
+   <Button layoutX="466.0" layoutY="120.0" mnemonicParsing="false" onAction="#toPDF" text="Exporter To PDF" textAlignment="CENTER">
          <font>
-            <Font size="18.0" />
+            <Font name="System Bold" size="18.0" />
          </font>
       </Button>
-   <ScrollPane layoutX="252.0" layoutY="348.0" prefHeight="159.0" prefWidth="200.0">
+   <ScrollPane layoutX="252.0" layoutY="363.5" prefHeight="148.0" prefWidth="200.0">
         <content>
           <AnchorPane fx:id="scrollPane" minHeight="0.0" minWidth="0.0" prefHeight="445.0" prefWidth="200.0" />
         </content>
       </ScrollPane>
-      <Button fx:id="btnAjout" graphicTextGap="5.0" layoutX="310.0" layoutY="617.0" mnemonicParsing="false" onAction="#CreateAbonnement" style="-fx-background-color: #f79517;" text="Ajouter" textAlignment="CENTER" textFill="WHITE">
+      <Button fx:id="btnAjout" graphicTextGap="5.0" layoutX="283.5" layoutY="625.0" mnemonicParsing="false" onAction="#CreateAbonnement" prefHeight="50.0" prefWidth="120.0" style="-fx-background-color: #f79517;" text="Ajouter" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
