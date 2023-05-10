@@ -28,6 +28,7 @@ import java.util.ArrayList;
 import java.util.List;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.FileChooser;
+import org.apache.commons.io.FileUtils;
 
 
 public class AjouterProduitController implements Initializable {
@@ -119,6 +120,20 @@ public class AjouterProduitController implements Initializable {
             p.setPrix(Integer.parseInt(Prix.getText()));
             p.setNbr_prods(Integer.parseInt(Quantite.getText()));
             p.setCAategorie(Categorie.getValue());
+            
+            if (selectedFile != null) {
+                try {
+                    File source = new File(selectedFile.toString());
+                    File dest = new File("C:\\Users\\don7a\\Desktop\\Pii\\Pi\\gogym_symfony\\public\\uploads\\produit\\");
+                   
+                    System.out.println(dest);
+                    FileUtils.copyFileToDirectory(source, dest);
+                } catch (IOException ee) {
+                    ee.printStackTrace();
+                }
+   
+            }
+            
             p.setImage(uploadpath);
             produit_service e = new produit_service();
             e.add_produit(p);

@@ -250,7 +250,7 @@ SalleService ss = new SalleService();
                     int randomNum = random.nextInt(90000) + 10000;
                     image_s= "image"+randomNum+".jpg";
                     String image_s2= "image"+randomNum;
-                    File outputfile = new File("./src/Images/Salles/"+image_s);
+                    File outputfile = new File("C:\\Users\\don7a\\Desktop\\Pii\\Pi\\gogym_symfony\\public\\uploads\\"+image_s);
                     BufferedImage buffer = ImageIO.read(new File(pathImage.getText()));
                     ImageIO.write(buffer, "jpg",outputfile);
                 }

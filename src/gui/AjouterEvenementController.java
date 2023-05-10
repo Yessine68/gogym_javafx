@@ -44,6 +44,7 @@ import java.util.List;
 import java.util.Set;
 import javafx.scene.input.KeyEvent;
 import javafx.stage.FileChooser;
+import org.apache.commons.io.FileUtils;
 import org.controlsfx.control.textfield.AutoCompletionBinding;
 import org.controlsfx.control.textfield.TextFields;
 import org.json.JSONException;
@@ -230,6 +231,21 @@ public class AjouterEvenementController implements Initializable {
             e.setDate_e(tfDate.getText());
             e.setNbr_participants(Integer.parseInt(tfNbrParticipants.getText()));
             e.setCategorieEvenement(cbcategorie.getValue());
+            
+            
+            if (selectedFile != null) {
+                try {
+                    File source = new File(selectedFile.toString());
+                    File dest = new File("C:\\Users\\don7a\\Desktop\\Pii\\Pi\\gogym_symfony\\public\\uploads\\evenement\\");
+                   
+                    System.out.println(dest);
+                    FileUtils.copyFileToDirectory(source, dest);
+                } catch (IOException ee) {
+                    ee.printStackTrace();
+                }
+   
+            }
+            
             e.setImage(uploadpath);
             EvenementService se = new EvenementService();
             se.ajouterEvenement(e);

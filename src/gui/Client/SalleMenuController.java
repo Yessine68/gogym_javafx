@@ -143,7 +143,7 @@ SalleService ss = new SalleService();
             while(rs.next()){
                 panes.get(i).setVisible(true);
                 if (rs.getString(5)!=null){
-                    InputStream stream2 = new FileInputStream("./src/Images/Salles/"+rs.getString(5));
+                    InputStream stream2 = new FileInputStream("C:\\Users\\don7a\\Desktop\\Pii\\Pi\\gogym_symfony\\public\\uploads\\"+rs.getString(5));
                     Image image2 = new Image(stream2);
                     ((ImageView)panes.get(i).getChildren().get(0)).setImage(image2);
                 }

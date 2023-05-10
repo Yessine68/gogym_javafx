@@ -48,7 +48,7 @@ public class ProdFrontItemController implements Initializable {
         descriptionlabel.setText(prod.getDescription());
         Prix.setText(Integer.toString(prod.getPrix()));
         Quantite.setText(Integer.toString(prod.getNbr_prods()));
-        Image image = new Image(getClass().getResourceAsStream("../images/"+prod.getImage()));
+        Image image = new Image("http://localhost:8000/uploads/produit/"+prod.getImage());
         imgitem.setImage(image);
        
     }

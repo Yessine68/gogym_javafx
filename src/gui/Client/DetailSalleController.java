@@ -79,7 +79,7 @@ public class DetailSalleController implements Initializable {
         Salle salleClicked = Variables.salleDetail;
         InputStream stream2;
         try {
-            stream2 = new FileInputStream("./src/Images/Salles/"+salleClicked.getImage_s());
+            stream2 = new FileInputStream("C:\\Users\\don7a\\Desktop\\Pii\\Pi\\gogym_symfony\\public\\uploads\\"+salleClicked.getImage_s());
             Image image2 = new Image(stream2);
             
             ((ImageView)anchorPane.getChildren().get(0)).setImage(image2);

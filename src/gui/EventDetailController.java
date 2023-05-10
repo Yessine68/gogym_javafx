@@ -124,7 +124,7 @@ public class EventDetailController implements Initializable {
         datefxid.setText(evenement.getDate_e());
         lieufxid.setText(evenement.getLieu_e());
         nbrfxid.setText(String.valueOf(evenement.getNbr_participants()));
-        Image image = new Image(getClass().getResourceAsStream("../uploads/"+evenement.getImage()));
+        Image image = new Image("http://localhost:8000/uploads/evenement/"+evenement.getImage());
         imagefxid.setImage(image);
               
         if (evenement.getNbr_participants() == 0) {

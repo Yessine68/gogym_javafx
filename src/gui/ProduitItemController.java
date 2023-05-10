@@ -54,7 +54,7 @@ public class ProduitItemController implements Initializable {
         descriptionlabel.setText(produit.getDescription());
         Prix.setText(Integer.toString(produit.getPrix()));
         Quantite.setText(Integer.toString(produit.getNbr_prods()));
-        Image image = new Image(getClass().getResourceAsStream("../images/"+produit.getImage()));
+        Image image = new Image("http://localhost:8000/uploads/produit/"+produit.getImage());
        imgitem.setImage(image);
      
     }

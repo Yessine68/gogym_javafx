@@ -19,6 +19,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.image.ImageViewBuilder;
 import javafx.stage.Stage;
 
 /**
@@ -61,7 +62,10 @@ public class EventFrontItemController implements Initializable {
         datelabel.setText(evenement.getDate_e());
         lieulabel.setText(evenement.getLieu_e());
         nbrparticipantslabel.setText(Integer.toString(evenement.getNbr_participants()));
-        Image image = new Image(getClass().getResourceAsStream("../uploads/"+evenement.getImage()));
+        //Image image = new Image(getClass().getResourceAsStream("http://localhost:8000/uploads/evenement/"+evenement.getImage()));
+        //String imageSource = "http://localhost:8000/uploads/evenement/"+evenement.getImage();
+       Image image = new Image("http://localhost:8000/uploads/evenement/"+evenement.getImage());
+
         imgitem.setImage(image);
        // Image image = new Image(getClass().getResourceAsStream("../uploads/" + evenement.getImage()));
        // imgitem.setImage(image);

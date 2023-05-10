@@ -68,7 +68,7 @@ public class EvenementItemController implements Initializable {
         datelabel.setText(evenement.getDate_e());
         lieulabel.setText(evenement.getLieu_e());
         nbrparticipantslabel.setText(Integer.toString(evenement.getNbr_participants()));
-        Image image = new Image(getClass().getResourceAsStream("../uploads/"+evenement.getImage()));
+        Image image = new Image("http://localhost:8000/uploads/evenement/"+evenement.getImage());
         imgitem.setImage(image);
        // Image image = new Image(getClass().getResourceAsStream("../uploads/" + evenement.getImage()));
        // imgitem.setImage(image);

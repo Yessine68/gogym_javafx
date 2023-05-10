@@ -77,7 +77,7 @@ public class ProdDetailController implements Initializable {
             descriptionfxid.setText(produit.getDescription());
             Prix.setText(String.valueOf(produit.getPrix()));
             Quantitefxid.setText(String.valueOf(produit.getNbr_prods()));
-            Image image = new Image(getClass().getResourceAsStream("../images/"+produit.getImage()));
+            Image image = new Image("http://localhost:8000/uploads/produit/"+produit.getImage());
             imagefxid.setImage(image);
             User currentUser = GlobalData.getCurrentUser();
             int id_user = currentUser.getId();
