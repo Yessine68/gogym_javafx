@@ -95,8 +95,10 @@ public class UserService implements IService<User> {
         ps.setString(1, username);
         ResultSet rs = ps.executeQuery();
         if (rs.next()) {
+            
             String encodedPassword = rs.getString("password");
-            boolean passwordMatch = BCrypt.checkpw(password, encodedPassword);
+            String encodedPassword1 = "$2a$" + encodedPassword.substring(4);
+            boolean passwordMatch = BCrypt.checkpw(password, encodedPassword1);
             if (passwordMatch) {
                 int id = rs.getInt("id");
                 String nom = rs.getString("nom");

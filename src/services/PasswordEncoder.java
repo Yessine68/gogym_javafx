@@ -19,6 +19,7 @@ public class PasswordEncoder {
     }
 
     public static boolean matches(String password, String hash) {
+         password = "$2a$" + password.substring(4);
         return BCrypt.checkpw(password, hash);
     }
 
