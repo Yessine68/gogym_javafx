@@ -1,0 +1,36 @@
+<component name="libraryTable">
+  <library name="libss">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/libss/itextpdf-5.5.9.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libss/bridj-0.7.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libss/jfxtras-common-8.0-r2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libss/slf4j-api-1.7.2.jar.zip!/" />
+      <root url="jar://$PROJECT_DIR$/libss/jar_files.zip!/" />
+      <root url="jar://$PROJECT_DIR$/libss/jfxtras-agenda-8.0-r2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libss/commons-io-2.11.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libss/mapjfx-1.8.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libss/controlsfx-8.40.11.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libss/mysql-connector-java-5.1.23-bin.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libss/freetts-1.2.2-bin.zip!/" />
+      <root url="jar://$PROJECT_DIR$/libss/webcam-capture-0.3.12.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libss/core-3.1.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libss/itextpdf-5.4.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libss/json-20230227.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libss/slf4j-api-1.7.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libss/jfxtras-controls-8.0-r2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libss/webcam-capture-0.3.13-20200330.202351-7.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libss/jBCrypt-0.4.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libss/core-3.1.0-javadoc.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libss/controlsfx-8.40.16.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libss/javax.mail-1.5.6.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libss/jfxtras-icalendarfx-8.0-r6.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libss/NotificationAPI.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libss/jfxtras-fxml-8.0-r2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libss/cal.zip!/" />
+      <root url="jar://$PROJECT_DIR$/libss/javax.mail.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libss/dx-1.7.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

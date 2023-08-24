@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="652.0" prefWidth="1200.0" style="-fx-background-color: #2b255a;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.AffCoursController">
+   <children>
+      <TableView fx:id="affiche" layoutX="194.0" layoutY="167.0" prefHeight="476.0" prefWidth="964.0">
+         <columns>
+            <TableColumn fx:id="idcr" prefWidth="75.0" text="Id" />
+            <TableColumn fx:id="nomcr" prefWidth="260.0" text="Nom du cours" />
+            <TableColumn fx:id="dureecr" prefWidth="272.0" text="Duree" />
+            <TableColumn fx:id="intcr" prefWidth="133.0" text="intensite" />
+            <TableColumn fx:id="biencr" prefWidth="147.0" text="Bienfait" />
+            <TableColumn fx:id="imgcr" prefWidth="270.0" text="Image" />
+         </columns>
+      </TableView>
+      <Button layoutX="1066.0" layoutY="128.0" mnemonicParsing="false" onAction="#search" text="rechercher" />
+      <Button layoutX="150.0" layoutY="16.0" mnemonicParsing="false" onAction="#back" text="&lt;&lt;" textFill="#bf1d1d">
+         <font>
+            <Font size="14.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="37.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/190238.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <TextField fx:id="rec" layoutX="872.0" layoutY="128.0" onKeyTyped="#rec" />
+      <Button fx:id="pdf" layoutX="194.0" layoutY="656.0" mnemonicParsing="false" onAction="#pdf" prefHeight="31.0" prefWidth="82.0" text="pdf" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f79517" height="703.0" layoutY="-1.0" stroke="#f79517" strokeType="INSIDE" style="-fx-background-color: #f79517;" width="143.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="150.0" layoutY="-1.0" stroke="WHITE" strokeType="INSIDE" style="-fx-background-color: #f79517;" width="143.0" />
+      <ImageView fitHeight="122.0" fitWidth="115.0" layoutX="14.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="file:/C:/Users/don7a/Desktop/logo%20(1).png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="PIDEV33">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/dist/PIDEV33.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
